@@ -1331,6 +1331,61 @@
     document.getElementById("year").textContent =
       new Date().getFullYear();
   </script>
+    
+<script>
+  // SIDEBAR NAVIGATION ACTIVE STATE
+  const sidebarLinks = document.querySelectorAll(".sidebar-nav a");
+
+  const sections = document.querySelectorAll(
+    "#home, #services, #work, #about, #contact"
+  );
+
+  // Change active link
+  function setActiveLink(sectionId) {
+    sidebarLinks.forEach(link => {
+      link.classList.toggle(
+        "active",
+        link.getAttribute("href") === "#" + sectionId
+      );
+    });
+  }
+
+  // Update immediately when a navigation link is clicked
+  sidebarLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      const sectionId = link.getAttribute("href").substring(1);
+      setActiveLink(sectionId);
+    });
+  });
+
+  // Update automatically while scrolling
+  const sectionObserver = new IntersectionObserver(entries => {
+    const visibleSections = entries
+      .filter(entry => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+    if (visibleSections.length > 0) {
+      setActiveLink(visibleSections[0].target.id);
+    }
+  }, {
+    rootMargin: "-20% 0px -65% 0px",
+    threshold: [0, 0.25, 0.5, 0.75, 1]
+  });
+
+  sections.forEach(section => {
+    sectionObserver.observe(section);
+  });
+
+  // Set active link on initial page load
+  const initialSection = window.location.hash.substring(1);
+
+  if (initialSection) {
+    setActiveLink(initialSection);
+  } else {
+    setActiveLink("home");
+  }
+</script>
+
   </main>
 </div>
 </body>
