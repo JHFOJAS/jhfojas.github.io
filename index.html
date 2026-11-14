@@ -1,0 +1,1145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jake Harley Fojas — Creative Designer and Digital Experience Developer.">
+  <title>Jake Harley Fojas | Creative Designer & Developer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --orange: #f04b22;
+      --black: #171313;
+      --white: #f7f6f3;
+      --gray: #e8e6e2;
+      --muted: #77736f;
+      --font: "DM Sans", sans-serif;
+      --display: "Space Grotesk", sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: var(--font);
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1180px, 90%);
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    .navbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      padding: 28px 0;
+      color: white;
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: var(--display);
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      list-style: none;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      opacity: .85;
+      transition: .25s;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    .nav-contact {
+      border: 1px solid rgba(255,255,255,.65);
+      padding: 11px 20px;
+      border-radius: 50px;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      color: white;
+      border: 0;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 730px;
+      background: var(--orange);
+      color: white;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      padding: 145px 0 80px;
+    }
+
+    .hero::before {
+      content: "CREATIVE";
+      position: absolute;
+      font-family: var(--display);
+      font-size: clamp(130px, 23vw, 330px);
+      font-weight: 700;
+      letter-spacing: -20px;
+      opacity: .055;
+      right: -40px;
+      bottom: -70px;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      align-items: center;
+      gap: 45px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-family: var(--display);
+      font-size: clamp(54px, 7.5vw, 100px);
+      line-height: .94;
+      letter-spacing: -7px;
+      font-weight: 700;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 span {
+      display: block;
+    }
+
+    .hero-description {
+      max-width: 490px;
+      font-size: 16px;
+      line-height: 1.8;
+      opacity: .92;
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 24px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: .25s;
+    }
+
+    .btn-dark {
+      background: var(--black);
+      color: white;
+    }
+
+    .btn-dark:hover {
+      background: white;
+      color: var(--black);
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,.7);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: var(--orange);
+    }
+
+    .portrait-wrap {
+      position: relative;
+      max-width: 390px;
+      width: 100%;
+      margin-left: auto;
+    }
+
+    .portrait {
+      aspect-ratio: 4 / 5;
+      background: #24201e;
+      border-radius: 190px 190px 24px 24px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      border: 1px solid rgba(255,255,255,.3);
+    }
+
+    .portrait-placeholder {
+      text-align: center;
+      padding: 30px;
+      color: white;
+    }
+
+    .portrait-placeholder .initials {
+      font-family: var(--display);
+      font-size: 100px;
+      font-weight: 700;
+      line-height: 1;
+      opacity: .9;
+    }
+
+    .portrait-placeholder p {
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin-top: 15px;
+      opacity: .65;
+    }
+
+    .portrait-note {
+      position: absolute;
+      bottom: 25px;
+      left: -45px;
+      background: var(--white);
+      color: var(--black);
+      padding: 17px 22px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 700;
+      box-shadow: 0 15px 40px rgba(0,0,0,.12);
+    }
+
+    .hero-index {
+      position: absolute;
+      right: 0;
+      bottom: -35px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      opacity: .7;
+    }
+
+    /* INTRO */
+
+    .intro {
+      padding: 115px 0;
+    }
+
+    .section-label {
+      color: var(--orange);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .intro h2 {
+      font-family: var(--display);
+      font-size: clamp(35px, 5vw, 58px);
+      line-height: 1.08;
+      letter-spacing: -3px;
+    }
+
+    .intro-copy {
+      font-size: 16px;
+      line-height: 1.9;
+      color: #5f5b57;
+    }
+
+    .intro-copy p + p {
+      margin-top: 18px;
+    }
+
+    /* SERVICES */
+
+    .services {
+      background: var(--black);
+      color: white;
+      padding: 105px 0;
+    }
+
+    .services-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 55px;
+    }
+
+    .services-heading h2,
+    .work-heading h2,
+    .about-heading h2 {
+      font-family: var(--display);
+      font-size: clamp(42px, 6vw, 68px);
+      letter-spacing: -4px;
+      line-height: 1;
+    }
+
+    .services-heading p {
+      max-width: 300px;
+      color: #aaa5a0;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .service-list {
+      border-top: 1px solid #393534;
+    }
+
+    .service-item {
+      display: grid;
+      grid-template-columns: 65px 1fr 1fr 30px;
+      align-items: center;
+      gap: 20px;
+      padding: 29px 0;
+      border-bottom: 1px solid #393534;
+    }
+
+    .service-number {
+      color: var(--orange);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .service-item h3 {
+      font-family: var(--display);
+      font-size: 25px;
+      font-weight: 600;
+    }
+
+    .service-item p {
+      color: #aaa5a0;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .service-arrow {
+      font-size: 22px;
+      color: var(--orange);
+    }
+
+    /* WORK */
+
+    .work {
+      padding: 110px 0;
+    }
+
+    .work-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 50px;
+      gap: 20px;
+    }
+
+    .work-heading p {
+      max-width: 300px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px 30px;
+    }
+
+    .project-visual {
+      height: 330px;
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: .35s;
+    }
+
+    .project-card:hover .project-visual {
+      transform: translateY(-6px);
+    }
+
+    .visual-one {
+      background: #e5a58d;
+    }
+
+    .visual-two {
+      background: #c7d4c6;
+    }
+
+    .visual-three {
+      background: #e5d4b8;
+    }
+
+    .visual-four {
+      background: #c3c0d9;
+    }
+
+    .mockup {
+      width: 75%;
+      height: 75%;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 20px 55px rgba(0,0,0,.16);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transform: rotate(-3deg);
+    }
+
+    .mockup-top {
+      display: flex;
+      justify-content: space-between;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .mockup-title {
+      font-family: var(--display);
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: .95;
+      font-weight: 700;
+      letter-spacing: -2px;
+    }
+
+    .mockup-bottom {
+      font-size: 9px;
+      color: #777;
+    }
+
+    .mockup-two {
+      background: #202020;
+      color: white;
+      transform: rotate(3deg);
+    }
+
+    .mockup-two .mockup-bottom {
+      color: #aaa;
+    }
+
+    .mockup-three {
+      background: #f4e8d6;
+      transform: rotate(-2deg);
+    }
+
+    .mockup-four {
+      background: #332e3e;
+      color: white;
+      transform: rotate(2deg);
+    }
+
+    .mockup-four .mockup-bottom {
+      color: #ccc;
+    }
+
+    .project-info {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 20px;
+    }
+
+    .project-info h3 {
+      font-family: var(--display);
+      font-size: 22px;
+      margin-bottom: 7px;
+    }
+
+    .project-info p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .project-year {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .work-note {
+      margin-top: 45px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    /* ABOUT */
+
+    .about {
+      padding: 110px 0;
+      background: var(--gray);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+    }
+
+    .about-heading h2 {
+      margin-bottom: 25px;
+    }
+
+    .about-heading p {
+      color: #66615d;
+      line-height: 1.9;
+      max-width: 450px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .skill {
+      background: var(--white);
+      border: 1px solid #d8d5d0;
+      padding: 11px 15px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .experience-list {
+      border-top: 1px solid #c8c4bd;
+    }
+
+    .experience-item {
+      padding: 23px 0;
+      border-bottom: 1px solid #c8c4bd;
+    }
+
+    .experience-item h3 {
+      font-family: var(--display);
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .experience-item p {
+      color: #68635f;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: var(--orange);
+      color: white;
+      padding: 110px 0;
+      text-align: center;
+    }
+
+    .contact .section-label {
+      color: white;
+      opacity: .8;
+    }
+
+    .contact h2 {
+      font-family: var(--display);
+      font-size: clamp(48px, 8vw, 95px);
+      line-height: .95;
+      letter-spacing: -6px;
+      margin-bottom: 28px;
+    }
+
+    .contact p {
+      max-width: 480px;
+      margin: 0 auto 35px;
+      line-height: 1.8;
+      opacity: .9;
+    }
+
+    .contact .btn {
+      background: var(--black);
+      color: white;
+    }
+
+    .contact .btn:hover {
+      background: white;
+      color: var(--black);
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--black);
+      color: white;
+      padding: 28px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 11px;
+      color: #aaa5a0;
+    }
+
+    .footer-inner strong {
+      color: white;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 800px) {
+      .hero-grid,
+      .intro-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 130px;
+      }
+
+      .hero h1 {
+        letter-spacing: -4px;
+      }
+
+      .portrait-wrap {
+        margin: 30px auto 0;
+        max-width: 320px;
+      }
+
+      .intro-grid,
+      .about-grid {
+        gap: 35px;
+      }
+
+      .services-heading,
+      .work-heading {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .service-item {
+        grid-template-columns: 35px 1fr 25px;
+      }
+
+      .service-item p {
+        grid-column: 2;
+      }
+
+      .service-arrow {
+        grid-column: 3;
+        grid-row: 1;
+      }
+
+      .project-visual {
+        height: 260px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        padding: 20px 0;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 5%;
+        width: 90%;
+        background: var(--black);
+        padding: 25px;
+        border-radius: 14px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 22px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-contact {
+        text-align: center;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 120px 0 75px;
+      }
+
+      .hero h1 {
+        font-size: 60px;
+      }
+
+      .portrait-wrap {
+        max-width: 270px;
+      }
+
+      .portrait-note {
+        left: -20px;
+      }
+
+      .intro,
+      .services,
+      .work,
+      .about,
+      .contact {
+        padding: 75px 0;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .project-visual {
+        height: 280px;
+      }
+
+      .contact h2 {
+        letter-spacing: -3px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">JHF<span>.</span></a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Portfolio</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact" class="nav-contact">Let's Talk ↗</a></li>
+      </ul>
+    </div>
+  </nav>
+
+ 
+  <header class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Creative Designer · Digital Developer</div>
+
+        <h1>
+          JAKE<br>
+          HARLEY<br>
+          FOJAS<span>.</span>
+        </h1>
+
+        <p class="hero-description">
+          I transform ideas into meaningful visual experiences —
+          combining creative design, thoughtful web development,
+          and technology to build for the digital world.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#work" class="btn btn-dark">Explore My Work ↗</a>
+          <a href="#about" class="btn btn-outline">More About Me</a>
+        </div>
+      </div>
+
+      <div class="portrait-wrap">
+        <div class="portrait">
+          <!-- Replace this placeholder with your own portrait -->
+          <div class="portrait-placeholder">
+            <div class="initials">JHF</div>
+            <p>YOUR PORTRAIT GOES HERE</p>
+          </div>
+        </div>
+
+        <div class="portrait-note">
+          Design-minded.<br>Technology-driven.
+        </div>
+
+        <div class="hero-index">01 / CREATIVE PORTFOLIO</div>
+      </div>
+    </div>
+  </header>
+
+  
+  <section class="intro">
+    <div class="container intro-grid">
+      <div>
+        <div class="section-label">01 — Introduction</div>
+        <h2>Designing ideas.<br>Building experiences.</h2>
+      </div>
+
+      <div class="intro-copy">
+        <p>
+          I'm a creative designer and digital experience developer
+          with a background that bridges graphic design, web design,
+          and front-end development.
+        </p>
+
+        <p>
+          My journey began with visual communication and grew into
+          building websites and digital experiences. I enjoy bringing
+          creative concepts to life through design, technology,
+          and attention to detail.
+        </p>
+
+        <p>
+          From a single graphic to a complete website, my goal is
+          always the same: create work that looks good, works well,
+          and communicates clearly.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="services" id="services">
+    <div class="container">
+      <div class="services-heading">
+        <div>
+          <div class="section-label">02 — What I Do</div>
+          <h2>My Expertise.</h2>
+        </div>
+
+        <p>
+          Creative thinking meets practical execution.
+          Here's how I turn concepts into finished work.
+        </p>
+      </div>
+
+      <div class="service-list">
+        <div class="service-item">
+          <span class="service-number">01</span>
+          <h3>Graphic Design</h3>
+          <p>Brand visuals, marketing materials, print design, and digital content.</p>
+          <span class="service-arrow">↗</span>
+        </div>
+
+        <div class="service-item">
+          <span class="service-number">02</span>
+          <h3>Web Design</h3>
+          <p>Modern layouts, landing pages, responsive interfaces, and user experiences.</p>
+          <span class="service-arrow">↗</span>
+        </div>
+
+        <div class="service-item">
+          <span class="service-number">03</span>
+          <h3>WordPress Development</h3>
+          <p>Custom page building, website implementation, maintenance, and optimization.</p>
+          <span class="service-arrow">↗</span>
+        </div>
+
+        <div class="service-item">
+          <span class="service-number">04</span>
+          <h3>Digital Solutions</h3>
+          <p>Front-end development, creative technology, and AI-assisted workflows.</p>
+          <span class="service-arrow">↗</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="work" id="work">
+    <div class="container">
+      <div class="work-heading">
+        <div>
+          <div class="section-label">03 — Selected Work</div>
+          <h2>Featured Projects.</h2>
+        </div>
+
+        <p>
+          A selection of creative directions and digital work.
+          Project visuals are placeholders until your real work is added.
+        </p>
+      </div>
+
+      <div class="project-grid">
+
+        <article class="project-card">
+          <div class="project-visual visual-one">
+            <div class="mockup">
+              <div class="mockup-top">
+                <span>BRAND / 001</span>
+                <span>2026</span>
+              </div>
+              <div class="mockup-title">MAKE<br>IT<br>MATTER.</div>
+              <div class="mockup-bottom">BRAND IDENTITY & VISUAL DESIGN</div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div>
+              <h3>Brand & Graphic Design</h3>
+              <p>Branding · Marketing · Visual Communication</p>
+            </div>
+            <span class="project-year">01 / 04</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-visual visual-two">
+            <div class="mockup mockup-two">
+              <div class="mockup-top">
+                <span>DIGITAL / 002</span>
+                <span>WEB</span>
+              </div>
+              <div class="mockup-title">DIGITAL<br>FIRST.</div>
+              <div class="mockup-bottom">WEBSITE DESIGN & DEVELOPMENT</div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div>
+              <h3>Website Design</h3>
+              <p>UI Design · Landing Pages · WordPress</p>
+            </div>
+            <span class="project-year">02 / 04</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-visual visual-three">
+            <div class="mockup mockup-three">
+              <div class="mockup-top">
+                <span>PRINT / 003</span>
+                <span>DESIGN</span>
+              </div>
+              <div class="mockup-title">PRINT<br>WITH<br>PURPOSE.</div>
+              <div class="mockup-bottom">PRINT PRODUCTION & PACKAGING</div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div>
+              <h3>Print & Production</h3>
+              <p>Labels · Stickers · Print-Ready Artwork</p>
+            </div>
+            <span class="project-year">03 / 04</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-visual visual-four">
+            <div class="mockup mockup-four">
+              <div class="mockup-top">
+                <span>CREATIVE / 004</span>
+                <span>TECH</span>
+              </div>
+              <div class="mockup-title">BEYOND<br>THE<br>PIXELS.</div>
+              <div class="mockup-bottom">CREATIVE TECHNOLOGY & EXPERIMENTS</div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div>
+              <h3>Creative Experiments</h3>
+              <p>Interactive Design · AI · Digital Concepts</p>
+            </div>
+            <span class="project-year">04 / 04</span>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="work-note">
+        Note: These are sample project covers, not actual client projects.
+        Replace them with your own portfolio images and project details.
+      </p>
+    </div>
+  </section>
+
+  
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div class="about-heading">
+        <div class="section-label">04 — About & Skills</div>
+        <h2>A little about my process.</h2>
+
+        <p>
+          I approach every project with curiosity, organization,
+          and a focus on delivering quality work. I enjoy learning
+          new tools, solving problems, and collaborating with teams
+          to bring ideas to life.
+        </p>
+
+        <div class="skills">
+          <span class="skill">Photoshop</span>
+          <span class="skill">Illustrator</span>
+          <span class="skill">Figma</span>
+          <span class="skill">Adobe XD</span>
+          <span class="skill">WordPress</span>
+          <span class="skill">Divi</span>
+          <span class="skill">Elementor</span>
+          <span class="skill">Beaver Builder</span>
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">PHP</span>
+          <span class="skill">AI Tools</span>
+        </div>
+      </div>
+
+      <div class="experience-list">
+        <div class="experience-item">
+          <h3>Graphic Design & Visual Communication</h3>
+          <p>
+            Creating marketing graphics, social media content,
+            email designs, e-commerce visuals, labels, and
+            print-ready production artwork.
+          </p>
+        </div>
+
+        <div class="experience-item">
+          <h3>Web Design & WordPress</h3>
+          <p>
+            Designing and developing websites from design concepts,
+            building responsive pages, and working with popular
+            WordPress builders and themes.
+          </p>
+        </div>
+
+        <div class="experience-item">
+          <h3>Front-End Development & Website Support</h3>
+          <p>
+            Working with HTML, CSS, JavaScript, PHP, website QA,
+            maintenance, troubleshooting, and optimization.
+          </p>
+        </div>
+
+        <div class="experience-item">
+          <h3>Team Leadership & Collaboration</h3>
+          <p>
+            Experience coordinating creative teams, supporting
+            production workflows, and collaborating across
+            design, development, SEO, and content.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-label">05 — Get In Touch</div>
+
+      <h2>Have a project<br>in mind?</h2>
+
+      <p>
+        Let's create something meaningful together.
+        I'm open to creative opportunities, collaborations,
+        and exciting digital projects.
+      </p>
+
+     
+      <a href="mailto:YOUR-EMAIL@example.com" class="btn">
+        Let's Talk ↗
+      </a>
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="container footer-inner">
+      <span><strong>JHF.</strong> Creative Designer & Developer</span>
+      <span>© <span id="year"></span> Jake Harley Fojas. All rights reserved.</span>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+      });
+    });
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
