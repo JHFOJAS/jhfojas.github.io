@@ -274,8 +274,6 @@
       opacity: .7;
     }
 
-    /* INTRO */
-
     .intro {
       padding: 115px 0;
     }
@@ -312,8 +310,6 @@
     .intro-copy p + p {
       margin-top: 18px;
     }
-
-    /* SERVICES */
 
     .services {
       background: var(--black);
@@ -380,8 +376,6 @@
       font-size: 22px;
       color: var(--orange);
     }
-
-    /* WORK */
 
     .work {
       padding: 110px 0;
@@ -528,8 +522,6 @@
       line-height: 1.7;
     }
 
-    /* ABOUT */
-
     .about {
       padding: 110px 0;
       background: var(--gray);
@@ -588,7 +580,6 @@
       line-height: 1.7;
     }
 
-    /* CONTACT */
 
     .contact {
       background: var(--orange);
@@ -627,7 +618,6 @@
       color: var(--black);
     }
 
-    /* FOOTER */
 
     footer {
       background: var(--black);
@@ -648,7 +638,6 @@
       color: white;
     }
 
-    /* RESPONSIVE */
 
     @media (max-width: 800px) {
       .hero-grid,
@@ -772,31 +761,185 @@
         flex-direction: column;
       }
     }
+    
+/* NEW EDITORIAL SIDEBAR LAYOUT */
+
+.site-shell {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  background: var(--black);
+  color: white;
+  padding: 38px 28px;
+  display: flex;
+  flex-direction: column;
+  z-index: 20;
+}
+
+.sidebar-profile {
+  margin-bottom: 55px;
+}
+
+.sidebar-portrait {
+  width: 125px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #38302d;
+  border: 2px solid var(--orange);
+  display: grid;
+  place-items: center;
+  margin-bottom: 24px;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.sidebar-name {
+  font-size: 23px;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.sidebar-role {
+  color: #aaa5a0;
+  font-size: 12px;
+  line-height: 1.6;
+  margin-top: 9px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.sidebar-nav a {
+  color: #aaa5a0;
+  padding: 12px 14px;
+  border-radius: 7px;
+  font-size: 14px;
+  transition: .25s ease;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+  background: var(--orange);
+  color: white;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  color: #aaa5a0;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.main-content {
+  min-width: 0;
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .site-shell {
+    grid-template-columns: 230px minmax(0, 1fr);
+  }
+
+  .sidebar {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  .site-shell {
+    display: block;
+  }
+
+  .sidebar {
+    position: relative;
+    height: auto;
+    padding: 20px;
+  }
+
+  .sidebar-profile {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .sidebar-portrait {
+    width: 65px;
+    margin: 0;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+
+  .sidebar-name {
+    font-size: 19px;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .sidebar-nav a {
+    padding: 9px 11px;
+    font-size: 12px;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+}
+
   </style>
 </head>
 
 <body>
 
 
-  <nav class="navbar">
-    <div class="container nav-inner">
-      <a href="#home" class="logo">JHF<span>.</span></a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
-        ☰
-      </button>
+<div class="site-shell">
 
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#work">Portfolio</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact" class="nav-contact">Let's Talk ↗</a></li>
-      </ul>
+  <aside class="sidebar">
+
+    <div class="sidebar-profile">
+      <div class="sidebar-portrait">JHF</div>
+
+      <div>
+        <div class="sidebar-name">Jake Harley Fojas</div>
+        <div class="sidebar-role">
+          Creative Designer<br>
+          Digital Experience Developer
+        </div>
+      </div>
     </div>
-  </nav>
 
- 
+    <nav class="sidebar-nav" aria-label="Main navigation">
+      <a href="#home" class="active">Home</a>
+      <a href="#services">Services</a>
+      <a href="#work">Portfolio</a>
+      <a href="#about">About Me</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="sidebar-footer">
+      Graphic Design · Web Design<br>
+      WordPress Development<br><br>
+      © Jake Harley Fojas
+    </div>
+
+  </aside>
+
+  <main class="main-content">
+
   <header class="hero" id="home">
     <div class="container hero-grid">
       <div>
@@ -1138,6 +1281,7 @@
     document.getElementById("year").textContent =
       new Date().getFullYear();
   </script>
-
+  </main>
+</div>
 </body>
 </html>
