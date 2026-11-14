@@ -875,17 +875,37 @@
 .sidebar {
   border-right: 1px solid rgba(255,255,255,0.08);
 }
+/* DESKTOP SIDEBAR PROFILE */
 .sidebar-profile {
-  flex-direction: row;
+  position: relative;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  text-align: left;
-  gap: 16px;
-  margin-bottom: 20px;
+  justify-content: center;
+  text-align: center;
+  gap: 0;
+  margin-bottom: 55px;
 }
 
 .sidebar-profile > div:last-child {
-  text-align: left;
+  width: 100%;
+  text-align: center;
+}
+
+/* MOBILE SIDEBAR PROFILE */
+@media (max-width: 700px) {
+  .sidebar-profile {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .sidebar-profile > div:last-child {
+    text-align: left;
+  }
 }
 
 .sidebar-name {
@@ -1519,24 +1539,61 @@
       <a href="#home">Back to top ↑</a>
     </div>
   </footer>
+<div class="project-modal" id="projectModal" aria-hidden="true">
 
-  <script>
-    const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
+  <div class="project-modal-backdrop"></div>
 
-    menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("open");
-    });
+  <div class="project-modal-content"
+       role="dialog"
+       aria-modal="true"
+       aria-labelledby="modalTitle">
 
-    document.querySelectorAll(".nav-links a").forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-      });
-    });
+    <button class="project-modal-close"
+            type="button"
+            aria-label="Close project preview">
+      &times;
+    </button>
 
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-  </script>
+    <div class="modal-label">PROJECT PREVIEW</div>
+
+    <h2 id="modalTitle">Project Title</h2>
+
+    <p id="modalDescription">
+      Project description goes here.
+    </p>
+
+    <div class="modal-details">
+      <div>
+        <span>DISCIPLINE</span>
+        <strong id="modalDiscipline">Design</strong>
+      </div>
+
+      <div>
+        <span>FOCUS</span>
+        <strong id="modalFocus">Creative Direction</strong>
+      </div>
+
+      <div>
+        <span>PROJECT TYPE</span>
+        <strong id="modalType">Portfolio Sample</strong>
+      </div>
+    </div>
+
+    <div class="modal-note">
+      This is a sample portfolio presentation.
+      Actual project details and visuals will be added later.
+    </div>
+
+    <button class="modal-case-study" type="button" disabled>
+      FULL CASE STUDY — COMING SOON
+    </button>
+
+  </div>
+</div>
+<script>
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
     
 <script>
   // SIDEBAR NAVIGATION ACTIVE STATE
@@ -1699,57 +1756,6 @@ document.addEventListener("keydown", event => {
   </main>
 </div>
   
-<div class="project-modal" id="projectModal" aria-hidden="true">
-
-  <div class="project-modal-backdrop"></div>
-
-  <div class="project-modal-content"
-       role="dialog"
-       aria-modal="true"
-       aria-labelledby="modalTitle">
-
-    <button class="project-modal-close"
-            type="button"
-            aria-label="Close project preview">
-      &times;
-    </button>
-
-    <div class="modal-label">PROJECT PREVIEW</div>
-
-    <h2 id="modalTitle">Project Title</h2>
-
-    <p id="modalDescription">
-      Project description goes here.
-    </p>
-
-    <div class="modal-details">
-      <div>
-        <span>DISCIPLINE</span>
-        <strong id="modalDiscipline">Design</strong>
-      </div>
-
-      <div>
-        <span>FOCUS</span>
-        <strong id="modalFocus">Creative Direction</strong>
-      </div>
-
-      <div>
-        <span>PROJECT TYPE</span>
-        <strong id="modalType">Portfolio Sample</strong>
-      </div>
-    </div>
-
-    <div class="modal-note">
-      This is a sample portfolio presentation.
-      Actual project details and visuals will be added later.
-    </div>
-
-    <button class="modal-case-study" type="button" disabled>
-      FULL CASE STUDY — COMING SOON
-    </button>
-
-  </div>
-</div>
 
 </body>
 </html>
