@@ -949,6 +949,173 @@
   }
 }
 
+/* =================================
+   PROJECT PREVIEW MODAL
+================================= */
+
+.project-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .3s ease, visibility .3s ease;
+}
+
+.project-modal.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.project-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(23, 19, 19, .82);
+  backdrop-filter: blur(8px);
+}
+
+.project-modal-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 680px;
+  max-height: 85vh;
+  overflow-y: auto;
+  background: #F7F6F3;
+  color: #171313;
+  padding: 55px;
+  border-radius: 12px;
+  transform: translateY(25px);
+  transition: transform .3s ease;
+}
+
+.project-modal.open .project-modal-content {
+  transform: translateY(0);
+}
+
+.project-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  background: #E8E6E2;
+  color: #171313;
+  font-size: 28px;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease;
+}
+
+.project-modal-close:hover {
+  background: #F04B22;
+  color: white;
+}
+
+.modal-label {
+  color: #F04B22;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.project-modal-content h2 {
+  font-size: clamp(30px, 5vw, 48px);
+  line-height: 1.1;
+  margin-bottom: 20px;
+  letter-spacing: -1.5px;
+}
+
+.project-modal-content > p {
+  color: #625D58;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+.modal-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 25px 0;
+  border-top: 1px solid #E8E6E2;
+  border-bottom: 1px solid #E8E6E2;
+}
+
+.modal-details div {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.modal-details span {
+  color: #928B84;
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.modal-details strong {
+  font-size: 13px;
+}
+
+.modal-note {
+  margin: 25px 0;
+  color: #77716B;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.modal-case-study {
+  width: 100%;
+  padding: 17px;
+  background: #E8E6E2;
+  color: #77716B;
+  border: 0;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: not-allowed;
+}
+
+.project-card {
+  cursor: pointer;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+.project-card:focus-visible {
+  outline: 3px solid #F04B22;
+  outline-offset: 5px;
+}
+
+@media (max-width: 600px) {
+  .project-modal {
+    padding: 12px;
+  }
+
+  .project-modal-content {
+    padding: 45px 24px 28px;
+  }
+
+  .modal-details {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
   </style>
 </head>
 
@@ -1140,7 +1307,7 @@
 
       <div class="project-grid">
 
-        <article class="project-card">
+        <article class="project-card" data-project="branding" tabindex="0" role="button" aria-haspopup="dialog">
           <div class="project-visual visual-one">
             <div class="mockup">
               <div class="mockup-top">
@@ -1160,7 +1327,7 @@
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card" data-project="web-design" tabindex="0" role="button" aria-haspopup="dialog">
           <div class="project-visual visual-two">
             <div class="mockup mockup-two">
               <div class="mockup-top">
@@ -1180,7 +1347,7 @@
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card" data-project="print-design" tabindex="0" role="button" aria-haspopup="dialog">
           <div class="project-visual visual-three">
             <div class="mockup mockup-three">
               <div class="mockup-top">
@@ -1200,7 +1367,7 @@
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card" data-project="creative-experiments" tabindex="0" role="button" aria-haspopup="dialog">
           <div class="project-visual visual-four">
             <div class="mockup mockup-four">
               <div class="mockup-top">
@@ -1423,9 +1590,166 @@
   } else {
     setActiveLink("home");
   }
+  
+// =================================
+// PROJECT PREVIEW INTERACTIONS
+// =================================
+
+const projectModal = document.getElementById("projectModal");
+const modalTitle = document.getElementById("modalTitle");
+const modalDescription = document.getElementById("modalDescription");
+const modalDiscipline = document.getElementById("modalDiscipline");
+const modalFocus = document.getElementById("modalFocus");
+const modalType = document.getElementById("modalType");
+
+const projectCards = document.querySelectorAll(".project-card");
+const modalClose = document.querySelector(".project-modal-close");
+const modalBackdrop = document.querySelector(".project-modal-backdrop");
+
+const projectData = {
+  branding: {
+    title: "Brand & Graphic Design",
+    description: "A showcase of visual communication, branding concepts, marketing graphics, and creative design. Actual project examples and visuals will be added later.",
+    discipline: "Graphic Design",
+    focus: "Branding & Visuals",
+    type: "Creative Portfolio"
+  },
+
+  "web-design": {
+    title: "Website Design",
+    description: "A collection of website design and WordPress development work, including responsive layouts, landing pages, and digital experiences. Actual project examples will be added later.",
+    discipline: "Web Design",
+    focus: "UI & WordPress",
+    type: "Digital Portfolio"
+  },
+
+  "print-design": {
+    title: "Print & Production",
+    description: "A showcase of print-focused creative work, including labels, stickers, production artwork, and print-ready design preparation. Actual project examples will be added later.",
+    discipline: "Print Design",
+    focus: "Production Artwork",
+    type: "Creative Portfolio"
+  },
+
+  "creative-experiments": {
+    title: "Creative Experiments",
+    description: "A space for exploring creative technology, AI-assisted workflows, interactive ideas, and experimental digital concepts. Actual project examples will be added later.",
+    discipline: "Creative Tech",
+    focus: "AI & Interaction",
+    type: "Experimental Work"
+  }
+};
+
+let lastFocusedCard = null;
+
+function openProjectModal(projectId, card) {
+  const project = projectData[projectId];
+
+  if (!project) return;
+
+  lastFocusedCard = card;
+
+  modalTitle.textContent = project.title;
+  modalDescription.textContent = project.description;
+  modalDiscipline.textContent = project.discipline;
+  modalFocus.textContent = project.focus;
+  modalType.textContent = project.type;
+
+  projectModal.classList.add("open");
+  projectModal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+
+  modalClose.focus();
+}
+
+function closeProjectModal() {
+  projectModal.classList.remove("open");
+  projectModal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+
+  if (lastFocusedCard) {
+    lastFocusedCard.focus();
+  }
+}
+
+projectCards.forEach(card => {
+  card.addEventListener("click", () => {
+    openProjectModal(card.dataset.project, card);
+  });
+
+  card.addEventListener("keydown", event => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openProjectModal(card.dataset.project, card);
+    }
+  });
+});
+
+modalClose.addEventListener("click", closeProjectModal);
+modalBackdrop.addEventListener("click", closeProjectModal);
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape" && projectModal.classList.contains("open")) {
+    closeProjectModal();
+  }
+});
+
 </script>
 
   </main>
 </div>
+  
+<div class="project-modal" id="projectModal" aria-hidden="true">
+
+  <div class="project-modal-backdrop"></div>
+
+  <div class="project-modal-content"
+       role="dialog"
+       aria-modal="true"
+       aria-labelledby="modalTitle">
+
+    <button class="project-modal-close"
+            type="button"
+            aria-label="Close project preview">
+      &times;
+    </button>
+
+    <div class="modal-label">PROJECT PREVIEW</div>
+
+    <h2 id="modalTitle">Project Title</h2>
+
+    <p id="modalDescription">
+      Project description goes here.
+    </p>
+
+    <div class="modal-details">
+      <div>
+        <span>DISCIPLINE</span>
+        <strong id="modalDiscipline">Design</strong>
+      </div>
+
+      <div>
+        <span>FOCUS</span>
+        <strong id="modalFocus">Creative Direction</strong>
+      </div>
+
+      <div>
+        <span>PROJECT TYPE</span>
+        <strong id="modalType">Portfolio Sample</strong>
+      </div>
+    </div>
+
+    <div class="modal-note">
+      This is a sample portfolio presentation.
+      Actual project details and visuals will be added later.
+    </div>
+
+    <button class="modal-case-study" type="button" disabled>
+      FULL CASE STUDY — COMING SOON
+    </button>
+
+  </div>
+</div>
+
 </body>
 </html>
