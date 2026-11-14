@@ -782,22 +782,7 @@
   z-index: 20;
 }
 
-.sidebar-profile {
-  margin-bottom: 55px;
-}
 
-.sidebar-portrait {
-  width: 125px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: #38302d;
-  border: 2px solid var(--orange);
-  display: grid;
-  place-items: center;
-  margin-bottom: 24px;
-  font-size: 36px;
-  font-weight: 700;
-}
 
 .sidebar-name {
   font-size: 23px;
@@ -865,19 +850,7 @@
     padding: 20px;
   }
 
-  .sidebar-profile {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 20px;
-  }
-
-  .sidebar-portrait {
-    width: 65px;
-    margin: 0;
-    font-size: 22px;
-    flex-shrink: 0;
-  }
+  
 
   .sidebar-name {
     font-size: 19px;
@@ -899,31 +872,20 @@
   }
 }
 
-/* SIDEBAR VISUAL REFINEMENT */
-
 .sidebar {
   border-right: 1px solid rgba(255,255,255,0.08);
 }
-
 .sidebar-profile {
-  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  gap: 16px;
+  margin-bottom: 20px;
 }
 
-.sidebar-portrait {
-  position: relative;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 30% 25%, #62504a, transparent 65%),
-    linear-gradient(145deg, #302623, #171313);
-  border: 2px solid var(--orange);
-  box-shadow: 0 8px 25px rgba(240,75,34,0.15);
-  letter-spacing: -2px;
-  transition: transform .3s ease, box-shadow .3s ease;
-}
-
-.sidebar-portrait:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(240,75,34,0.25);
+.sidebar-profile > div:last-child {
+  text-align: left;
 }
 
 .sidebar-name {
@@ -952,6 +914,39 @@
   border-top: 1px solid rgba(255,255,255,0.12);
   padding-top: 20px;
   letter-spacing: 0.3px;
+}
+
+.sidebar-portrait {
+  width: 125px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 25%, #62504a, transparent 65%),
+    linear-gradient(145deg, #302623, #171313);
+  border: 2px solid var(--orange);
+  display: grid;
+  place-items: center;
+  margin: 0 auto 24px;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -2px;
+  flex-shrink: 0;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(240,75,34,0.15);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.sidebar-portrait:hover {
+  transform: scale(1.04);
+  box-shadow: 0 12px 30px rgba(240,75,34,0.25);
+}
+
+@media (max-width: 700px) {
+  .sidebar-portrait {
+    width: 65px;
+    margin: 0;
+    font-size: 22px;
+  }
 }
 
   </style>
