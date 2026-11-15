@@ -109,7 +109,13 @@
       cursor: pointer;
     }
 
-    /* HERO */
+    .hero-portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
 
     .hero {
       min-height: 730px;
@@ -955,7 +961,13 @@
   box-shadow: 0 8px 25px rgba(240,75,34,0.15);
   transition: transform .3s ease, box-shadow .3s ease;
 }
-
+.sidebar-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: inherit;
+}
 .sidebar-portrait:hover {
   transform: scale(1.04);
   box-shadow: 0 12px 30px rgba(240,75,34,0.25);
@@ -1168,7 +1180,9 @@
   <aside class="sidebar">
 
     <div class="sidebar-profile">
-      <div class="sidebar-portrait">JHF</div>
+      <div class="sidebar-portrait">
+  <img src="assets/images/jake-avatar.png" alt="Jake Harley Fojas Avatar">
+</div>
 
       <div>
         <div class="sidebar-name">Jake Harley Fojas</div>
@@ -1245,12 +1259,12 @@
 
     <div class="portrait-wrap">
       <div class="portrait">
-        <!-- Replace this placeholder with your own portrait -->
-        <div class="portrait-placeholder">
-          <div class="initials">JHF</div>
-          <p>YOUR PORTRAIT GOES HERE</p>
-        </div>
-      </div>
+  <img
+    src="assets/images/jake-portrait.png"
+    alt="Jake Harley Fojas Portrait"
+    class="hero-portrait"
+  >
+</div>
 
       <div class="portrait-note">
         Design-minded.<br>
