@@ -1658,9 +1658,9 @@
       Actual project details and visuals will be added later.
     </div>
 
-    <button class="modal-case-study" type="button" disabled>
-      FULL CASE STUDY — COMING SOON
-    </button>
+<a class="modal-case-study" id="modalViewAll" href="#">
+  VIEW ALL PROJECTS ↗
+</a>
 
   </div>
 </div>
@@ -1834,7 +1834,19 @@ function openProjectModal(projectId, card) {
       modalGallery.appendChild(image);
     });
   }
+    // Set the View All Projects link for the selected category
+  const categoryPages = {
+    branding: "branding.html",
+    "web-design": "web-design.html",
+    "print-design": "print-design.html",
+    "creative-experiments": "creative-experiments.html"
+  };
 
+  const viewAllLink = document.getElementById("modalViewAll");
+
+  if (viewAllLink && categoryPages[projectId]) {
+    viewAllLink.href = categoryPages[projectId];
+  }
   projectModal.classList.add("open");
   projectModal.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
