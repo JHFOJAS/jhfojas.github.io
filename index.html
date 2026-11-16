@@ -110,12 +110,12 @@
     }
 
     .hero-portrait {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
-}
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
 
     .hero {
       min-height: 730px;
@@ -418,13 +418,15 @@
       justify-content: center;
       transition: .35s;
     }
+
     .project-thumbnail {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: .35s;
-}
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: .35s;
+    }
+
     .project-card:hover .project-visual {
       transform: translateY(-6px);
     }
@@ -592,7 +594,6 @@
       line-height: 1.7;
     }
 
-
     .contact {
       background: var(--orange);
       color: white;
@@ -630,7 +631,6 @@
       color: var(--black);
     }
 
-
     footer {
       background: var(--black);
       color: white;
@@ -649,7 +649,6 @@
     .footer-inner strong {
       color: white;
     }
-
 
     @media (max-width: 800px) {
       .hero-grid,
@@ -773,444 +772,485 @@
         flex-direction: column;
       }
     }
-    
-/* NEW EDITORIAL SIDEBAR LAYOUT */
 
-.site-shell {
-  display: grid;
-  grid-template-columns: 280px minmax(0, 1fr);
-  min-height: 100vh;
-}
+    .site-shell {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      min-height: 100vh;
+    }
 
-.sidebar {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  background: var(--black);
-  color: white;
-  padding: 38px 28px;
-  display: flex;
-  flex-direction: column;
-  z-index: 20;
-}
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      background: var(--black);
+      color: white;
+      padding: 38px 28px;
+      display: flex;
+      flex-direction: column;
+      z-index: 20;
+    }
 
+    .sidebar-name {
+      font-size: 23px;
+      line-height: 1.15;
+      font-weight: 700;
+    }
 
+    .sidebar-role {
+      color: #aaa5a0;
+      font-size: 12px;
+      line-height: 1.6;
+      margin-top: 9px;
+    }
 
-.sidebar-name {
-  font-size: 23px;
-  line-height: 1.15;
-  font-weight: 700;
-}
+    .sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
 
-.sidebar-role {
-  color: #aaa5a0;
-  font-size: 12px;
-  line-height: 1.6;
-  margin-top: 9px;
-}
+    .sidebar-nav a {
+      color: #aaa5a0;
+      padding: 12px 14px;
+      border-radius: 7px;
+      font-size: 14px;
+      transition: .25s ease;
+    }
 
-.sidebar-nav {
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-}
+    .sidebar-nav a:hover,
+    .sidebar-nav a.active {
+      background: var(--orange);
+      color: white;
+    }
 
-.sidebar-nav a {
-  color: #aaa5a0;
-  padding: 12px 14px;
-  border-radius: 7px;
-  font-size: 14px;
-  transition: .25s ease;
-}
+    .sidebar-footer {
+      margin-top: auto;
+      color: #aaa5a0;
+      font-size: 11px;
+      line-height: 1.7;
+    }
 
-.sidebar-nav a:hover,
-.sidebar-nav a.active {
-  background: var(--orange);
-  color: white;
-}
+    .main-content {
+      min-width: 0;
+      overflow: hidden;
+    }
 
-.sidebar-footer {
-  margin-top: auto;
-  color: #aaa5a0;
-  font-size: 11px;
-  line-height: 1.7;
-}
+    @media (max-width: 900px) {
+      .site-shell {
+        grid-template-columns: 230px minmax(0, 1fr);
+      }
 
-.main-content {
-  min-width: 0;
-  overflow: hidden;
-}
+      .sidebar {
+        padding: 30px 20px;
+      }
+    }
 
-@media (max-width: 900px) {
-  .site-shell {
-    grid-template-columns: 230px minmax(0, 1fr);
-  }
+    @media (max-width: 700px) {
+      .site-shell {
+        display: block;
+      }
 
-  .sidebar {
-    padding: 30px 20px;
-  }
-}
+      .sidebar {
+        position: relative;
+        height: auto;
+        padding: 20px;
+      }
 
-@media (max-width: 700px) {
-  .site-shell {
-    display: block;
-  }
+      .sidebar-name {
+        font-size: 19px;
+      }
 
-  .sidebar {
-    position: relative;
-    height: auto;
-    padding: 20px;
-  }
+      .sidebar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
 
-  
+      .sidebar-nav a {
+        padding: 9px 11px;
+        font-size: 12px;
+      }
 
-  .sidebar-name {
-    font-size: 19px;
-  }
+      .sidebar-footer {
+        display: none;
+      }
+    }
 
-  .sidebar-nav {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 5px;
-  }
+    .sidebar {
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
 
-  .sidebar-nav a {
-    padding: 9px 11px;
-    font-size: 12px;
-  }
+    .sidebar-profile {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 0;
+      margin-bottom: 55px;
+    }
 
-  .sidebar-footer {
-    display: none;
-  }
-}
+    .sidebar-profile > div:last-child {
+      width: 100%;
+      text-align: center;
+    }
 
-.sidebar {
-  border-right: 1px solid rgba(255,255,255,0.08);
-}
-/* DESKTOP SIDEBAR PROFILE */
-.sidebar-profile {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 0;
-  margin-bottom: 55px;
-}
+    @media (max-width: 700px) {
+      .sidebar-profile {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: left;
+        gap: 16px;
+        margin-bottom: 20px;
+      }
 
-.sidebar-profile > div:last-child {
-  width: 100%;
-  text-align: center;
-}
+      .sidebar-profile > div:last-child {
+        text-align: left;
+      }
+    }
 
-/* MOBILE SIDEBAR PROFILE */
-@media (max-width: 700px) {
-  .sidebar-profile {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: left;
-    gap: 16px;
-    margin-bottom: 20px;
-  }
+    .sidebar-name {
+      letter-spacing: -0.7px;
+    }
 
-  .sidebar-profile > div:last-child {
-    text-align: left;
-  }
-}
+    .sidebar-role {
+      letter-spacing: 0.3px;
+    }
 
-.sidebar-name {
-  letter-spacing: -0.7px;
-}
+    .sidebar-nav a {
+      position: relative;
+      transition: all .25s ease;
+    }
 
-.sidebar-role {
-  letter-spacing: 0.3px;
-}
+    .sidebar-nav a.active {
+      box-shadow: inset 3px 0 0 white;
+      font-weight: 600;
+    }
 
-.sidebar-nav a {
-  position: relative;
-  transition: all .25s ease;
-}
+    .sidebar-nav a:hover {
+      padding-left: 19px;
+    }
 
-.sidebar-nav a.active {
-  box-shadow: inset 3px 0 0 white;
-  font-weight: 600;
-}
+    .sidebar-footer {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 20px;
+      letter-spacing: 0.3px;
+    }
 
-.sidebar-nav a:hover {
-  padding-left: 19px;
-}
+    .sidebar-portrait {
+      width: 125px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 30% 25%, #62504a, transparent 65%),
+        linear-gradient(145deg, #302623, #171313);
+      border: 2px solid var(--orange);
+      display: grid;
+      place-items: center;
+      margin: 0 auto 24px;
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -2px;
+      flex-shrink: 0;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(240,75,34,0.15);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
 
-.sidebar-footer {
-  border-top: 1px solid rgba(255,255,255,0.12);
-  padding-top: 20px;
-  letter-spacing: 0.3px;
-}
+    .sidebar-portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: inherit;
+    }
 
-.sidebar-portrait {
-  width: 125px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at 30% 25%, #62504a, transparent 65%),
-    linear-gradient(145deg, #302623, #171313);
-  border: 2px solid var(--orange);
-  display: grid;
-  place-items: center;
-  margin: 0 auto 24px;
-  font-size: 36px;
-  font-weight: 700;
-  letter-spacing: -2px;
-  flex-shrink: 0;
-  overflow: hidden;
-  box-shadow: 0 8px 25px rgba(240,75,34,0.15);
-  transition: transform .3s ease, box-shadow .3s ease;
-}
-.sidebar-portrait img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  border-radius: inherit;
-}
-.sidebar-portrait:hover {
-  transform: scale(1.04);
-  box-shadow: 0 12px 30px rgba(240,75,34,0.25);
-}
+    .sidebar-portrait:hover {
+      transform: scale(1.04);
+      box-shadow: 0 12px 30px rgba(240,75,34,0.25);
+    }
 
-@media (max-width: 700px) {
-  .sidebar-portrait {
-    width: 65px;
-    margin: 0;
-    font-size: 22px;
-  }
-}
+    @media (max-width: 700px) {
+      .sidebar-portrait {
+        width: 65px;
+        margin: 0;
+        font-size: 22px;
+      }
+    }
 
+    .sidebar-social {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 28px;
+      padding: 18px 4px;
+      border-top: 1px solid rgba(255,255,255,.12);
+    }
 
-/* SIDEBAR SOCIAL LINKS */
-.sidebar-social {
-  display: flex; align-items: center; gap: 12px; margin-top: 28px; padding: 18px 4px;
-  border-top: 1px solid rgba(255,255,255,.12);
-}
-.social-link {
-  width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center;
-  border: 1px solid rgba(255,255,255,.2); border-radius: 50%; color: #fff;
-  transition: background .2s ease, border-color .2s ease, transform .2s ease;
-}
-.social-link svg { width: 17px; height: 17px; fill: currentColor; }
-.social-link svg path:first-child:not(:only-child) { }
-.social-link:hover { background: var(--orange); border-color: var(--orange); transform: translateY(-2px); }
-.social-link.is-placeholder { opacity: .62; }
-.social-link.is-placeholder:hover { opacity: 1; }
-.social-link[aria-label^="Email"] svg path { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-.indeed-mark { font-family: Arial, sans-serif; font-size: 23px; font-weight: 800; font-style: italic; line-height: 1; }
-@media (max-width:700px) { .sidebar-social { margin-top: 16px; padding: 12px 4px 0; border-top: 0; } }
+    .social-link {
+      width: 36px;
+      height: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 50%;
+      color: #fff;
+      transition: background .2s ease, border-color .2s ease, transform .2s ease;
+    }
 
-/* =================================
-   PROJECT PREVIEW MODAL
-================================= */
+    .social-link svg {
+      width: 17px;
+      height: 17px;
+      fill: currentColor;
+    }
 
-.project-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity .3s ease, visibility .3s ease;
-}
+    .social-link svg path:first-child:not(:only-child) { }
 
-.project-modal.open {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
+    .social-link:hover {
+      background: var(--orange);
+      border-color: var(--orange);
+      transform: translateY(-2px);
+    }
 
-.project-modal-backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(23, 19, 19, .82);
-  backdrop-filter: blur(8px);
-}
+    .social-link.is-placeholder {
+      opacity: .62;
+    }
 
-.project-modal-content {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 680px;
-  max-height: 85vh;
-  overflow-y: auto;
-  background: #F7F6F3;
-  color: #171313;
-  padding: 55px;
-  border-radius: 12px;
-  transform: translateY(25px);
-  transition: transform .3s ease;
-}
-.modal-gallery {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  margin: 28px 0;
-}
+    .social-link.is-placeholder:hover {
+      opacity: 1;
+    }
 
-.modal-gallery:empty {
-  display: none;
-}
+    .social-link[aria-label^="Email"] svg path {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
 
-.modal-gallery img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  display: block;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform .3s ease;
-}
+    .indeed-mark {
+      font-family: Arial, sans-serif;
+      font-size: 23px;
+      font-weight: 800;
+      font-style: italic;
+      line-height: 1;
+    }
 
-.modal-gallery img:hover {
-  transform: scale(1.02);
-}
+    @media (max-width:700px) {
+      .sidebar-social {
+        margin-top: 16px;
+        padding: 12px 4px 0;
+        border-top: 0;
+      }
+    }
 
-@media (max-width: 600px) {
-  .modal-gallery {
-    grid-template-columns: 1fr;
-  }
-}
-.project-modal.open .project-modal-content {
-  transform: translateY(0);
-}
+    .project-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity .3s ease, visibility .3s ease;
+    }
 
-.project-modal-close {
-  position: absolute;
-  top: 18px;
-  right: 22px;
-  width: 42px;
-  height: 42px;
-  border: 0;
-  border-radius: 50%;
-  background: #E8E6E2;
-  color: #171313;
-  font-size: 28px;
-  cursor: pointer;
-  transition: background .2s ease, color .2s ease;
-}
+    .project-modal.open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
 
-.project-modal-close:hover {
-  background: #F04B22;
-  color: white;
-}
+    .project-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(23, 19, 19, .82);
+      backdrop-filter: blur(8px);
+    }
 
-.modal-label {
-  color: #F04B22;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  margin-bottom: 18px;
-}
+    .project-modal-content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 680px;
+      max-height: 85vh;
+      overflow-y: auto;
+      background: #F7F6F3;
+      color: #171313;
+      padding: 55px;
+      border-radius: 12px;
+      transform: translateY(25px);
+      transition: transform .3s ease;
+    }
 
-.project-modal-content h2 {
-  font-size: clamp(30px, 5vw, 48px);
-  line-height: 1.1;
-  margin-bottom: 20px;
-  letter-spacing: -1.5px;
-}
+    .modal-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 28px 0;
+    }
 
-.project-modal-content > p {
-  color: #625D58;
-  font-size: 15px;
-  line-height: 1.8;
-  margin-bottom: 35px;
-}
+    .modal-gallery:empty {
+      display: none;
+    }
 
-.modal-details {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 25px 0;
-  border-top: 1px solid #E8E6E2;
-  border-bottom: 1px solid #E8E6E2;
-}
+    .modal-gallery img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform .3s ease;
+    }
 
-.modal-details div {
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-}
+    .modal-gallery img:hover {
+      transform: scale(1.02);
+    }
 
-.modal-details span {
-  color: #928B84;
-  font-size: 10px;
-  letter-spacing: 1px;
-  font-weight: 700;
-}
+    @media (max-width: 600px) {
+      .modal-gallery {
+        grid-template-columns: 1fr;
+      }
+    }
 
-.modal-details strong {
-  font-size: 13px;
-}
+    .project-modal.open .project-modal-content {
+      transform: translateY(0);
+    }
 
-.modal-note {
-  margin: 25px 0;
-  color: #77716B;
-  font-size: 12px;
-  line-height: 1.7;
-}
+    .project-modal-close {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 50%;
+      background: #E8E6E2;
+      color: #171313;
+      font-size: 28px;
+      cursor: pointer;
+      transition: background .2s ease, color .2s ease;
+    }
 
-.modal-case-study {
-  width: 100%;
-  padding: 17px;
-  background: #F04B22;
-  color: #FFFFFF;
-  border: 0;
-  border-radius: 5px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: background 0.25s ease, color 0.25s ease;
-text-decoration: none;
-}
+    .project-modal-close:hover {
+      background: #F04B22;
+      color: white;
+    }
+
+    .modal-label {
+      color: #F04B22;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+    }
+
+    .project-modal-content h2 {
+      font-size: clamp(30px, 5vw, 48px);
+      line-height: 1.1;
+      margin-bottom: 20px;
+      letter-spacing: -1.5px;
+    }
+
+    .project-modal-content > p {
+      color: #625D58;
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 35px;
+    }
+
+    .modal-details {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 25px 0;
+      border-top: 1px solid #E8E6E2;
+      border-bottom: 1px solid #E8E6E2;
+    }
+
+    .modal-details div {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .modal-details span {
+      color: #928B84;
+      font-size: 10px;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    .modal-details strong {
+      font-size: 13px;
+    }
+
+    .modal-note {
+      margin: 25px 0;
+      color: #77716B;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .modal-case-study {
+      width: 100%;
+      padding: 17px;
+      background: #F04B22;
+      color: #FFFFFF;
+      border: 0;
+      border-radius: 5px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: background 0.25s ease, color 0.25s ease;
+      text-decoration: none;
+    }
+
     .modal-case-study:hover {
-  background: #171313;
-  color: #FFFFFF;
-}
+      background: #171313;
+      color: #FFFFFF;
+    }
 
-.project-card {
-  cursor: pointer;
-  transition: transform .3s ease, box-shadow .3s ease;
-}
+    .project-card {
+      cursor: pointer;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
 
-.project-card:hover {
-  transform: translateY(-6px);
-}
+    .project-card:hover {
+      transform: translateY(-6px);
+    }
 
-.project-card:focus-visible {
-  outline: 3px solid #F04B22;
-  outline-offset: 5px;
-}
+    .project-card:focus-visible {
+      outline: 3px solid #F04B22;
+      outline-offset: 5px;
+    }
 
-@media (max-width: 600px) {
-  .project-modal {
-    padding: 12px;
-  }
+    @media (max-width: 600px) {
+      .project-modal {
+        padding: 12px;
+      }
 
-  .project-modal-content {
-    padding: 45px 24px 28px;
-  }
+      .project-modal-content {
+        padding: 45px 24px 28px;
+      }
 
-  .modal-details {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-}
+      .modal-details {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+    }
   </style>
-  
 </head>
+
 <body>
 <div class="site-shell">
 
@@ -1218,8 +1258,8 @@ text-decoration: none;
 
     <div class="sidebar-profile">
       <div class="sidebar-portrait">
-  <img src="assets/images/jake-avatar.png" alt="Jake Harley Fojas Avatar">
-</div>
+        <img src="assets/images/jake-avatar.png" alt="Jake Harley Fojas Avatar">
+      </div>
 
       <div>
         <div class="sidebar-name">Jake Harley Fojas</div>
@@ -1243,9 +1283,11 @@ text-decoration: none;
       <a href="#" class="social-link is-placeholder" aria-label="LinkedIn profile (link coming soon)" title="LinkedIn — link coming soon" data-placeholder-link>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 3.5a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4ZM3.4 9.4H7v11.2H3.4zM9.2 9.4h3.4v1.5h.1a3.7 3.7 0 0 1 3.3-1.8c3.5 0 4.2 2.3 4.2 5.3v6.2h-3.6v-5.5c0-1.3 0-3-1.9-3s-2.2 1.4-2.2 2.9v5.6H9.2z"/></svg>
       </a>
+
       <a href="mailto:harleyjake09@gmail.com" class="social-link" aria-label="Email Jake">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5h18v13H3z"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>
       </a>
+
       <a href="#" class="social-link is-placeholder" aria-label="Indeed profile (link coming soon)" title="Indeed — link coming soon" data-placeholder-link>
         <span class="indeed-mark" aria-hidden="true">i</span>
       </a>
@@ -1260,609 +1302,609 @@ text-decoration: none;
   </aside>
 
   <main class="main-content">
-<header class="hero" id="home">
-  <div class="container hero-grid">
 
-    <div>
-      <div class="eyebrow">
-        CREATIVE DESIGNER · WORDPRESS DEVELOPER
+    <header class="hero" id="home">
+      <div class="container hero-grid">
+
+        <div>
+          <div class="eyebrow">
+            CREATIVE DESIGNER · WORDPRESS DEVELOPER
+          </div>
+
+          <h1>
+            DESIGNING<br>
+            WITH<br>
+            INTENTION<span>.</span>
+          </h1>
+
+          <p class="hero-description">
+            I bring creative design and front-end development together
+            to build meaningful digital experiences, compelling brand
+            visuals, and functional websites.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#work" class="btn btn-dark">
+              Explore Selected Work ↗
+            </a>
+
+            <a href="#about" class="btn btn-outline">
+              More About Me
+            </a>
+          </div>
+        </div>
+
+        <div class="portrait-wrap">
+          <div class="portrait">
+            <img
+              src="assets/images/jake-portrait.png"
+              alt="Jake Harley Fojas Portrait"
+              class="hero-portrait"
+            >
+          </div>
+
+          <div class="portrait-note">
+            Design-minded.<br>
+            Technology-driven.
+          </div>
+
+          <div class="hero-index">
+            01 / CREATIVE PORTFOLIO
+          </div>
+        </div>
+
       </div>
+    </header>
 
-      <h1>
-        DESIGNING<br>
-        WITH<br>
-        INTENTION<span>.</span>
-      </h1>
+    <section class="intro">
+      <div class="container intro-grid">
+        <div>
+          <div class="section-label">01 — Introduction</div>
+          <h2>Designing ideas.<br>Building experiences.</h2>
+        </div>
 
-      <p class="hero-description">
-        I bring creative design and front-end development together
-        to build meaningful digital experiences, compelling brand
-        visuals, and functional websites.
-      </p>
+        <div class="intro-copy">
+          <p>
+            I'm a creative designer and digital experience developer
+            with a background that bridges graphic design, web design,
+            and front-end development.
+          </p>
 
-      <div class="hero-buttons">
-        <a href="#work" class="btn btn-dark">
-          Explore Selected Work ↗
+          <p>
+            My journey began with visual communication and grew into
+            building websites and digital experiences. I enjoy bringing
+            creative concepts to life through design, technology,
+            and attention to detail.
+          </p>
+
+          <p>
+            From a single graphic to a complete website, my goal is
+            always the same: create work that looks good, works well,
+            and communicates clearly.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="services-heading">
+          <div>
+            <div class="section-label">02 — What I Do</div>
+            <h2>My Expertise.</h2>
+          </div>
+
+          <p>
+            Creative thinking meets practical execution.
+            Here's how I turn concepts into finished work.
+          </p>
+        </div>
+
+        <div class="service-list">
+          <div class="service-item">
+            <span class="service-number">01</span>
+            <h3>Graphic Design</h3>
+            <p>Brand visuals, marketing materials, print design, and digital content.</p>
+            <span class="service-arrow">↗</span>
+          </div>
+
+          <div class="service-item">
+            <span class="service-number">02</span>
+            <h3>Web Design</h3>
+            <p>Modern layouts, landing pages, responsive interfaces, and user experiences.</p>
+            <span class="service-arrow">↗</span>
+          </div>
+
+          <div class="service-item">
+            <span class="service-number">03</span>
+            <h3>WordPress Development</h3>
+            <p>Custom page building, website implementation, maintenance, and optimization.</p>
+            <span class="service-arrow">↗</span>
+          </div>
+
+          <div class="service-item">
+            <span class="service-number">04</span>
+            <h3>Digital Solutions</h3>
+            <p>Front-end development, creative technology, and AI-assisted workflows.</p>
+            <span class="service-arrow">↗</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="work" id="work">
+      <div class="container">
+        <div class="work-heading">
+          <div>
+            <div class="section-label">03 — Selected Work</div>
+            <h2>Featured Projects.</h2>
+          </div>
+
+          <p>
+            A curated selection of creative work, design explorations, and digital experiences showcasing my approach to visual communication and design.
+          </p>
+        </div>
+
+        <div class="project-grid">
+
+          <article class="project-card" data-project="branding" tabindex="0" role="button" aria-haspopup="dialog">
+            <div class="project-visual">
+              <img
+                src="assets/images/portfolio/thumbnails/branding-thumb.jpg"
+                alt="Brand and Graphic Design project thumbnail"
+                class="project-thumbnail"
+              >
+            </div>
+
+            <div class="project-info">
+              <div>
+                <h3>Brand & Graphic Design</h3>
+                <p>Branding · Marketing · Visual Communication</p>
+              </div>
+              <span class="project-year">01 / 04</span>
+            </div>
+          </article>
+
+          <article class="project-card" data-project="web-design" tabindex="0" role="button" aria-haspopup="dialog">
+            <div class="project-visual">
+              <img
+                src="assets/images/portfolio/thumbnails/web-design-thumb.jpg"
+                alt="Website Design project thumbnail"
+                class="project-thumbnail"
+              >
+            </div>
+
+            <div class="project-info">
+              <div>
+                <h3>Website Design</h3>
+                <p>UI Design · Landing Pages · WordPress</p>
+              </div>
+              <span class="project-year">02 / 04</span>
+            </div>
+          </article>
+
+          <article class="project-card" data-project="print-design" tabindex="0" role="button" aria-haspopup="dialog">
+            <div class="project-visual">
+              <img
+                src="assets/images/portfolio/thumbnails/print-design-thumb.jpg"
+                alt="Print and Production project thumbnail"
+                class="project-thumbnail"
+              >
+            </div>
+
+            <div class="project-info">
+              <div>
+                <h3>Print & Production</h3>
+                <p>Labels · Stickers · Print-Ready Artwork</p>
+              </div>
+              <span class="project-year">03 / 04</span>
+            </div>
+          </article>
+
+          <article class="project-card" data-project="creative-experiments" tabindex="0" role="button" aria-haspopup="dialog">
+            <div class="project-visual">
+              <img
+                src="assets/images/portfolio/thumbnails/creative-experiments-thumb.jpg"
+                alt="Web App Development project thumbnail"
+                class="project-thumbnail"
+              >
+            </div>
+
+            <div class="project-info">
+              <div>
+                <h3>Web App Development</h3>
+                <p>Interactive Interfaces · Front-End · Digital Tools</p>
+              </div>
+              <span class="project-year">04 / 04</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container about-grid">
+
+        <div class="about-heading">
+          <div class="section-label">04 — ABOUT & EXPERTISE</div>
+
+          <h2>Where creativity meets technology.</h2>
+
+          <p>
+            I'm a multidisciplinary creative professional with a
+            background in graphic design, web design, and front-end
+            development.
+
+            My journey started with visual communication and evolved
+            into building digital experiences through design and
+            technology. I enjoy turning ideas into purposeful visuals,
+            engaging websites, and practical digital solutions.
+
+            I value thoughtful design, clean execution, continuous
+            learning, and meaningful collaboration.
+          </p>
+
+          <div class="skills">
+            <span class="skill">Photoshop</span>
+            <span class="skill">Illustrator</span>
+            <span class="skill">Figma</span>
+            <span class="skill">Midjourney</span>
+            <span class="skill">WordPress</span>
+            <span class="skill">Divi</span>
+            <span class="skill">Elementor</span>
+            <span class="skill">Beaver Builder</span>
+            <span class="skill">Avada</span>
+            <span class="skill">HTML5</span>
+            <span class="skill">CSS3</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">PHP</span>
+            <span class="skill">SFTP / SSH</span>
+            <span class="skill">Website QA</span>
+            <span class="skill">AI-Assisted Workflows</span>
+          </div>
+        </div>
+
+        <div class="experience-list">
+          <div class="experience-item">
+            <h3>01 / Graphic Design & Visual Communication</h3>
+            <p>
+              Creating brand visuals, marketing graphics, social
+              media content, email campaigns, e-commerce presentations,
+              product labels, and print-ready production artwork.
+              Experienced in preparing technical artwork with cutlines,
+              perforation lines, and production specifications.
+            </p>
+          </div>
+
+          <div class="experience-item">
+            <h3>02 / Web Design & WordPress Development</h3>
+            <p>
+              Transforming design concepts from AI Designs, Figma,
+              and other design sources into functional WordPress
+              websites. Experienced with Divi, Elementor,
+              Beaver Builder, Avada, responsive layouts, and
+              website customization.
+            </p>
+          </div>
+
+          <div class="experience-item">
+            <h3>03 / Front-End Development & Website Support</h3>
+            <p>
+              Working with HTML, CSS, JavaScript, and PHP to
+              customize and maintain websites. Familiar with
+              theme and plugin updates, website QA, SFTP/SSH,
+              troubleshooting, performance improvements,
+              and website security maintenance.
+            </p>
+          </div>
+
+          <div class="experience-item">
+            <h3>04 / Team Leadership & Collaboration</h3>
+            <p>
+              Experience coordinating creative and technical teams
+              across graphic design, web development, SEO, and
+              content production. Comfortable managing workflows,
+              organizing deliverables, supporting teammates,
+              and working toward project deadlines.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-label">05 — Get In Touch</div>
+
+        <h2>Have a project<br>in mind?</h2>
+
+        <p>
+          Let's create something meaningful together.
+          I'm open to creative opportunities, collaborations,
+          and exciting digital projects.
+        </p>
+
+        <a href="mailto:YOUR-EMAIL@example.com" class="btn">
+          Let's Talk ↗
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container footer-inner">
+        <span><strong>JHF.</strong> Creative Designer & Developer</span>
+        <span>© <span id="year"></span> Jake Harley Fojas. All rights reserved.</span>
+        <a href="#home">Back to top ↑</a>
+      </div>
+    </footer>
+
+    <div class="project-modal" id="projectModal" aria-hidden="true">
+
+      <div class="project-modal-backdrop"></div>
+
+      <div class="project-modal-content"
+           role="dialog"
+           aria-modal="true"
+           aria-labelledby="modalTitle">
+
+        <button class="project-modal-close"
+                type="button"
+                aria-label="Close project preview">
+          &times;
+        </button>
+
+        <div class="modal-label">PROJECT PREVIEW</div>
+
+        <h2 id="modalTitle">Project Title</h2>
+
+        <p id="modalDescription">
+          Project description goes here.
+        </p>
+
+        <div class="modal-gallery" id="modalGallery" aria-label="Project image gallery">
+        </div>
+
+        <div class="modal-details">
+          <div>
+            <span>DISCIPLINE</span>
+            <strong id="modalDiscipline">Design</strong>
+          </div>
+
+          <div>
+            <span>FOCUS</span>
+            <strong id="modalFocus">Creative Direction</strong>
+          </div>
+
+          <div>
+            <span>PROJECT TYPE</span>
+            <strong id="modalType">Portfolio Sample</strong>
+          </div>
+        </div>
+
+        <div class="modal-note">
+          This is a sample portfolio presentation.
+          Actual project details and visuals will be added later.
+        </div>
+
+        <a class="modal-case-study" id="modalViewAll" href="#">
+          VIEW ALL PROJECTS ↗
         </a>
 
-        <a href="#about" class="btn btn-outline">
-          More About Me
-        </a>
       </div>
     </div>
 
-    <div class="portrait-wrap">
-      <div class="portrait">
-  <img
-    src="assets/images/jake-portrait.png"
-    alt="Jake Harley Fojas Portrait"
-    class="hero-portrait"
-  >
-</div>
+    <script>
+      document.getElementById("year").textContent =
+        new Date().getFullYear();
+    </script>
 
-      <div class="portrait-note">
-        Design-minded.<br>
-        Technology-driven.
-      </div>
+    <script>
 
-      <div class="hero-index">
-        01 / CREATIVE PORTFOLIO
-      </div>
-    </div>
+      document.querySelectorAll('[data-placeholder-link]').forEach(link => {
+        link.addEventListener('click', event => event.preventDefault());
+      });
 
-  </div>
-</header>
+      const sidebarLinks = document.querySelectorAll('.sidebar-nav a[href^="#"]');
 
-  <section class="intro">
-    <div class="container intro-grid">
-      <div>
-        <div class="section-label">01 — Introduction</div>
-        <h2>Designing ideas.<br>Building experiences.</h2>
-      </div>
-
-      <div class="intro-copy">
-        <p>
-          I'm a creative designer and digital experience developer
-          with a background that bridges graphic design, web design,
-          and front-end development.
-        </p>
-
-        <p>
-          My journey began with visual communication and grew into
-          building websites and digital experiences. I enjoy bringing
-          creative concepts to life through design, technology,
-          and attention to detail.
-        </p>
-
-        <p>
-          From a single graphic to a complete website, my goal is
-          always the same: create work that looks good, works well,
-          and communicates clearly.
-        </p>
-      </div>
-    </div>
-  </section>
-  
-  <section class="services" id="services">
-    <div class="container">
-      <div class="services-heading">
-        <div>
-          <div class="section-label">02 — What I Do</div>
-          <h2>My Expertise.</h2>
-        </div>
-        <p>
-          Creative thinking meets practical execution.
-          Here's how I turn concepts into finished work.
-        </p>
-      </div>
-
-      <div class="service-list">
-        <div class="service-item">
-          <span class="service-number">01</span>
-          <h3>Graphic Design</h3>
-          <p>Brand visuals, marketing materials, print design, and digital content.</p>
-          <span class="service-arrow">↗</span>
-        </div>
-
-        <div class="service-item">
-          <span class="service-number">02</span>
-          <h3>Web Design</h3>
-          <p>Modern layouts, landing pages, responsive interfaces, and user experiences.</p>
-          <span class="service-arrow">↗</span>
-        </div>
-
-        <div class="service-item">
-          <span class="service-number">03</span>
-          <h3>WordPress Development</h3>
-          <p>Custom page building, website implementation, maintenance, and optimization.</p>
-          <span class="service-arrow">↗</span>
-        </div>
-
-        <div class="service-item">
-          <span class="service-number">04</span>
-          <h3>Digital Solutions</h3>
-          <p>Front-end development, creative technology, and AI-assisted workflows.</p>
-          <span class="service-arrow">↗</span>
-        </div>
-      </div>
-    </div>
-  </section>
-    
-  <section class="work" id="work">
-    <div class="container">
-      <div class="work-heading">
-        <div>
-          <div class="section-label">03 — Selected Work</div>
-          <h2>Featured Projects.</h2>
-        </div>
-
-        <p>
-          A curated selection of creative work, design explorations, and digital experiences showcasing my approach to visual communication and design.
-        </p>
-      </div>
-
-      <div class="project-grid">
-
-        <article class="project-card" data-project="branding" tabindex="0" role="button" aria-haspopup="dialog">
-          <div class="project-visual">
-  <img
-    src="assets/images/portfolio/thumbnails/branding-thumb.jpg"
-    alt="Brand and Graphic Design project thumbnail"
-    class="project-thumbnail"
-  >
-</div>
-          <div class="project-info">
-            <div>
-              <h3>Brand & Graphic Design</h3>
-              <p>Branding · Marketing · Visual Communication</p>
-            </div>
-            <span class="project-year">01 / 04</span>
-          </div>
-        </article>
-
-        <article class="project-card" data-project="web-design" tabindex="0" role="button" aria-haspopup="dialog">
-          <div class="project-visual">
-  <img
-    src="assets/images/portfolio/thumbnails/web-design-thumb.jpg"
-    alt="Website Design project thumbnail"
-    class="project-thumbnail"
-  >
-</div>
-          <div class="project-info">
-            <div>
-              <h3>Website Design</h3>
-              <p>UI Design · Landing Pages · WordPress</p>
-            </div>
-            <span class="project-year">02 / 04</span>
-          </div>
-        </article>
-
-        <article class="project-card" data-project="print-design" tabindex="0" role="button" aria-haspopup="dialog">
-       <div class="project-visual">
-  <img
-    src="assets/images/portfolio/thumbnails/print-design-thumb.jpg"
-    alt="Print and Production project thumbnail"
-    class="project-thumbnail"
-  >
-</div>
-          <div class="project-info">
-            <div>
-              <h3>Print & Production</h3>
-              <p>Labels · Stickers · Print-Ready Artwork</p>
-            </div>
-            <span class="project-year">03 / 04</span>
-          </div>
-        </article>
-
-        <article class="project-card" data-project="creative-experiments" tabindex="0" role="button" aria-haspopup="dialog">
-<div class="project-visual">
-  <img
-    src="assets/images/portfolio/thumbnails/creative-experiments-thumb.jpg"
-    alt="Creative Experiments project thumbnail"
-    class="project-thumbnail"
-  >
-</div>
-          <div class="project-info">
-            <div>
-              <h3>Creative Experiments</h3>
-              <p>Interactive Design · AI · Digital Concepts</p>
-            </div>
-            <span class="project-year">04 / 04</span>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-<section class="about" id="about">
-  <div class="container about-grid">
-
-    <div class="about-heading">
-      <div class="section-label">04 — ABOUT & EXPERTISE</div>
-
-      <h2>Where creativity meets technology.</h2>
-
-      <p>
-        I'm a multidisciplinary creative professional with a
-        background in graphic design, web design, and front-end
-        development.
-
-        My journey started with visual communication and evolved
-        into building digital experiences through design and
-        technology. I enjoy turning ideas into purposeful visuals,
-        engaging websites, and practical digital solutions.
-
-        I value thoughtful design, clean execution, continuous
-        learning, and meaningful collaboration.
-      </p>
-
-      <div class="skills">
-        <span class="skill">Photoshop</span>
-        <span class="skill">Illustrator</span>
-        <span class="skill">Figma</span>
-        <span class="skill">Midjourney</span>
-        <span class="skill">WordPress</span>
-        <span class="skill">Divi</span>
-        <span class="skill">Elementor</span>
-        <span class="skill">Beaver Builder</span>
-        <span class="skill">Avada</span>
-        <span class="skill">HTML5</span>
-        <span class="skill">CSS3</span>
-        <span class="skill">JavaScript</span>
-        <span class="skill">PHP</span>
-        <span class="skill">SFTP / SSH</span>
-        <span class="skill">Website QA</span>
-        <span class="skill">AI-Assisted Workflows</span>
-      </div>
-    </div>
-
-    <div class="experience-list">
-      <div class="experience-item">
-        <h3>01 / Graphic Design & Visual Communication</h3>
-        <p>
-          Creating brand visuals, marketing graphics, social
-          media content, email campaigns, e-commerce presentations,
-          product labels, and print-ready production artwork.
-          Experienced in preparing technical artwork with cutlines,
-          perforation lines, and production specifications.
-        </p>
-      </div>
-
-      <div class="experience-item">
-        <h3>02 / Web Design & WordPress Development</h3>
-        <p>
-          Transforming design concepts from AI Designs, Figma,
-          and other design sources into functional WordPress
-          websites. Experienced with Divi, Elementor,
-          Beaver Builder, Avada, responsive layouts, and
-          website customization.
-        </p>
-      </div>
-
-      <div class="experience-item">
-        <h3>03 / Front-End Development & Website Support</h3>
-        <p>
-          Working with HTML, CSS, JavaScript, and PHP to
-          customize and maintain websites. Familiar with
-          theme and plugin updates, website QA, SFTP/SSH,
-          troubleshooting, performance improvements,
-          and website security maintenance.
-        </p>
-      </div>
-
-      <div class="experience-item">
-        <h3>04 / Team Leadership & Collaboration</h3>
-        <p>
-          Experience coordinating creative and technical teams
-          across graphic design, web development, SEO, and
-          content production. Comfortable managing workflows,
-          organizing deliverables, supporting teammates,
-          and working toward project deadlines.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="section-label">05 — Get In Touch</div>
-
-      <h2>Have a project<br>in mind?</h2>
-
-      <p>
-        Let's create something meaningful together.
-        I'm open to creative opportunities, collaborations,
-        and exciting digital projects.
-      </p>
-
-      <a href="mailto:YOUR-EMAIL@example.com" class="btn">
-        Let's Talk ↗
-      </a>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container footer-inner">
-      <span><strong>JHF.</strong> Creative Designer & Developer</span>
-      <span>© <span id="year"></span> Jake Harley Fojas. All rights reserved.</span>
-      <a href="#home">Back to top ↑</a>
-    </div>
-  </footer>
-<div class="project-modal" id="projectModal" aria-hidden="true">
-
-  <div class="project-modal-backdrop"></div>
-
-  <div class="project-modal-content"
-       role="dialog"
-       aria-modal="true"
-       aria-labelledby="modalTitle">
-
-    <button class="project-modal-close"
-            type="button"
-            aria-label="Close project preview">
-      &times;
-    </button>
-
-    <div class="modal-label">PROJECT PREVIEW</div>
-
-    <h2 id="modalTitle">Project Title</h2>
-
-    <p id="modalDescription">
-      Project description goes here.
-    </p>
-      <div class="modal-gallery" id="modalGallery" aria-label="Project image gallery">
-</div>
-    <div class="modal-details">
-      <div>
-        <span>DISCIPLINE</span>
-        <strong id="modalDiscipline">Design</strong>
-      </div>
-
-      <div>
-        <span>FOCUS</span>
-        <strong id="modalFocus">Creative Direction</strong>
-      </div>
-
-      <div>
-        <span>PROJECT TYPE</span>
-        <strong id="modalType">Portfolio Sample</strong>
-      </div>
-    </div>
-
-    <div class="modal-note">
-      This is a sample portfolio presentation.
-      Actual project details and visuals will be added later.
-    </div>
-
-<a class="modal-case-study" id="modalViewAll" href="#">
-  VIEW ALL PROJECTS ↗
-</a>
-
-  </div>
-</div>
-<script>
-  document.getElementById("year").textContent =
-    new Date().getFullYear();
-</script>
-    
-<script>
-  
-document.querySelectorAll('[data-placeholder-link]').forEach(link => {
-  link.addEventListener('click', event => event.preventDefault());
-});
-
-  const sidebarLinks = document.querySelectorAll('.sidebar-nav a[href^="#"]');
-
-  const sections = document.querySelectorAll(
-    "#home, #services, #work, #about, #contact"
-  );
-
-  function setActiveLink(sectionId) {
-    sidebarLinks.forEach(link => {
-      link.classList.toggle(
-        "active",
-        link.getAttribute("href") === "#" + sectionId
+      const sections = document.querySelectorAll(
+        "#home, #services, #work, #about, #contact"
       );
-    });
-  }
 
-  sidebarLinks.forEach(link => {
-    link.addEventListener("click", () => {
-      const sectionId = link.getAttribute("href").substring(1);
-      setActiveLink(sectionId);
-    });
-  });
+      function setActiveLink(sectionId) {
+        sidebarLinks.forEach(link => {
+          link.classList.toggle(
+            "active",
+            link.getAttribute("href") === "#" + sectionId
+          );
+        });
+      }
 
-  const sectionObserver = new IntersectionObserver(entries => {
-    const visibleSections = entries
-      .filter(entry => entry.isIntersecting)
-      .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+      sidebarLinks.forEach(link => {
+        link.addEventListener("click", () => {
+          const sectionId = link.getAttribute("href").substring(1);
+          setActiveLink(sectionId);
+        });
+      });
 
-    if (visibleSections.length > 0) {
-      setActiveLink(visibleSections[0].target.id);
-    }
-  }, {
-    rootMargin: "-20% 0px -65% 0px",
-    threshold: [0, 0.25, 0.5, 0.75, 1]
-  });
+      const sectionObserver = new IntersectionObserver(entries => {
+        const visibleSections = entries
+          .filter(entry => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
 
-  sections.forEach(section => {
-    sectionObserver.observe(section);
-  });
-  
-  const initialSection = window.location.hash.substring(1);
+        if (visibleSections.length > 0) {
+          setActiveLink(visibleSections[0].target.id);
+        }
+      }, {
+        rootMargin: "-20% 0px -65% 0px",
+        threshold: [0, 0.25, 0.5, 0.75, 1]
+      });
 
-  if (initialSection) {
-    setActiveLink(initialSection);
-  } else {
-    setActiveLink("home");
-  }
-  
-// =================================
-// PROJECT PREVIEW INTERACTIONS
-// =================================
+      sections.forEach(section => {
+        sectionObserver.observe(section);
+      });
 
-const projectModal = document.getElementById("projectModal");
-const modalTitle = document.getElementById("modalTitle");
-const modalDescription = document.getElementById("modalDescription");
-const modalDiscipline = document.getElementById("modalDiscipline");
-const modalFocus = document.getElementById("modalFocus");
-const modalType = document.getElementById("modalType");
-const modalGallery = document.getElementById("modalGallery");
-  
-const projectCards = document.querySelectorAll(".project-card");
-const modalClose = document.querySelector(".project-modal-close");
-const modalBackdrop = document.querySelector(".project-modal-backdrop");
+      const initialSection = window.location.hash.substring(1);
 
-const projectData = {
+      if (initialSection) {
+        setActiveLink(initialSection);
+      } else {
+        setActiveLink("home");
+      }
 
-branding: {
-  title: "Brand & Graphic Design",
-  description: "A showcase of visual communication, branding concepts, marketing graphics, and creative design. Actual project examples and visuals will be added later.",
-  discipline: "Graphic Design",
-  focus: "Branding & Visuals",
-  type: "Creative Portfolio",
-  gallery: [
-    "assets/images/portfolio/projects/branding/image-01.png",
-    "assets/images/portfolio/projects/branding/image-02.png",
-    "assets/images/portfolio/projects/branding/image-03.png"
-  ]
-},
+      const projectModal = document.getElementById("projectModal");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalDescription = document.getElementById("modalDescription");
+      const modalDiscipline = document.getElementById("modalDiscipline");
+      const modalFocus = document.getElementById("modalFocus");
+      const modalType = document.getElementById("modalType");
+      const modalGallery = document.getElementById("modalGallery");
 
+      const projectCards = document.querySelectorAll(".project-card");
+      const modalClose = document.querySelector(".project-modal-close");
+      const modalBackdrop = document.querySelector(".project-modal-backdrop");
 
-"web-design": {
-  title: "Website Design",
-  description: "A collection of website design and WordPress development work, including responsive layouts, landing pages, and digital experiences. Actual project examples will be added later.",
-  discipline: "Web Design",
-  focus: "UI & WordPress",
-  type: "Digital Portfolio",
-  gallery: [
-    "assets/images/portfolio/projects/web-design/image-01.jpg",
-    "assets/images/portfolio/projects/web-design/image-02.jpg",
-    "assets/images/portfolio/projects/web-design/image-03.jpg"
-  ]
-},
+      const projectData = {
 
+        branding: {
+          title: "Brand & Graphic Design",
+          description: "A showcase of visual communication, branding concepts, marketing graphics, and creative design. Actual project examples and visuals will be added later.",
+          discipline: "Graphic Design",
+          focus: "Branding & Visuals",
+          type: "Creative Portfolio",
+          gallery: [
+            "assets/images/portfolio/projects/branding/image-01.png",
+            "assets/images/portfolio/projects/branding/image-02.png",
+            "assets/images/portfolio/projects/branding/image-03.png"
+          ]
+        },
 
+        "web-design": {
+          title: "Website Design",
+          description: "A collection of website design and WordPress development work, including responsive layouts, landing pages, and digital experiences. Actual project examples will be added later.",
+          discipline: "Web Design",
+          focus: "UI & WordPress",
+          type: "Digital Portfolio",
+          gallery: [
+            "assets/images/portfolio/projects/web-design/image-01.jpg",
+            "assets/images/portfolio/projects/web-design/image-02.jpg",
+            "assets/images/portfolio/projects/web-design/image-03.jpg"
+          ]
+        },
 
-"print-design": {
-  title: "Print & Production",
-  description: "A showcase of print-focused creative work, including labels, stickers, production artwork, and print-ready design preparation. Actual project examples will be added later.",
-  discipline: "Print Design",
-  focus: "Production Artwork",
-  type: "Creative Portfolio",
-  gallery: [
-    "assets/images/portfolio/projects/print-design/image-01.jpg",
-    "assets/images/portfolio/projects/print-design/image-02.jpg",
-    "assets/images/portfolio/projects/print-design/image-03.jpg"
-  ]
-},
+        "print-design": {
+          title: "Print & Production",
+          description: "A showcase of print-focused creative work, including labels, stickers, production artwork, and print-ready design preparation. Actual project examples and visuals will be added later.",
+          discipline: "Print Design",
+          focus: "Production Artwork",
+          type: "Creative Portfolio",
+          gallery: [
+            "assets/images/portfolio/projects/print-design/image-01.jpg",
+            "assets/images/portfolio/projects/print-design/image-02.jpg",
+            "assets/images/portfolio/projects/print-design/image-03.jpg"
+          ]
+        },
 
+        "creative-experiments": {
+          title: "Web App Development",
+          description: "A collection of web-based interfaces, interactive features, and functional digital concepts focused on usability, thoughtful design, and practical implementation. Project examples and details will be added as they are ready.",
+          discipline: "Web Development",
+          focus: "Front-End & Interactive UI",
+          type: "Digital Projects",
+          gallery: [
+            "assets/images/portfolio/projects/creative-experiments/image-01.jpg",
+            "assets/images/portfolio/projects/creative-experiments/image-02.jpg",
+            "assets/images/portfolio/projects/creative-experiments/image-03.jpg"
+          ]
+        }
+      };
 
+      let lastFocusedCard = null;
 
-"creative-experiments": {
-  title: "Creative Experiments",
-  description: "A space for exploring creative technology, AI-assisted workflows, interactive ideas, and experimental digital concepts. Actual project examples will be added later.",
-  discipline: "Creative Tech",
-  focus: "AI & Interaction",
-  type: "Experimental Work",
-  gallery: [
-    "assets/images/portfolio/projects/creative-experiments/image-01.jpg",
-    "assets/images/portfolio/projects/creative-experiments/image-02.jpg",
-    "assets/images/portfolio/projects/creative-experiments/image-03.jpg"
-  ]
-}
-};
+      function openProjectModal(projectId, card) {
+        const project = projectData[projectId];
 
-let lastFocusedCard = null;
+        if (!project) return;
 
+        lastFocusedCard = card;
 
-function openProjectModal(projectId, card) {
-  const project = projectData[projectId];
+        modalTitle.textContent = project.title;
+        modalDescription.textContent = project.description;
+        modalDiscipline.textContent = project.discipline;
+        modalFocus.textContent = project.focus;
+        modalType.textContent = project.type;
 
-  if (!project) return;
+        modalGallery.innerHTML = "";
 
-  lastFocusedCard = card;
+        if (project.gallery && project.gallery.length > 0) {
+          project.gallery.forEach((imagePath, index) => {
+            const image = document.createElement("img");
 
-  modalTitle.textContent = project.title;
-  modalDescription.textContent = project.description;
-  modalDiscipline.textContent = project.discipline;
-  modalFocus.textContent = project.focus;
-  modalType.textContent = project.type;
+            image.src = imagePath;
+            image.alt = `${project.title} — Image ${index + 1}`;
+            image.loading = "lazy";
 
-  // Load project gallery images
-  modalGallery.innerHTML = "";
+            modalGallery.appendChild(image);
+          });
+        }
 
-  if (project.gallery && project.gallery.length > 0) {
-    project.gallery.forEach((imagePath, index) => {
-      const image = document.createElement("img");
+        const categoryPages = {
+          branding: "branding.html",
+          "web-design": "web-design.html",
+          "print-design": "print-design.html",
+          "creative-experiments": "creative-experiments.html"
+        };
 
-      image.src = imagePath;
-      image.alt = `${project.title} — Image ${index + 1}`;
-      image.loading = "lazy";
+        const viewAllLink = document.getElementById("modalViewAll");
 
-      modalGallery.appendChild(image);
-    });
-  }
-    // Set the View All Projects link for the selected category
-  const categoryPages = {
-    branding: "branding.html",
-    "web-design": "web-design.html",
-    "print-design": "print-design.html",
-    "creative-experiments": "creative-experiments.html"
-  };
+        if (viewAllLink && categoryPages[projectId]) {
+          viewAllLink.href = categoryPages[projectId];
+        }
 
-  const viewAllLink = document.getElementById("modalViewAll");
+        projectModal.classList.add("open");
+        projectModal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
 
-  if (viewAllLink && categoryPages[projectId]) {
-    viewAllLink.href = categoryPages[projectId];
-  }
-  projectModal.classList.add("open");
-  projectModal.setAttribute("aria-hidden", "false");
-  document.body.style.overflow = "hidden";
+        modalClose.focus();
+      }
 
-  modalClose.focus();
-}
+      function closeProjectModal() {
+        projectModal.classList.remove("open");
+        projectModal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
 
+        if (lastFocusedCard) {
+          lastFocusedCard.focus();
+        }
+      }
 
-function closeProjectModal() {
-  projectModal.classList.remove("open");
-  projectModal.setAttribute("aria-hidden", "true");
-  document.body.style.overflow = "";
+      projectCards.forEach(card => {
+        card.addEventListener("click", () => {
+          openProjectModal(card.dataset.project, card);
+        });
 
-  if (lastFocusedCard) {
-    lastFocusedCard.focus();
-  }
-}
+        card.addEventListener("keydown", event => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openProjectModal(card.dataset.project, card);
+          }
+        });
+      });
 
-projectCards.forEach(card => {
-  card.addEventListener("click", () => {
-    openProjectModal(card.dataset.project, card);
-  });
+      modalClose.addEventListener("click", closeProjectModal);
+      modalBackdrop.addEventListener("click", closeProjectModal);
 
-  card.addEventListener("keydown", event => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      openProjectModal(card.dataset.project, card);
-    }
-  });
-});
+      document.addEventListener("keydown", event => {
+        if (event.key === "Escape" && projectModal.classList.contains("open")) {
+          closeProjectModal();
+        }
+      });
 
-modalClose.addEventListener("click", closeProjectModal);
-modalBackdrop.addEventListener("click", closeProjectModal);
-
-document.addEventListener("keydown", event => {
-  if (event.key === "Escape" && projectModal.classList.contains("open")) {
-    closeProjectModal();
-  }
-});
-
-</script>
+    </script>
   </main>
 </div>
-  
+
 <script src="assets/js/image-protection.js"></script>
 </body>
 </html>
