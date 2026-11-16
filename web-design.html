@@ -76,12 +76,19 @@
 
       const image = document.createElement("img");
 
-      image.src = `assets/images/portfolio/projects/web-design/${filename}`;
+      image.src = `assets/images/portfolio/projects/web-design/thumbnails/${filename}`;
       image.alt = `Website design and development work ${index + 1}`;
       image.loading = "lazy";
 
-      item.appendChild(image);
-      gallery.appendChild(item);
+item.appendChild(image);
+
+item.style.cursor = "pointer";
+
+item.addEventListener("click", () => {
+  openWebDesignModal(filename);
+});
+
+gallery.appendChild(item);
     });
 
     imageCount.textContent =
