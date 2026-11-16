@@ -418,7 +418,13 @@
       justify-content: center;
       transition: .35s;
     }
-
+    .project-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: .35s;
+}
     .project-card:hover .project-visual {
       transform: translateY(-6px);
     }
@@ -1376,16 +1382,13 @@
       <div class="project-grid">
 
         <article class="project-card" data-project="branding" tabindex="0" role="button" aria-haspopup="dialog">
-          <div class="project-visual visual-one">
-            <div class="mockup">
-              <div class="mockup-top">
-                <span>BRAND / 001</span>
-                <span>2026</span>
-              </div>
-              <div class="mockup-title">MAKE<br>IT<br>MATTER.</div>
-              <div class="mockup-bottom">BRAND IDENTITY & VISUAL DESIGN</div>
-            </div>
-          </div>
+          <div class="project-visual">
+  <img
+    src="assets/images/portfolio/thumbnails/branding-thumb.jpg"
+    alt="Brand and Graphic Design project thumbnail"
+    class="project-thumbnail"
+  >
+</div>
           <div class="project-info">
             <div>
               <h3>Brand & Graphic Design</h3>
