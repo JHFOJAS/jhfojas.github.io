@@ -13,217 +13,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="assets/images/jake-avatar.png">
-
-  <style>
-    :root {
-      --orange: #F04B22;
-      --black: #171313;
-      --white: #F7F6F3;
-      --gray: #E8E6E2;
-      --muted: #77736F;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background: var(--white);
-      color: var(--black);
-      font-family: "proxima-nova", "DM Sans", sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .page-container {
-      width: min(1400px, 100% - 100px);
-      margin: 0 auto;
-    }
-
-    .site-header {
-      height: 90px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid var(--gray);
-    }
-
-    .brand-name {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 19px;
-      font-weight: 700;
-      letter-spacing: -0.7px;
-    }
-
-    .brand-name span {
-      color: var(--orange);
-    }
-
-    .back-link {
-      font-size: 14px;
-      font-weight: 600;
-      transition: color .25s;
-    }
-
-    .back-link:hover {
-      color: var(--orange);
-    }
-
-    .page-hero {
-      padding: 110px 0 65px;
-    }
-
-    .section-label {
-      color: var(--orange);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 22px;
-    }
-
-    .page-hero h1 {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: clamp(48px, 7vw, 88px);
-      line-height: .98;
-      letter-spacing: -5px;
-      max-width: 950px;
-    }
-
-    .page-hero h1 span {
-      color: var(--orange);
-    }
-
-    .hero-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 30px;
-      margin-top: 35px;
-    }
-
-    .hero-description {
-      max-width: 570px;
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.7;
-    }
-
-    .image-count {
-      color: var(--muted);
-      font-size: 13px;
-      white-space: nowrap;
-    }
-
-    .gallery-section {
-      padding: 30px 0 120px;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 25px;
-    }
-
-    .gallery-item {
-      overflow: hidden;
-      background: var(--gray);
-      border-radius: 12px;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      display: block;
-      transition: transform .5s ease;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.035);
-    }
-
-    .site-footer {
-      border-top: 1px solid var(--gray);
-      padding: 30px 0;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .site-footer a:hover {
-      color: var(--orange);
-    }
-
-    @media (max-width: 900px) {
-      .gallery-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .page-hero {
-        padding-top: 85px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .page-container {
-        width: calc(100% - 40px);
-      }
-
-      .site-header {
-        height: 75px;
-      }
-
-      .page-hero {
-        padding: 75px 0 45px;
-      }
-
-      .page-hero h1 {
-        letter-spacing: -2.5px;
-      }
-
-      .hero-bottom {
-        align-items: start;
-        flex-direction: column;
-      }
-
-      .gallery-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
-      }
-
-      .gallery-section {
-        padding-bottom: 75px;
-      }
-
-      .site-footer {
-        flex-direction: column;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/category-global.css">
+  
 </head>
 
 <body>
 
   <div class="page-container">
-
-    <header class="site-header">
-      <a href="index.html" class="brand-name">
-        JAKE FOJAS<span>.</span>
-      </a>
-
-      <a href="index.html#work" class="back-link">
-        ← Back to Portfolio
-      </a>
-    </header>
+  <div id="categoryHeader"></div>
 
     <main>
 
@@ -256,10 +53,7 @@
 
     </main>
 
-    <footer class="site-footer">
-      <span>© 2026 Jake Harley Fojas</span>
-      <a href="index.html#work">Back to Main Portfolio ↑</a>
-    </footer>
+<div id="categoryFooter"></div>
 
   </div>
 
@@ -296,6 +90,6 @@
     imageCount.textContent =
       `${sortedImages.length.toString().padStart(2, "0")} DESIGN PIECES`;
   </script>
-
+<script src="assets/js/category-global.js"></script>
 </body>
 </html>
