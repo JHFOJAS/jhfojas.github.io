@@ -89,15 +89,7 @@
     imageCount.textContent =
       `${sortedImages.length.toString().padStart(2, "0")} DESIGN PIECES`;
   </script>
-  <script>
-  const currentPage = window.location.pathname.split("/").pop();
-
-  document.querySelectorAll(".category-nav a").forEach(link => {
-    if (link.dataset.page === currentPage) {
-      link.style.display = "none";
-    }
-  });
-</script>
+  
 <script src="assets/js/category-global.js"></script>
 </body>
 </html>
