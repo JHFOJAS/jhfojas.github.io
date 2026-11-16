@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +35,13 @@ a{color:inherit;text-decoration:none}
 .back-portfolio{font-size:11px;font-weight:700;color:#303030;border-bottom:1px solid var(--cyan);padding-bottom:4px;white-space:nowrap}
 
 .resume{max-width:1100px;margin:0 auto;background:var(--paper);display:grid;grid-template-columns:35% 65%;box-shadow:0 16px 48px rgba(0,0,0,.10);min-height:1250px}
-.resume-side{background:var(--charcoal);color:#f4f4f4;padding:0 30px 38px}
+
+/* SIDEBAR - FULL WIDTH PORTRAIT */
+.resume-side{
+    background:var(--charcoal);
+    color:#f4f4f4;
+    padding:0;
+}
 
 .identity-block{
     width:100%;
@@ -52,7 +59,7 @@ a{color:inherit;text-decoration:none}
     padding:0;
     margin:0;
     overflow:hidden;
-    background:#303030;
+    background:#424242;
     display:block;
 }
 
@@ -68,9 +75,19 @@ a{color:inherit;text-decoration:none}
     object-position:center 22%;
 }
 
-.cyan-band{height:35px;background:var(--cyan);margin:0 -30px 18px}
-.side-section{padding:18px 0 20px;border-bottom:1px solid rgba(255,255,255,.28)}
+.cyan-band{
+    height:35px;
+    background:var(--cyan);
+    margin:0 0 18px;
+}
+
+/* INDIVIDUAL SIDEBAR SECTIONS */
+.side-section{
+    padding:18px 30px 20px;
+    border-bottom:1px solid rgba(255,255,255,.28);
+}
 .side-section:last-of-type{border-bottom:0}
+
 .side-section h2{font:700 15px var(--heading-font);letter-spacing:2.5px;margin-bottom:14px;color:#fff}
 .contact-item{font-size:13px;line-height:1.75;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.35);overflow-wrap:anywhere}
 .contact-item:last-child{border-bottom:0}
@@ -88,7 +105,12 @@ a{color:inherit;text-decoration:none}
 .ai-tools-list li{padding:5px 0;font-size:12.5px;line-height:1.7;color:#e0e0e0}
 .ai-tools-list li::before{content:"";display:inline-block;width:6px;height:6px;background:var(--cyan);border-radius:50%;margin:0 10px 1px 2px}
 
-.socials{display:flex;gap:10px;padding-top:20px}
+.socials{
+    display:flex;
+    gap:10px;
+    padding:20px 30px 0;
+    margin-bottom:38px;
+}
 .social-link{width:34px;height:34px;border:1px solid rgba(255,255,255,.55);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;transition:.2s}
 .social-link:hover{background:var(--cyan);border-color:var(--cyan);color:#222}
 .social-link svg{width:16px;height:16px;fill:currentColor}
@@ -112,6 +134,7 @@ a{color:inherit;text-decoration:none}
 .job h4{font-size:13px;color:#1686a6;font-weight:600;line-height:1.6;margin:6px 0 8px}
 .job p{font-size:13px;line-height:1.85;color:#555}
 
+/* TABLET */
 @media(max-width:900px){
 .site-header{padding:0 3%}
 .header-inner{gap:15px}
@@ -119,12 +142,14 @@ a{color:inherit;text-decoration:none}
 .header-navigation a{font-size:11px}
 .brand-logo{font-size:18px}
 .resume-main{padding:45px 32px 50px}
-.resume-side{padding:0 24px 30px}
-.cyan-band{margin-left:-24px;margin-right:-24px}
+.resume-side{padding:0}
+.side-section{padding-left:24px;padding-right:24px}
+.socials{padding-left:24px;padding-right:24px}
 .job-heading{flex-direction:column;gap:5px}
 .job time{align-self:flex-start}
 }
 
+/* MOBILE */
 @media(max-width:760px){
 body{padding:0 10px 35px}
 .site-header{margin:0 -10px 22px;padding:0 18px}
@@ -135,10 +160,12 @@ body{padding:0 10px 35px}
 .header-navigation::-webkit-scrollbar{display:none}
 .header-navigation a{font-size:11px}
 .resume{grid-template-columns:1fr;min-height:0}
-.resume-side{padding:0 24px 28px}
+.resume-side{padding:0}
 .identity-block{min-height:0}
 .portrait{width:100%;height:280px}
-.cyan-band{margin-left:-24px;margin-right:-24px;height:30px}
+.cyan-band{height:30px}
+.side-section{padding-left:24px;padding-right:24px}
+.socials{padding-left:24px;padding-right:24px;margin-bottom:28px}
 .side-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 22px}
 .contact-section{grid-column:1/-1}
 .resume-main{padding:38px 28px 45px}
@@ -147,6 +174,7 @@ body{padding:0 10px 35px}
 .job time{font-size:10px}
 }
 
+/* SMALL MOBILE */
 @media(max-width:460px){
 .side-grid{grid-template-columns:1fr}
 .resume-main{padding:32px 21px 38px}
@@ -159,15 +187,18 @@ body{padding:0 10px 35px}
 .header-navigation{gap:18px}
 }
 
+/* PRINT */
 @media print{
 @page{size:A4;margin:0}
 body{padding:0;background:#fff}
 .site-header{display:none!important}
 .resume{max-width:none;min-height:0;box-shadow:none;grid-template-columns:35% 65%}
-.resume-side{padding:0 25px 28px}
+.resume-side{padding:0}
 .identity-block{min-height:0}
 .portrait{width:100%;height:250px}
-.cyan-band{margin-left:-25px;margin-right:-25px;height:30px}
+.cyan-band{height:30px}
+.side-section{padding-left:25px;padding-right:25px}
+.socials{padding-left:25px;padding-right:25px;margin-bottom:28px}
 .resume-main{padding:40px 35px}
 .job{break-inside:avoid}
 .resume,.resume-side{-webkit-print-color-adjust:exact;print-color-adjust:exact}
@@ -196,7 +227,7 @@ body{padding:0;background:#fff}
 
 <div class="identity-block">
 <div class="portrait">
-<img src="assets/images/jake-avatar.png" alt="Jake Harley Fojas portrait" onerror="this.remove();this.parentElement.textContent='JHF'">
+<img src="assets/images/jake-harley-fojas-portrait.jpg" alt="Jake Harley Fojas portrait" onerror="this.remove();this.parentElement.textContent='JHF'">
 </div>
 </div>
 
