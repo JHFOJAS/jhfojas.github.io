@@ -1,51 +1,339 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Jake Harley Fojas — Graphic and Web Designer, Frontend Web Developer. Resume and professional experience.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Jake Harley Fojas — Graphic and Web Designer, Frontend Web Developer. Professional resume and experience.">
 <title>Resume | Jake Harley Fojas</title>
+
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/images/jake-avatar.png">
+
 <style>
-:root{--charcoal:#303030;--charcoal-2:#252525;--cyan:#59bfd7;--paper:#fff;--ink:#303030;--muted:#777;--line:#d8d8d8;--font:'DM Sans',sans-serif}
-*{box-sizing:border-box;margin:0;padding:0}body{background:#e9e9e9;color:var(--ink);font-family:var(--font);padding:30px 22px 55px}a{color:inherit;text-decoration:none}.toolbar{max-width:1050px;margin:0 auto 18px;display:flex;justify-content:space-between;align-items:center;gap:16px}.back-link{font-size:13px;font-weight:700;color:#555}.download-btn{background:var(--charcoal);color:#fff;border:0;border-radius:2px;padding:12px 18px;font:700 12px var(--font);cursor:pointer}.download-btn:hover{background:#111}.resume{max-width:1050px;margin:0 auto;background:var(--paper);display:grid;grid-template-columns:35% 65%;box-shadow:0 16px 48px rgba(0,0,0,.14);min-height:1250px}.resume-side{background:var(--charcoal);color:#f4f4f4;padding:0 30px 38px}.identity-block{min-height:168px;display:flex;align-items:center;justify-content:center;position:relative;padding:25px 0}.portrait{width:94px;height:94px;border-radius:50%;overflow:hidden;border:4px solid var(--cyan);background:#424242;display:grid;place-items:center;color:var(--cyan);font:800 25px Montserrat,sans-serif;letter-spacing:-1px}.portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 22%}.cyan-band{height:35px;background:var(--cyan);margin:0 -30px 18px}.side-section{padding:17px 0 19px;border-bottom:1px solid rgba(255,255,255,.28)}.side-section:last-of-type{border-bottom:0}.side-section h2{font:700 15px Montserrat,sans-serif;letter-spacing:2.5px;margin-bottom:13px;color:#fff}.contact-item{font-size:11.5px;line-height:1.65;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.35);overflow-wrap:anywhere}.contact-item:last-child{border-bottom:0}.side-section strong{display:block;font-size:10px;line-height:1.5;margin:12px 0 3px;color:#fff}.side-section p,.side-section li{font-size:11px;line-height:1.7;color:#e0e0e0}.side-section ul{list-style:none}.skills-list li{padding:7px 0 5px;border-bottom:1px solid rgba(255,255,255,.18);letter-spacing:.3px}.skills-list li:last-child{border-bottom:0}.skill-label{display:flex;justify-content:space-between;gap:8px;font-size:10.5px;font-weight:600;line-height:1.4;letter-spacing:.25px;color:#f4f4f4}.skill-label span:last-child{color:var(--cyan);font-variant-numeric:tabular-nums}.skill-track{height:5px;background:rgba(255,255,255,.2);margin-top:6px;border-radius:8px;overflow:hidden}.skill-track span{display:block;height:100%;background:var(--cyan);border-radius:8px}.socials{display:flex;gap:10px;padding-top:19px}.social-link{width:32px;height:32px;border:1px solid rgba(255,255,255,.55);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff}.social-link:hover{background:var(--cyan);border-color:var(--cyan);color:#222}.social-link svg{width:15px;height:15px;fill:currentColor}.social-link.email svg path{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.indeed-mark{font:bold italic 21px Arial}.resume-main{padding:55px 48px 58px;min-width:0}.main-header{text-align:center;padding:0 0 27px;border-bottom:4px solid var(--cyan);margin-bottom:27px}.main-header h1{font:800 clamp(27px,3.3vw,39px)/1.1 Montserrat,sans-serif;letter-spacing:-1.2px;color:#333}.subtitle{font:500 11px Montserrat,sans-serif;letter-spacing:4px;text-transform:uppercase;margin-top:11px;color:#666}.section{margin-bottom:26px}.section-title{font:700 15px Montserrat,sans-serif;letter-spacing:2.3px;margin-bottom:14px}.profile-copy{font-size:12px;line-height:1.85;color:#555}.portfolio-links{display:flex;flex-wrap:wrap;gap:7px 18px;margin-top:13px}.portfolio-links a{font-size:10px;color:#1784a4;overflow-wrap:anywhere}.job{margin:0 0 22px;break-inside:avoid}.job-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.job h3{font:700 12px Montserrat,sans-serif;line-height:1.5}.job time{font-size:10px;font-weight:700;white-space:nowrap;border:1px solid #999;border-radius:20px;padding:3px 8px;color:#555}.job h4{font-size:11.5px;color:#1686a6;font-weight:600;margin:5px 0 7px}.job p{font-size:11px;line-height:1.75;color:#555}.mobile-label{display:none}
-@media(max-width:760px){body{padding:15px 10px 30px}.resume{grid-template-columns:1fr;min-height:0}.resume-side{padding:0 24px 24px}.identity-block{min-height:135px}.portrait{width:82px;height:82px}.cyan-band{margin-left:-24px;margin-right:-24px;height:28px}.side-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 22px}.contact-section{grid-column:1/-1}.resume-main{padding:34px 25px 42px}.main-header{padding-bottom:22px}.job-heading{gap:8px}.job time{font-size:8px}.toolbar{align-items:center}}
-@media(max-width:460px){.side-grid{grid-template-columns:1fr}.resume-main{padding:29px 20px 36px}.main-header h1{font-size:27px}.subtitle{font-size:9px;letter-spacing:2.5px}.job-heading{flex-direction:column;gap:4px}.job time{align-self:flex-start}.toolbar{gap:8px}.download-btn{padding:10px 12px}}
-@media print{@page{size:A4;margin:0}body{padding:0;background:#fff}.toolbar{display:none!important}.resume{max-width:none;min-height:0;box-shadow:none;grid-template-columns:35% 65%}.resume-side{padding:0 25px 28px}.identity-block{min-height:145px}.portrait{width:82px;height:82px}.cyan-band{margin-left:-25px;margin-right:-25px;height:30px}.resume-main{padding:40px 35px 40px}.job{break-inside:avoid}.resume,.resume-side{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+:root {
+    --charcoal:#303030;
+    --cyan:#59bfd7;
+    --paper:#fff;
+    --ink:#303030;
+    --font:'DM Sans',sans-serif;
+    --heading-font:'Montserrat',sans-serif;
+    --page-bg:#f7f6f3;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--page-bg);color:var(--ink);font-family:var(--font);font-size:14px;padding:0 22px 65px}
+a{color:inherit;text-decoration:none}
+
+.site-header{min-height:90px;position:sticky;top:0;z-index:1000;background:rgba(247,246,243,.95);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid #E8E6E2;margin:0 -22px 35px;padding:0 5%}
+.header-inner{max-width:1400px;min-height:90px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.brand-logo{font:800 21px var(--heading-font);letter-spacing:-1px;white-space:nowrap;color:#303030}
+.brand-logo span{color:var(--cyan)}
+.header-navigation{display:flex;align-items:center;justify-content:center;gap:25px}
+.header-navigation a{font-size:12px;font-weight:600;color:#666;transition:color .2s;white-space:nowrap}
+.header-navigation a:hover{color:#1686a6}
+.back-portfolio{font-size:11px;font-weight:700;color:#303030;border-bottom:1px solid var(--cyan);padding-bottom:4px;white-space:nowrap}
+
+.resume{max-width:1100px;margin:0 auto;background:var(--paper);display:grid;grid-template-columns:35% 65%;box-shadow:0 16px 48px rgba(0,0,0,.10);min-height:1250px}
+.resume-side{background:var(--charcoal);color:#f4f4f4;padding:0 30px 38px}
+.identity-block{min-height:168px;display:flex;align-items:center;justify-content:center;padding:25px 0}
+.portrait{width:100px;height:100px;border-radius:50%;overflow:hidden;border:4px solid var(--cyan);background:#424242;display:grid;place-items:center;color:var(--cyan);font:800 25px var(--heading-font);letter-spacing:-1px}
+.portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 22%}
+.cyan-band{height:35px;background:var(--cyan);margin:0 -30px 18px}
+.side-section{padding:18px 0 20px;border-bottom:1px solid rgba(255,255,255,.28)}
+.side-section:last-of-type{border-bottom:0}
+.side-section h2{font:700 15px var(--heading-font);letter-spacing:2.5px;margin-bottom:14px;color:#fff}
+.contact-item{font-size:13px;line-height:1.75;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.35);overflow-wrap:anywhere}
+.contact-item:last-child{border-bottom:0}
+.side-section strong{display:block;font-size:11px;line-height:1.6;margin:13px 0 4px;color:#fff}
+.side-section p,.side-section li{font-size:12.5px;line-height:1.8;color:#e0e0e0}
+.side-section ul{list-style:none}
+.skills-list li{padding:8px 0 6px;border-bottom:1px solid rgba(255,255,255,.18)}
+.skills-list li:last-child{border-bottom:0}
+.skill-label{display:flex;justify-content:space-between;gap:8px;font-size:11.5px;font-weight:600;line-height:1.5;color:#f4f4f4}
+.skill-label span:last-child{color:var(--cyan);font-variant-numeric:tabular-nums}
+.skill-track{height:5px;background:rgba(255,255,255,.2);margin-top:7px;border-radius:8px;overflow:hidden}
+.skill-track span{display:block;height:100%;background:var(--cyan);border-radius:8px}
+
+.socials{display:flex;gap:10px;padding-top:20px}
+.social-link{width:34px;height:34px;border:1px solid rgba(255,255,255,.55);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;transition:.2s}
+.social-link:hover{background:var(--cyan);border-color:var(--cyan);color:#222}
+.social-link svg{width:16px;height:16px;fill:currentColor}
+.social-link.email svg path{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.indeed-mark{font:bold italic 21px Arial}
+
+.resume-main{padding:58px 50px 65px;min-width:0}
+.main-header{text-align:center;padding:0 0 28px;border-bottom:4px solid var(--cyan);margin-bottom:30px}
+.main-header h1{font:800 clamp(27px,3.3vw,39px)/1.15 var(--heading-font);letter-spacing:-1.2px;color:#333}
+.subtitle{font:500 12px var(--heading-font);letter-spacing:4px;text-transform:uppercase;margin-top:12px;color:#666}
+.section{margin-bottom:32px}
+.section-title{font:700 16px var(--heading-font);letter-spacing:2.3px;margin-bottom:16px}
+.profile-copy{font-size:14px;line-height:1.9;color:#555}
+
+.job{margin:0 0 25px;break-inside:avoid}
+.job-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.job h3{font:700 13px/1.5 var(--heading-font)}
+.job time{font-size:11px;font-weight:700;white-space:nowrap;border:1px solid #999;border-radius:20px;padding:4px 9px;color:#555}
+.job h4{font-size:13px;color:#1686a6;font-weight:600;line-height:1.6;margin:6px 0 8px}
+.job p{font-size:13px;line-height:1.85;color:#555}
+
+@media(max-width:900px){
+.site-header{padding:0 3%}
+.header-inner{gap:15px}
+.header-navigation{gap:15px}
+.header-navigation a{font-size:11px}
+.brand-logo{font-size:18px}
+.resume-main{padding:45px 32px 50px}
+.resume-side{padding:0 24px 30px}
+.cyan-band{margin-left:-24px;margin-right:-24px}
+.job-heading{flex-direction:column;gap:5px}
+.job time{align-self:flex-start}
+}
+
+@media(max-width:760px){
+body{padding:0 10px 35px}
+.site-header{margin:0 -10px 22px;padding:0 18px}
+.header-inner{min-height:80px;flex-wrap:wrap;justify-content:space-between;padding:15px 0;gap:14px}
+.brand-logo{font-size:19px}
+.back-portfolio{font-size:11px}
+.header-navigation{order:3;width:100%;justify-content:flex-start;overflow-x:auto;padding:4px 0 8px;gap:22px;scrollbar-width:none}
+.header-navigation::-webkit-scrollbar{display:none}
+.header-navigation a{font-size:11px}
+.resume{grid-template-columns:1fr;min-height:0}
+.resume-side{padding:0 24px 28px}
+.identity-block{min-height:145px}
+.portrait{width:90px;height:90px}
+.cyan-band{margin-left:-24px;margin-right:-24px;height:30px}
+.side-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 22px}
+.contact-section{grid-column:1/-1}
+.resume-main{padding:38px 28px 45px}
+.main-header{padding-bottom:24px}
+.job-heading{flex-direction:column;gap:5px}
+.job time{font-size:10px}
+}
+
+@media(max-width:460px){
+.side-grid{grid-template-columns:1fr}
+.resume-main{padding:32px 21px 38px}
+.main-header h1{font-size:27px}
+.subtitle{font-size:10px;letter-spacing:2.5px}
+.section-title{font-size:15px}
+.profile-copy,.job p{font-size:13px;line-height:1.85}
+.job h3{font-size:13px}
+.job h4{font-size:12.5px}
+.header-navigation{gap:18px}
+}
+
+@media print{
+@page{size:A4;margin:0}
+body{padding:0;background:#fff}
+.site-header{display:none!important}
+.resume{max-width:none;min-height:0;box-shadow:none;grid-template-columns:35% 65%}
+.resume-side{padding:0 25px 28px}
+.identity-block{min-height:145px}
+.portrait{width:82px;height:82px}
+.cyan-band{margin-left:-25px;margin-right:-25px;height:30px}
+.resume-main{padding:40px 35px}
+.job{break-inside:avoid}
+.resume,.resume-side{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
 </style>
 </head>
+
 <body>
-<div class="toolbar"><a class="back-link" href="index.html#home">← Back to Introduction</a><button class="download-btn" onclick="window.print()">Download / Print Resume ↓</button></div>
-<div class="resume">
-<aside class="resume-side">
-<div class="identity-block"><div class="portrait"><img src="assets/images/jake-harley-fojas-portrait.jpg" alt="Jake Harley Fojas portrait" onerror="this.remove();this.parentElement.textContent='JHF'"></div></div>
-<div class="cyan-band"></div>
-<section class="side-section contact-section"><div class="contact-item">✉ &nbsp;harleyjake09@gmail.com</div><div class="contact-item">⌖ &nbsp;Caloocan City, Philippines</div></section>
-<div class="side-grid">
-<section class="side-section"><h2>EDUCATION</h2><strong>COMPUTER PROGRAMMING</strong><p>Informatics Caloocan</p><p>2010 – 2011</p><strong>LIBERTAD NATIONAL HIGH SCHOOL</strong><p>Libertad, Odiongan, Romblon</p><p>2003 – 2007</p></section>
-<section class="side-section"><h2>SKILLS</h2><ul class="skills-list"><li><div class="skill-label"><span>SEO</span><span>75%</span></div><div class="skill-track" role="img" aria-label="SEO: estimated proficiency 75 percent"><span style="width:75%"></span></div></li><li><div class="skill-label"><span>DUDA</span><span>85%</span></div><div class="skill-track" role="img" aria-label="DUDA: estimated proficiency 85 percent"><span style="width:85%"></span></div></li><li><div class="skill-label"><span>WORDPRESS</span><span>90%</span></div><div class="skill-track" role="img" aria-label="WORDPRESS: estimated proficiency 90 percent"><span style="width:90%"></span></div></li><li><div class="skill-label"><span>BEAVER BUILDER</span><span>90%</span></div><div class="skill-track" role="img" aria-label="BEAVER BUILDER: estimated proficiency 90 percent"><span style="width:90%"></span></div></li><li><div class="skill-label"><span>DIVI</span><span>90%</span></div><div class="skill-track" role="img" aria-label="DIVI: estimated proficiency 90 percent"><span style="width:90%"></span></div></li><li><div class="skill-label"><span>ELEMENTOR</span><span>90%</span></div><div class="skill-track" role="img" aria-label="ELEMENTOR: estimated proficiency 90 percent"><span style="width:90%"></span></div></li><li><div class="skill-label"><span>FIGMA</span><span>85%</span></div><div class="skill-track" role="img" aria-label="FIGMA: estimated proficiency 85 percent"><span style="width:85%"></span></div></li><li><div class="skill-label"><span>PHOTOSHOP</span><span>95%</span></div><div class="skill-track" role="img" aria-label="PHOTOSHOP: estimated proficiency 95 percent"><span style="width:95%"></span></div></li><li><div class="skill-label"><span>ILLUSTRATOR</span><span>90%</span></div><div class="skill-track" role="img" aria-label="ILLUSTRATOR: estimated proficiency 90 percent"><span style="width:90%"></span></div></li><li><div class="skill-label"><span>AFTER EFFECTS</span><span>70%</span></div><div class="skill-track" role="img" aria-label="AFTER EFFECTS: estimated proficiency 70 percent"><span style="width:70%"></span></div></li><li><div class="skill-label"><span>HTML · CSS · PHP</span><span>80%</span></div><div class="skill-track" role="img" aria-label="HTML · CSS · PHP: estimated proficiency 80 percent"><span style="width:80%"></span></div></li><li><div class="skill-label"><span>JAVASCRIPT · MEDIA QUERY</span><span>75%</span></div><div class="skill-track" role="img" aria-label="JAVASCRIPT · MEDIA QUERY: estimated proficiency 75 percent"><span style="width:75%"></span></div></li><li><div class="skill-label"><span>CPANEL</span><span>85%</span></div><div class="skill-track" role="img" aria-label="CPANEL: estimated proficiency 85 percent"><span style="width:85%"></span></div></li></ul></section>
-<section class="side-section"><h2>REFERENCE</h2><strong>DANIEL WOLFE</strong><p>CEO of Digital Wolfe</p><p>09953593986</p><strong>KIM ROSS SANTOS</strong><p>General Manager, Ringside Marketing Corp.</p><p>09173872806</p></section>
+
+<header class="site-header">
+<div class="header-inner">
+<a href="index.html#home" class="brand-logo">JAKE FOJAS<span>.</span></a>
+<nav class="header-navigation" aria-label="Main navigation">
+<a href="branding.html">Branding</a>
+<a href="web-design.html">Website Design</a>
+<a href="print-design.html">Print &amp; Production</a>
+<a href="creative-experiments.html">Creative Experiments</a>
+</nav>
+<a href="index.html#portfolio" class="back-portfolio">Back to Portfolio</a>
 </div>
-<div class="socials" aria-label="Social and contact links"><a href="#" class="social-link" aria-label="LinkedIn profile coming soon" title="LinkedIn — link coming soon" data-placeholder-link><svg viewBox="0 0 24 24"><path d="M5.2 3.5a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4ZM3.4 9.4H7v11.2H3.4zM9.2 9.4h3.4v1.5h.1a3.7 3.7 0 0 1 3.3-1.8c3.5 0 4.2 2.3 4.2 5.3v6.2h-3.6v-5.5c0-1.3 0-3-1.9-3s-2.2 1.4-2.2 2.9v5.6H9.2z"/></svg></a><a href="mailto:harleyjake09@gmail.com" class="social-link email" aria-label="Email Jake"><svg viewBox="0 0 24 24"><path d="M3 5.5h18v13H3z"/><path d="m3.5 6 8.5 7 8.5-7"/></svg></a><a href="#" class="social-link" aria-label="Indeed profile coming soon" title="Indeed — link coming soon" data-placeholder-link><span class="indeed-mark">i</span></a></div>
+</header>
+
+<div class="resume">
+
+<aside class="resume-side">
+
+<div class="identity-block">
+<div class="portrait">
+<img src="assets/images/jake-harley-fojas-portrait.jpg" alt="Jake Harley Fojas portrait" onerror="this.remove();this.parentElement.textContent='JHF'">
+</div>
+</div>
+
+<div class="cyan-band"></div>
+
+<section class="side-section contact-section">
+<div class="contact-item">✉ &nbsp;harleyjake09@gmail.com</div>
+<div class="contact-item">⌖ &nbsp;Caloocan City, Philippines</div>
+</section>
+
+<div class="side-grid">
+
+<section class="side-section">
+<h2>EDUCATION</h2>
+<strong>COMPUTER PROGRAMMING</strong>
+<p>Informatics Caloocan</p>
+<p>2010 – 2011</p>
+<strong>LIBERTAD NATIONAL HIGH SCHOOL</strong>
+<p>Libertad, Odiongan, Romblon</p>
+<p>2003 – 2007</p>
+</section>
+
+<section class="side-section">
+<h2>SKILLS</h2>
+<ul class="skills-list">
+<li><div class="skill-label"><span>SEO</span><span>75%</span></div><div class="skill-track"><span style="width:75%"></span></div></li>
+<li><div class="skill-label"><span>DUDA</span><span>85%</span></div><div class="skill-track"><span style="width:85%"></span></div></li>
+<li><div class="skill-label"><span>WORDPRESS</span><span>90%</span></div><div class="skill-track"><span style="width:90%"></span></div></li>
+<li><div class="skill-label"><span>BEAVER BUILDER</span><span>90%</span></div><div class="skill-track"><span style="width:90%"></span></div></li>
+<li><div class="skill-label"><span>DIVI</span><span>90%</span></div><div class="skill-track"><span style="width:90%"></span></div></li>
+<li><div class="skill-label"><span>ELEMENTOR</span><span>90%</span></div><div class="skill-track"><span style="width:90%"></span></div></li>
+<li><div class="skill-label"><span>FIGMA</span><span>85%</span></div><div class="skill-track"><span style="width:85%"></span></div></li>
+<li><div class="skill-label"><span>PHOTOSHOP</span><span>95%</span></div><div class="skill-track"><span style="width:95%"></span></div></li>
+<li><div class="skill-label"><span>ILLUSTRATOR</span><span>90%</span></div><div class="skill-track"><span style="width:90%"></span></div></li>
+<li><div class="skill-label"><span>AFTER EFFECTS</span><span>70%</span></div><div class="skill-track"><span style="width:70%"></span></div></li>
+<li><div class="skill-label"><span>HTML · CSS · PHP</span><span>80%</span></div><div class="skill-track"><span style="width:80%"></span></div></li>
+<li><div class="skill-label"><span>JAVASCRIPT · MEDIA QUERY</span><span>75%</span></div><div class="skill-track"><span style="width:75%"></span></div></li>
+<li><div class="skill-label"><span>CPANEL</span><span>85%</span></div><div class="skill-track"><span style="width:85%"></span></div></li>
+</ul>
+</section>
+
+<section class="side-section">
+<h2>REFERENCE</h2>
+<strong>DANIEL WOLFE</strong>
+<p>CEO of Digital Wolfe</p>
+<p>09953593986</p>
+<strong>KIM ROSS SANTOS</strong>
+<p>General Manager, Ringside Marketing Corp.</p>
+<p>09173872806</p>
+</section>
+
+</div>
+
+<div class="socials" aria-label="Social and contact links">
+<a href="#" class="social-link" aria-label="LinkedIn profile coming soon" title="LinkedIn — link coming soon" data-placeholder-link>
+<svg viewBox="0 0 24 24"><path d="M5.2 3.5a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4ZM3.4 9.4H7v11.2H3.4zM9.2 9.4h3.4v1.5h.1a3.7 3.7 0 0 1 3.3-1.8c3.5 0 4.2 2.3 4.2 5.3v6.2h-3.6v-5.5c0-1.3 0-3-1.9-3s-2.2 1.4-2.2 2.9v5.6H9.2z"/></svg>
+</a>
+<a href="mailto:harleyjake09@gmail.com" class="social-link email" aria-label="Email Jake">
+<svg viewBox="0 0 24 24"><path d="M3 5.5h18v13H3z"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>
+</a>
+<a href="#" class="social-link" aria-label="Indeed profile coming soon" title="Indeed — link coming soon" data-placeholder-link><span class="indeed-mark">i</span></a>
+</div>
+
 </aside>
+
 <main class="resume-main">
-<header class="main-header"><h1>JAKE HARLEY FOJAS</h1><p class="subtitle">Graphic &amp; Web Designer</p><p class="subtitle" style="margin-top:5px">Frontend Web Developer</p></header>
-<section class="section"><h2 class="section-title">PROFILE</h2><p class="profile-copy">Disciplined and analytical approach to web development projects, ability to work on my own with minimum supervision, drive projects forward, build customized websites to the highest specifications, work under pressure and to tight deadlines, work closely with other developers and professionals, make recommendations on the use of new and emerging technologies.</p></section>
-<section class="section"><h2 class="section-title">WORK EXPERIENCE</h2>
-<article class="job"><div class="job-heading"><h3>POPEYES HAWAII</h3><time>JULY 30, 2025 - NOVEMBER 15, 2026</time></div><h4>Graphic &amp; Web Designer / Frontend Web Developer</h4><p>Preparing detached label artwork for release and creating magazine ads, TV ads, flyers, promotional banners, posters, and store campaigns. Maintaining popeyeshawaii.com, including website content, promotional graphics, and landing pages.</p></article>
-<article class="job"><div class="job-heading"><h3>PRIORITY LABEL PRINTERS LLC</h3><time>MARCH 2024 - MAY 2026</time></div><h4>Graphic &amp; Web Designer / Frontend Web Developer</h4><p>Designing sticker decals, product labels, packaging, and print collateral for company products and services. Preparing print-ready artwork with spot colors and cut paths using Roland VersaWorks swatches for contour cutting and finishing. Designing, updating, and maintaining company websites and digital content.</p></article>
-<article class="job"><div class="job-heading"><h3>FREELANCE</h3><time>JUNE 2023 - FEBRUARY 2024</time></div><h4>Graphic &amp; Web Designer / Frontend Web Developer</h4><p>Providing graphics and website design services to my local and international clients using Photoshop, Figma, and CMS (WordPress). Designing websites using Beaver Builder, Divi, and Elementor. Creating website mockups for larger screens, desktop, laptop, tablet, and mobile view. Providing graphic design such as logos, marketing materials, email signatures, etc.</p></article>
-<article class="job"><div class="job-heading"><h3>SHAZAMME</h3><time>MARCH 2023 – JUNE 2023</time></div><h4>Front-end Web Designer and Developer</h4><p>Focused on recruitment website design and development. Creating websites using DUDA, Figma to DUDA, PSD to DUDA. Maintenance of existing website clients. Shazamme is an Australian company and a provider of cloud-based digital marketing technology platform solutions for recruiters and corporate recruiters.</p></article>
-<article class="job"><div class="job-heading"><h3>FREELANCE</h3><time>APRIL 2020 – FEBRUARY 2023</time></div><h4>Graphic &amp; Web Designer / Frontend Web Developer</h4><p>Providing graphics and website design services to my local and international clients using Photoshop and CMS (WordPress). Designing websites using Beaver Builder, Divi, and Elementor. Creating website mockups for desktop, laptop, tablet, and mobile views. Providing graphic design such as logos, marketing materials, email signatures, etc.</p></article>
-<article class="job"><div class="job-heading"><h3>AFFINITYX</h3><time>NOVEMBER 2019 – MARCH 2020</time></div><h4>Front-end Web Designer &amp; Developer</h4><p>Responsible for handling old and new clients under GoDaddy account. Website maintenance, onsite SEO, and development. Designing websites using WordPress and Beaver Builder. Expected to deliver 1–2 websites per day.</p></article>
-<article class="job"><div class="job-heading"><h3>FREELANCE</h3><time>MAY 2018 – OCTOBER 2019</time></div><h4>Graphic &amp; Web Designer / Frontend Web Developer</h4><p>Providing graphics and website design services to my local and international clients using Photoshop and CMS (WordPress). Designing websites using Beaver Builder, Divi, and Elementor. Creating website mockups for desktop, laptop, tablet, and mobile views. Providing graphic design such as logos, marketing materials, email signatures, etc.</p></article>
-<article class="job"><div class="job-heading"><h3>RINGSIDE MARKETING CORPORATION</h3><time>MARCH 2016 – MARCH 2018</time></div><h4>Graphic &amp; Web Designer / Frontend Web Developer</h4><p>Australian company. Designing websites using WordPress, Beaver Builder, Divi, Elementor, and Avada. Creating website mockups for desktop, laptop, and mobile views using Photoshop. Leading teams across social media marketing, content writing, SEO, and web design and development. Driving projects forward and on time. Responsible for domain and web hosting security.</p></article>
-<article class="job"><div class="job-heading"><h3>FREELANCE</h3><time>DECEMBER 2015 – FEBRUARY 2016</time></div><h4>Graphic &amp; Web Designer / Frontend Web Developer</h4><p>Providing graphics and website design services to my local and international clients using Photoshop and CMS (WordPress). Designing websites using Beaver Builder, Divi, and Elementor. Creating website mockups for desktop, laptop, tablet, and mobile views. Providing graphic design such as logos, marketing materials, email signatures, etc.</p></article>
-<article class="job"><div class="job-heading"><h3>MARKETLINK WEB SOLUTIONS INC.</h3><time>MAY 2015 – NOVEMBER 2015</time></div><h4>Graphic &amp; Web Designer / Frontend Web Developer</h4><p>Designing websites using WordPress and Avada. Creating website mockups for desktop, laptop, tablet, and mobile views using Photoshop. Project Manager and Field Marketing. Providing graphic design such as logos, marketing materials, email signatures, etc.</p></article>
-<article class="job"><div class="job-heading"><h3>FREELANCE</h3><time>APRIL 2013 – FEBRUARY 2015</time></div><h4>Graphic Designer</h4><p>Providing graphic design services to local clients using Photoshop and other design applications as needed. Creating logos, marketing materials, email signatures, T-shirt printing designs, business cards, etc.</p></article>
-<article class="job"><div class="job-heading"><h3>ODIONGAN TOWN HALL</h3><time>SEPTEMBER 2012 – MARCH 2013</time></div><h4>Souvenir Program Editor</h4><p>Designing souvenir programs, flyers, folders, business cards, and IDs. Creating brochures for tourist spots in the province.</p></article>
-<article class="job"><div class="job-heading"><h3>SOFTKEY INTERNET CAFE</h3><time>JUNE 2008 – MARCH 2010</time></div><h4>Server / T-shirt Printing</h4><p>Computer hardware maintenance and graphic design. Monitoring computer clients and creating T-shirt designs to sell.</p></article>
-</section></main></div>
-<script>document.querySelectorAll('[data-placeholder-link]').forEach(link=>link.addEventListener('click',event=>event.preventDefault()));</script>
+
+<header class="main-header">
+<h1>JAKE HARLEY FOJAS</h1>
+<p class="subtitle">Graphic &amp; Web Designer</p>
+<p class="subtitle" style="margin-top:5px">Frontend Web Developer</p>
+</header>
+
+<section class="section">
+<h2 class="section-title">PROFILE</h2>
+<p class="profile-copy">
+Disciplined and analytical approach to web development projects, ability to work on my own with minimum supervision, drive projects forward, build customized websites to the highest specifications, work under pressure and to tight deadlines, work closely with other developers and professionals, make recommendations on the use of new and emerging technologies.
+</p>
+</section>
+
+<section class="section">
+<h2 class="section-title">WORK EXPERIENCE</h2>
+
+<article class="job">
+<div class="job-heading"><h3>POPEYES HAWAII</h3><time>JULY 30, 2025 - NOVEMBER 15, 2026</time></div>
+<h4>Graphic &amp; Web Designer / Frontend Web Developer</h4>
+<p>Developed and delivered creative assets for integrated marketing campaigns, including promotional graphics, magazine advertisements, television advertisements, flyers, posters, and in-store campaigns. Prepared production-ready label artwork and managed website content, promotional landing pages, and digital assets for Popeyes Hawaii. Contributed to maintaining a consistent brand experience across digital and print channels.</p>
+</article>
+
+<article class="job">
+<div class="job-heading"><h3>PRIORITY LABEL PRINTERS LLC</h3><time>MARCH 2024 - MAY 2026</time></div>
+<h4>Graphic &amp; Web Designer / Frontend Web Developer</h4>
+<p>Designed and prepared production-ready artwork for custom labels, product packaging, decals, and commercial print materials. Applied professional prepress techniques, including spot-color management, contour-cut paths, and Roland VersaWorks swatches to ensure accurate printing and finishing. Also developed, updated, and maintained company websites and digital marketing assets.</p>
+</article>
+
+<article class="job">
+<div class="job-heading"><h3>FREELANCE</h3><time>JUNE 2023 - FEBRUARY 2024</time></div>
+<h4>Graphic &amp; Web Designer / Frontend Web Developer</h4>
+<p>Delivered end-to-end graphic and web design solutions for local and international clients. Translated design concepts and Figma layouts into responsive WordPress websites using Beaver Builder, Divi, and Elementor. Produced website mockups, brand assets, logos, marketing collateral, and email signatures while adapting designs for desktop, tablet, and mobile experiences.</p>
+</article>
+
+<article class="job">
+<div class="job-heading"><h3>SHAZAMME</h3><time>MARCH 2023 – JUNE 2023</time></div>
+<h4>Front-end Web Designer and Developer</h4>
+<p>Designed and developed recruitment-focused websites using the DUDA platform, translating Figma and PSD designs into functional web experiences. Maintained existing client websites, implemented design updates, and supported ongoing website improvements. Collaborated within an Australian digital marketing technology company serving recruitment agencies and corporate recruitment teams.</p>
+</article>
+
+<article class="job">
+<div class="job-heading"><h3>FREELANCE</h3><time>APRIL 2020 – FEBRUARY 2023</time></div>
+<h4>Graphic &amp; Web Designer / Frontend Web Developer</h4>
+<p>Provided comprehensive creative and web development services to local and international clients. Built and customized WordPress websites using Beaver Builder, Divi, and Elementor, transforming design concepts into responsive and user-friendly web layouts. Created brand identities, logos, digital marketing materials, email signatures, and other visual assets tailored to client requirements.</p>
+</article>
+
+<article class="job">
+<div class="job-heading"><h3>AFFINITYX</h3><time>NOVEMBER 2019 – MARCH 2020</time></div>
+<h4>Front-end Web Designer &amp; Developer</h4>
+<p>Managed website development and maintenance projects for clients under GoDaddy accounts. Designed and implemented WordPress websites using Beaver Builder, performed on-page SEO, and handled website updates and technical maintenance. Worked within a high-volume production environment with an expected delivery target of one to two websites per day.</p>
+</article>
+
+<article class="job">
+<div class="job-heading"><h3>FREELANCE</h3><time>MAY 2018 – OCTOBER 2019</time></div>
+<h4>Graphic &amp; Web Designer / Frontend Web Developer</h4>
+<p>Delivered custom graphic design and WordPress development projects for local and international clients. Designed and implemented websites using Beaver Builder, Divi, and Elementor, with layouts optimized for desktop, tablet, and mobile devices. Produced logos, promotional graphics, marketing collateral, and other branded materials to support client business objectives.</p>
+</article>
+
+<article class="job">
+<div class="job-heading"><h3>RINGSIDE MARKETING CORPORATION</h3><time>MARCH 2016 – MARCH 2018</time></div>
+<h4>Graphic &amp; Web Designer / Frontend Web Developer</h4>
+<p>Designed and developed WordPress websites using Beaver Builder, Divi, Elementor, and Avada, translating creative concepts into responsive digital experiences. Led and coordinated multidisciplinary teams across graphic design, web development, SEO, content creation, and social media marketing. Managed project workflows, coordinated deliverables, and supported timely project execution. Also handled domain management, web hosting administration, and website security.</p>
+</article>
+
+<article class="job">
+<div class="job-heading"><h3>FREELANCE</h3><time>DECEMBER 2015 – FEBRUARY 2016</time></div>
+<h4>Graphic &amp; Web Designer / Frontend Web Developer</h4>
+<p>Provided graphic design and website development services for local and international clients. Created customized WordPress websites using Beaver Builder, Divi, and Elementor, and developed visual mockups for desktop, tablet, and mobile layouts. Produced logos, marketing materials, email signatures, and other creative assets based on client specifications.</p>
+</article>
+
+<article class="job">
+<div class="job-heading"><h3>MARKETLINK WEB SOLUTIONS INC.</h3><time>MAY 2015 – NOVEMBER 2015</time></div>
+<h4>Graphic &amp; Web Designer / Frontend Web Developer</h4>
+<p>Designed and developed WordPress websites using the Avada theme, creating visual mockups and responsive layouts for desktop, tablet, and mobile devices. Handled project coordination and supported field marketing initiatives while producing logos, promotional materials, email signatures, and other digital and print design assets.</p>
+</article>
+
+<article class="job">
+<div class="job-heading"><h3>FREELANCE</h3><time>APRIL 2013 – FEBRUARY 2015</time></div>
+<h4>Graphic Designer</h4>
+<p>Provided creative design services to local clients, producing professional visual materials for business and promotional use. Developed logos, business cards, marketing collateral, email signatures, T-shirt graphics, and other customized designs using Adobe Photoshop and other graphic design applications.</p>
+</article>
+
+<article class="job">
+<div class="job-heading"><h3>ODIONGAN TOWN HALL</h3><time>SEPTEMBER 2012 – MARCH 2013</time></div>
+<h4>Souvenir Program Editor</h4>
+<p>Designed and prepared publication materials, including souvenir programs, brochures, flyers, folders, business cards, and identification cards. Created promotional brochures highlighting local tourist destinations and contributed to the visual presentation of community and tourism-related materials.</p>
+</article>
+
+<article class="job">
+<div class="job-heading"><h3>SOFTKEY INTERNET CAFE</h3><time>JUNE 2008 – MARCH 2010</time></div>
+<h4>Server / T-shirt Printing</h4>
+<p>Supported daily internet cafe operations, monitored computer stations, and assisted customers with technical needs. Performed basic computer hardware maintenance and created custom T-shirt graphics for printing and commercial sale.</p>
+</article>
+
+</section>
+</main>
+</div>
+
+<script>
+document.querySelectorAll('[data-placeholder-link]').forEach(link => {
+    link.addEventListener('click', event => event.preventDefault());
+});
+</script>
+
 <script src="assets/js/image-protection.js"></script>
-</body></html>
+
+</body>
+</html>
