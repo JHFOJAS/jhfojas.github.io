@@ -14,15 +14,79 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="assets/images/jake-avatar.png">
   <link rel="stylesheet" href="assets/css/category-global.css">
-</head>
+  
+  <style>
 
+  .web-design-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(23, 19, 19, 0.94);
+    padding: 40px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .web-design-modal.open {
+    display: flex;
+  }
+
+  .web-design-modal-content {
+    width: 100%;
+    max-width: 1200px;
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .web-design-modal-content img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 5px;
+  }
+
+  .web-design-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: none;
+    border: none;
+    color: #F7F6F3;
+    font-size: 42px;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.25s ease;
+  }
+
+  .web-design-modal-close:hover {
+    color: #F04B22;
+  }
+
+  @media (max-width: 768px) {
+    .web-design-modal {
+      padding: 20px;
+    }
+
+    .web-design-modal-close {
+      top: 12px;
+      right: 18px;
+      font-size: 36px;
+    }
+  }
+</style>
+  
+</head>
 <body>
 
 <div class="page-container">
 <div id="categoryHeader"></div>
 
     <main>
-
       <section class="page-hero">
         <div class="section-label">
           SELECTED WORK / 02
@@ -50,7 +114,26 @@
       </section>
 
     </main>
+<div class="web-design-modal" id="webDesignModal" aria-hidden="true">
 
+  <button
+    class="web-design-modal-close"
+    id="webDesignModalClose"
+    type="button"
+    aria-label="Close presentation"
+  >
+    &times;
+  </button>
+
+  <div class="web-design-modal-content">
+    <img
+      id="webDesignModalImage"
+      src=""
+      alt="Website design presentation"
+    >
+  </div>
+
+</div>
 <div id="categoryFooter"></div>
 
   </div>
@@ -62,7 +145,41 @@
       "image-02.jpg",
       "image-03.jpg"
     ];
+    const webDesignModal = document.getElementById("webDesignModal");
+const webDesignModalImage = document.getElementById("webDesignModalImage");
+const webDesignModalClose = document.getElementById("webDesignModalClose");
 
+function openWebDesignModal(filename) {
+  webDesignModalImage.src =
+    `assets/images/portfolio/projects/web-design/presentations/${filename}`;
+
+  webDesignModalImage.alt =
+    `Website design presentation — ${filename}`;
+
+  webDesignModal.classList.add("open");
+  webDesignModal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+}
+
+function closeWebDesignModal() {
+  webDesignModal.classList.remove("open");
+  webDesignModal.setAttribute("aria-hidden", "true");
+  webDesignModalImage.src = "";
+  document.body.style.overflow = "";
+}
+
+webDesignModalClose.addEventListener("click", closeWebDesignModal);
+webDesignModal.addEventListener("click", (event) => {
+  if (event.target === webDesignModal) {
+    closeWebDesignModal();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && webDesignModal.classList.contains("open")) {
+    closeWebDesignModal();
+  }
+});
     const gallery = document.getElementById("webDesignGallery");
     const imageCount = document.getElementById("imageCount");
 
