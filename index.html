@@ -1745,13 +1745,19 @@ const modalClose = document.querySelector(".project-modal-close");
 const modalBackdrop = document.querySelector(".project-modal-backdrop");
 
 const projectData = {
-  branding: {
-    title: "Brand & Graphic Design",
-    description: "A showcase of visual communication, branding concepts, marketing graphics, and creative design. Actual project examples and visuals will be added later.",
-    discipline: "Graphic Design",
-    focus: "Branding & Visuals",
-    type: "Creative Portfolio"
-  },
+
+branding: {
+  title: "Brand & Graphic Design",
+  description: "A showcase of visual communication, branding concepts, marketing graphics, and creative design. Actual project examples and visuals will be added later.",
+  discipline: "Graphic Design",
+  focus: "Branding & Visuals",
+  type: "Creative Portfolio",
+  gallery: [
+    "assets/images/portfolio/projects/branding/image-01.jpg",
+    "assets/images/portfolio/projects/branding/image-02.jpg",
+    "assets/images/portfolio/projects/branding/image-03.jpg"
+  ]
+},
 
   "web-design": {
     title: "Website Design",
@@ -1780,6 +1786,7 @@ const projectData = {
 
 let lastFocusedCard = null;
 
+
 function openProjectModal(projectId, card) {
   const project = projectData[projectId];
 
@@ -1793,12 +1800,28 @@ function openProjectModal(projectId, card) {
   modalFocus.textContent = project.focus;
   modalType.textContent = project.type;
 
+  // Load project gallery images
+  modalGallery.innerHTML = "";
+
+  if (project.gallery && project.gallery.length > 0) {
+    project.gallery.forEach((imagePath, index) => {
+      const image = document.createElement("img");
+
+      image.src = imagePath;
+      image.alt = `${project.title} — Image ${index + 1}`;
+      image.loading = "lazy";
+
+      modalGallery.appendChild(image);
+    });
+  }
+
   projectModal.classList.add("open");
   projectModal.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
 
   modalClose.focus();
 }
+
 
 function closeProjectModal() {
   projectModal.classList.remove("open");
