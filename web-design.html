@@ -218,12 +218,29 @@
 const webDesignModalImage = document.getElementById("webDesignModalImage");
 const webDesignModalClose = document.getElementById("webDesignModalClose");
 
-function openWebDesignModal(filename) {
+
+// Track the currently displayed presentation
+let currentPresentationIndex = 0;
+
+// Display a presentation by its index
+function showWebDesignPresentation(index) {
+  currentPresentationIndex =
+    (index + sortedImages.length) % sortedImages.length;
+
+  const filename = sortedImages[currentPresentationIndex];
+
   webDesignModalImage.src =
     `assets/images/portfolio/projects/web-design/presentations/${filename}`;
 
   webDesignModalImage.alt =
     `Website design presentation — ${filename}`;
+}
+
+// Open the selected website presentation
+function openWebDesignModal(filename) {
+  const selectedIndex = sortedImages.indexOf(filename);
+
+  showWebDesignPresentation(selectedIndex);
 
   webDesignModal.classList.add("open");
   webDesignModal.setAttribute("aria-hidden", "false");
@@ -238,17 +255,41 @@ function closeWebDesignModal() {
 }
 
 webDesignModalClose.addEventListener("click", closeWebDesignModal);
+
+document.getElementById("webDesignModalPrev")
+  .addEventListener("click", () => {
+    showWebDesignPresentation(currentPresentationIndex - 1);
+  });
+
+document.getElementById("webDesignModalNext")
+  .addEventListener("click", () => {
+    showWebDesignPresentation(currentPresentationIndex + 1);
+  });
+
 webDesignModal.addEventListener("click", (event) => {
   if (event.target === webDesignModal) {
     closeWebDesignModal();
   }
 });
 
+
+// Keyboard navigation and modal closing
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && webDesignModal.classList.contains("open")) {
+  if (!webDesignModal.classList.contains("open")) return;
+
+  if (event.key === "Escape") {
     closeWebDesignModal();
   }
+
+  if (event.key === "ArrowLeft") {
+    showWebDesignPresentation(currentPresentationIndex - 1);
+  }
+
+  if (event.key === "ArrowRight") {
+    showWebDesignPresentation(currentPresentationIndex + 1);
+  }
 });
+
     const gallery = document.getElementById("webDesignGallery");
     const imageCount = document.getElementById("imageCount");
 
