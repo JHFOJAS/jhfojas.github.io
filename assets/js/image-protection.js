@@ -27,19 +27,22 @@
   }, true);
 
   // Discourage common browser save and source-view shortcuts.
-  document.addEventListener("keydown", function (event) {
-    if (!event.ctrlKey && !event.metaKey) return;
+document.addEventListener("keydown", function (event) {
+  const key = event.key.toLowerCase();
+  const modifier = event.ctrlKey || event.metaKey;
+  const shift = event.shiftKey;
 
-    const key = event.key.toLowerCase();
+  // Discourage common browser developer tools shortcuts.
+  if (
+    key === "f12" ||
+    (modifier && shift && ["i", "j", "c"].includes(key)) ||
+    (modifier && ["s", "u"].includes(key))
+  ) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+}, true);
 
-    if (
-      key === "s" ||
-      key === "u"
-    ) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-  }, true);
 
   // Make displayed images non-draggable by default.
   document.querySelectorAll("img").forEach(function (image) {
