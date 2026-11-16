@@ -35,9 +35,39 @@ a{color:inherit;text-decoration:none}
 
 .resume{max-width:1100px;margin:0 auto;background:var(--paper);display:grid;grid-template-columns:35% 65%;box-shadow:0 16px 48px rgba(0,0,0,.10);min-height:1250px}
 .resume-side{background:var(--charcoal);color:#f4f4f4;padding:0 30px 38px}
-.identity-block{min-height:168px;display:flex;align-items:center;justify-content:center;padding:25px 0}
-.portrait{width:100px;height:100px;border-radius:50%;overflow:hidden;border:4px solid var(--cyan);background:#424242;display:grid;place-items:center;color:var(--cyan);font:800 25px var(--heading-font);letter-spacing:-1px}
-.portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 22%}
+
+.identity-block{
+    width:100%;
+    min-height:0;
+    display:block;
+    padding:0;
+    margin:0;
+}
+
+.portrait{
+    width:100%;
+    height:320px;
+    border:0;
+    border-radius:0;
+    padding:0;
+    margin:0;
+    overflow:hidden;
+    background:#424242;
+    display:block;
+}
+
+.portrait img{
+    display:block;
+    width:100%;
+    height:100%;
+    padding:0;
+    margin:0;
+    border:0;
+    border-radius:0;
+    object-fit:cover;
+    object-position:center 22%;
+}
+
 .cyan-band{height:35px;background:var(--cyan);margin:0 -30px 18px}
 .side-section{padding:18px 0 20px;border-bottom:1px solid rgba(255,255,255,.28)}
 .side-section:last-of-type{border-bottom:0}
@@ -106,8 +136,8 @@ body{padding:0 10px 35px}
 .header-navigation a{font-size:11px}
 .resume{grid-template-columns:1fr;min-height:0}
 .resume-side{padding:0 24px 28px}
-.identity-block{min-height:145px}
-.portrait{width:90px;height:90px}
+.identity-block{min-height:0}
+.portrait{width:100%;height:280px}
 .cyan-band{margin-left:-24px;margin-right:-24px;height:30px}
 .side-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 22px}
 .contact-section{grid-column:1/-1}
@@ -135,8 +165,8 @@ body{padding:0;background:#fff}
 .site-header{display:none!important}
 .resume{max-width:none;min-height:0;box-shadow:none;grid-template-columns:35% 65%}
 .resume-side{padding:0 25px 28px}
-.identity-block{min-height:145px}
-.portrait{width:82px;height:82px}
+.identity-block{min-height:0}
+.portrait{width:100%;height:250px}
 .cyan-band{margin-left:-25px;margin-right:-25px;height:30px}
 .resume-main{padding:40px 35px}
 .job{break-inside:avoid}
