@@ -1208,15 +1208,10 @@ text-decoration: none;
     gap: 18px;
   }
 }
-
   </style>
   
 </head>
-
 <body>
-
-
-
 <div class="site-shell">
 
   <aside class="sidebar">
@@ -1244,7 +1239,6 @@ text-decoration: none;
       <a href="#contact">Contact</a>
     </nav>
 
-
     <div class="sidebar-social" aria-label="Social and contact links">
       <a href="#" class="social-link is-placeholder" aria-label="LinkedIn profile (link coming soon)" title="LinkedIn — link coming soon" data-placeholder-link>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 3.5a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4ZM3.4 9.4H7v11.2H3.4zM9.2 9.4h3.4v1.5h.1a3.7 3.7 0 0 1 3.3-1.8c3.5 0 4.2 2.3 4.2 5.3v6.2h-3.6v-5.5c0-1.3 0-3-1.9-3s-2.2 1.4-2.2 2.9v5.6H9.2z"/></svg>
@@ -1266,8 +1260,6 @@ text-decoration: none;
   </aside>
 
   <main class="main-content">
-
-  
 <header class="hero" id="home">
   <div class="container hero-grid">
 
@@ -1321,8 +1313,6 @@ text-decoration: none;
   </div>
 </header>
 
-
-  
   <section class="intro">
     <div class="container intro-grid">
       <div>
@@ -1352,7 +1342,6 @@ text-decoration: none;
       </div>
     </div>
   </section>
-
   
   <section class="services" id="services">
     <div class="container">
@@ -1361,7 +1350,6 @@ text-decoration: none;
           <div class="section-label">02 — What I Do</div>
           <h2>My Expertise.</h2>
         </div>
-
         <p>
           Creative thinking meets practical execution.
           Here's how I turn concepts into finished work.
@@ -1399,8 +1387,7 @@ text-decoration: none;
       </div>
     </div>
   </section>
-
-  
+    
   <section class="work" id="work">
     <div class="container">
       <div class="work-heading">
@@ -1484,9 +1471,7 @@ text-decoration: none;
             <span class="project-year">04 / 04</span>
           </div>
         </article>
-
       </div>
-
       <p class="work-note">
         Note: These are sample project covers, not actual yet client projects.
         I'll Replace them with my own portfolio images and project details soon.
@@ -1494,8 +1479,6 @@ text-decoration: none;
     </div>
   </section>
 
-  
-  
 <section class="about" id="about">
   <div class="container about-grid">
 
@@ -1539,7 +1522,6 @@ text-decoration: none;
     </div>
 
     <div class="experience-list">
-
       <div class="experience-item">
         <h3>01 / Graphic Design & Visual Communication</h3>
         <p>
@@ -1588,8 +1570,6 @@ text-decoration: none;
   </div>
 </section>
 
-
- 
   <section class="contact" id="contact">
     <div class="container">
       <div class="section-label">05 — Get In Touch</div>
@@ -1602,13 +1582,11 @@ text-decoration: none;
         and exciting digital projects.
       </p>
 
-     
       <a href="mailto:YOUR-EMAIL@example.com" class="btn">
         Let's Talk ↗
       </a>
     </div>
   </section>
-
 
   <footer>
     <div class="container footer-inner">
@@ -1676,19 +1654,16 @@ text-decoration: none;
     
 <script>
   
-// Keep not-yet-configured social profile links safely inactive.
 document.querySelectorAll('[data-placeholder-link]').forEach(link => {
   link.addEventListener('click', event => event.preventDefault());
 });
 
-// SIDEBAR NAVIGATION ACTIVE STATE
   const sidebarLinks = document.querySelectorAll('.sidebar-nav a[href^="#"]');
 
   const sections = document.querySelectorAll(
     "#home, #services, #work, #about, #contact"
   );
 
-  // Change active link
   function setActiveLink(sectionId) {
     sidebarLinks.forEach(link => {
       link.classList.toggle(
@@ -1698,7 +1673,6 @@ document.querySelectorAll('[data-placeholder-link]').forEach(link => {
     });
   }
 
-  // Update immediately when a navigation link is clicked
   sidebarLinks.forEach(link => {
     link.addEventListener("click", () => {
       const sectionId = link.getAttribute("href").substring(1);
@@ -1706,7 +1680,6 @@ document.querySelectorAll('[data-placeholder-link]').forEach(link => {
     });
   });
 
-  // Update automatically while scrolling
   const sectionObserver = new IntersectionObserver(entries => {
     const visibleSections = entries
       .filter(entry => entry.isIntersecting)
@@ -1723,8 +1696,7 @@ document.querySelectorAll('[data-placeholder-link]').forEach(link => {
   sections.forEach(section => {
     sectionObserver.observe(section);
   });
-
-  // Set active link on initial page load
+  
   const initialSection = window.location.hash.substring(1);
 
   if (initialSection) {
@@ -1893,10 +1865,9 @@ document.addEventListener("keydown", event => {
 });
 
 </script>
-
   </main>
 </div>
   
-
+<script src="assets/js/image-protection.js"></script>
 </body>
 </html>
