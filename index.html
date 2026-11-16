@@ -1053,7 +1053,36 @@
   transform: translateY(25px);
   transition: transform .3s ease;
 }
+.modal-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 28px 0;
+}
 
+.modal-gallery:empty {
+  display: none;
+}
+
+.modal-gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform .3s ease;
+}
+
+.modal-gallery img:hover {
+  transform: scale(1.02);
+}
+
+@media (max-width: 600px) {
+  .modal-gallery {
+    grid-template-columns: 1fr;
+  }
+}
 .project-modal.open .project-modal-content {
   transform: translateY(0);
 }
@@ -1605,7 +1634,8 @@
     <p id="modalDescription">
       Project description goes here.
     </p>
-
+      <div class="modal-gallery" id="modalGallery" aria-label="Project image gallery">
+</div>
     <div class="modal-details">
       <div>
         <span>DISCIPLINE</span>
