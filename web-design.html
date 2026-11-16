@@ -50,6 +50,55 @@
     border-radius: 5px;
   }
 
+/* Previous and Next Presentation Buttons */
+.web-design-modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(247, 246, 243, 0.12);
+  color: #F7F6F3;
+  border: 1px solid rgba(247, 246, 243, 0.25);
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+  z-index: 2;
+}
+
+.web-design-modal-nav:hover {
+  background: #F04B22;
+  color: #FFFFFF;
+}
+
+.web-design-modal-prev {
+  left: 25px;
+}
+
+.web-design-modal-next {
+  right: 25px;
+}
+
+@media (max-width: 768px) {
+  .web-design-modal-nav {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+
+  .web-design-modal-prev {
+    left: 10px;
+  }
+
+  .web-design-modal-next {
+    right: 10px;
+  }
+}
+
   .web-design-modal-close {
     position: absolute;
     top: 20px;
