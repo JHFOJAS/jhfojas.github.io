@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +24,6 @@ html{scroll-behavior:smooth}
 body{background:var(--page-bg);color:var(--ink);font-family:var(--font);font-size:14px;padding:0 22px 65px}
 a{color:inherit;text-decoration:none}
 
-/* HEADER */
 .site-header{min-height:90px;position:sticky;top:0;z-index:1000;background:rgba(247,246,243,.95);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid #E8E6E2;margin:0 -22px 35px;padding:0 5%}
 .header-inner{max-width:1400px;min-height:90px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:25px}
 .brand-logo{font:800 21px var(--heading-font);letter-spacing:-1px;white-space:nowrap;color:#303030}
@@ -35,7 +33,6 @@ a{color:inherit;text-decoration:none}
 .header-navigation a:hover{color:#1686a6}
 .back-portfolio{font-size:11px;font-weight:700;color:#303030;border-bottom:1px solid var(--cyan);padding-bottom:4px;white-space:nowrap}
 
-/* RESUME */
 .resume{max-width:1100px;margin:0 auto;background:var(--paper);display:grid;grid-template-columns:35% 65%;box-shadow:0 16px 48px rgba(0,0,0,.10);min-height:1250px}
 .resume-side{background:var(--charcoal);color:#f4f4f4;padding:0 30px 38px}
 .identity-block{min-height:168px;display:flex;align-items:center;justify-content:center;padding:25px 0}
@@ -51,7 +48,6 @@ a{color:inherit;text-decoration:none}
 .side-section p,.side-section li{font-size:12.5px;line-height:1.8;color:#e0e0e0}
 .side-section ul{list-style:none}
 
-/* SKILLS */
 .skills-list li{padding:8px 0 6px;border-bottom:1px solid rgba(255,255,255,.18)}
 .skills-list li:last-child{border-bottom:0}
 .skill-label{display:flex;justify-content:space-between;gap:8px;font-size:11.5px;font-weight:600;line-height:1.5;color:#f4f4f4}
@@ -59,11 +55,9 @@ a{color:inherit;text-decoration:none}
 .skill-track{height:5px;background:rgba(255,255,255,.2);margin-top:7px;border-radius:8px;overflow:hidden}
 .skill-track span{display:block;height:100%;background:var(--cyan);border-radius:8px}
 
-/* AI TOOLS */
 .ai-tools-list li{padding:5px 0;font-size:12.5px;line-height:1.7;color:#e0e0e0}
 .ai-tools-list li::before{content:"";display:inline-block;width:6px;height:6px;background:var(--cyan);border-radius:50%;margin:0 10px 1px 2px}
 
-/* SOCIAL */
 .socials{display:flex;gap:10px;padding-top:20px}
 .social-link{width:34px;height:34px;border:1px solid rgba(255,255,255,.55);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;transition:.2s}
 .social-link:hover{background:var(--cyan);border-color:var(--cyan);color:#222}
@@ -71,7 +65,6 @@ a{color:inherit;text-decoration:none}
 .social-link.email svg path{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .indeed-mark{font:bold italic 21px Arial}
 
-/* MAIN */
 .resume-main{padding:58px 50px 65px;min-width:0}
 .main-header{text-align:center;padding:0 0 28px;border-bottom:4px solid var(--cyan);margin-bottom:30px}
 .main-header h1{font:800 clamp(27px,3.3vw,39px)/1.15 var(--heading-font);letter-spacing:-1.2px;color:#333}
@@ -80,15 +73,15 @@ a{color:inherit;text-decoration:none}
 .section-title{font:700 16px var(--heading-font);letter-spacing:2.3px;margin-bottom:16px}
 .profile-copy{font-size:14px;line-height:1.9;color:#555}
 
-/* EXPERIENCE */
 .job{margin:0 0 25px;break-inside:avoid}
 .job-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
 .job h3{font:700 13px/1.5 var(--heading-font)}
+.job h3 a{transition:color .2s ease}
+.job h3 a:hover{color:#1686a6}
 .job time{font-size:11px;font-weight:700;white-space:nowrap;border:1px solid #999;border-radius:20px;padding:4px 9px;color:#555}
 .job h4{font-size:13px;color:#1686a6;font-weight:600;line-height:1.6;margin:6px 0 8px}
 .job p{font-size:13px;line-height:1.85;color:#555}
 
-/* TABLET */
 @media(max-width:900px){
 .site-header{padding:0 3%}
 .header-inner{gap:15px}
@@ -102,7 +95,6 @@ a{color:inherit;text-decoration:none}
 .job time{align-self:flex-start}
 }
 
-/* MOBILE */
 @media(max-width:760px){
 body{padding:0 10px 35px}
 .site-header{margin:0 -10px 22px;padding:0 18px}
@@ -125,7 +117,6 @@ body{padding:0 10px 35px}
 .job time{font-size:10px}
 }
 
-/* SMALL MOBILE */
 @media(max-width:460px){
 .side-grid{grid-template-columns:1fr}
 .resume-main{padding:32px 21px 38px}
@@ -138,7 +129,6 @@ body{padding:0 10px 35px}
 .header-navigation{gap:18px}
 }
 
-/* PRINT */
 @media print{
 @page{size:A4;margin:0}
 body{padding:0;background:#fff}
@@ -183,13 +173,14 @@ body{padding:0;background:#fff}
 <div class="cyan-band"></div>
 
 <section class="side-section contact-section">
-<div class="contact-item">✉ &nbsp;harleyjake09@gmail.com</div>
-<div class="contact-item">⌖ &nbsp;Caloocan City, Philippines</div>
+    <div class="contact-item">
+        ✉ &nbsp;<a href="mailto:harleyjake09@gmail.com" aria-label="Email Jake Harley Fojas">harleyjake09@gmail.com</a>
+    </div>
+    <div class="contact-item">⌖ &nbsp;Caloocan City, Philippines</div>
 </section>
 
 <div class="side-grid">
 
-<!-- SKILLS -->
 <section class="side-section">
 <h2>SKILLS</h2>
 <ul class="skills-list">
@@ -272,7 +263,6 @@ body{padding:0;background:#fff}
 </ul>
 </section>
 
-<!-- AI TOOLS -->
 <section class="side-section">
 <h2>AI TOOLS</h2>
 <ul class="ai-tools-list">
@@ -285,7 +275,6 @@ body{padding:0;background:#fff}
 </ul>
 </section>
 
-<!-- EDUCATION -->
 <section class="side-section">
 <h2>EDUCATION</h2>
 <strong>COMPUTER PROGRAMMING</strong>
@@ -296,7 +285,6 @@ body{padding:0;background:#fff}
 <p>2003 – 2007</p>
 </section>
 
-<!-- REFERENCE -->
 <section class="side-section">
 <h2>REFERENCE</h2>
 <strong>DANIEL WOLFE</strong>
@@ -310,13 +298,33 @@ body{padding:0;background:#fff}
 </div>
 
 <div class="socials" aria-label="Social and contact links">
-<a href="#" class="social-link" aria-label="LinkedIn profile coming soon" title="LinkedIn — link coming soon" data-placeholder-link>
-<svg viewBox="0 0 24 24"><path d="M5.2 3.5a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4ZM3.4 9.4H7v11.2H3.4zM9.2 9.4h3.4v1.5h.1a3.7 3.7 0 0 1 3.3-1.8c3.5 0 4.2 2.3 4.2 5.3v6.2h-3.6v-5.5c0-1.3 0-3-1.9-3s-2.2 1.4-2.2 2.9v5.6H9.2z"/></svg>
+
+<a href="https://www.linkedin.com/in/jake-harley-fojas-3a6631125/"
+   class="social-link"
+   aria-label="Visit Jake's LinkedIn profile"
+   title="LinkedIn">
+    <svg viewBox="0 0 24 24">
+        <path d="M5.2 3.5a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4ZM3.4 9.4H7v11.2H3.4zM9.2 9.4h3.4v1.5h.1a3.7 3.7 0 0 1 3.3-1.8c3.5 0 4.2 2.3 4.2 5.3v6.2h-3.6v-5.5c0-1.3 0-3-1.9-3s-2.2 1.4-2.2 2.9v5.6H9.2z"/>
+    </svg>
 </a>
-<a href="mailto:harleyjake09@gmail.com" class="social-link email" aria-label="Email Jake">
-<svg viewBox="0 0 24 24"><path d="M3 5.5h18v13H3z"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>
+
+<a href="mailto:harleyjake09@gmail.com"
+   class="social-link email"
+   aria-label="Send Jake an email"
+   title="Email">
+    <svg viewBox="0 0 24 24">
+        <path d="M3 5.5h18v13H3z"/>
+        <path d="m3.5 6 8.5 7 8.5-7"/>
+    </svg>
 </a>
-<a href="#" class="social-link" aria-label="Indeed profile coming soon" title="Indeed — link coming soon" data-placeholder-link><span class="indeed-mark">i</span></a>
+
+<a href="https://profile.indeed.com/?hl=en_PH&amp;co=PH&amp;from=gnav-homepage--homepage-frontend"
+   class="social-link"
+   aria-label="Visit Jake's Indeed profile"
+   title="Indeed">
+    <span class="indeed-mark">i</span>
+</a>
+
 </div>
 
 </aside>
@@ -340,13 +348,13 @@ Disciplined and analytical approach to web development projects, ability to work
 <h2 class="section-title">WORK EXPERIENCE</h2>
 
 <article class="job">
-<div class="job-heading"><h3>POPEYES HAWAII</h3><time>JULY 30, 2025 - NOVEMBER 15, 2026</time></div>
+<div class="job-heading"><h3><a href="https://popeyeshawaii.com/" target="_blank" rel="noopener noreferrer">POPEYES HAWAII</a></h3><time>JULY 30, 2025 - NOVEMBER 15, 2026</time></div>
 <h4>Graphic &amp; Web Designer / Frontend Web Developer</h4>
 <p>Developed and delivered creative assets for integrated marketing campaigns, including promotional graphics, magazine advertisements, television advertisements, flyers, posters, and in-store campaigns. Prepared production-ready label artwork and managed website content, promotional landing pages, and digital assets for Popeyes Hawaii. Contributed to maintaining a consistent brand experience across digital and print channels.</p>
 </article>
 
 <article class="job">
-<div class="job-heading"><h3>PRIORITY LABEL PRINTERS LLC</h3><time>MARCH 2024 - MAY 2026</time></div>
+<div class="job-heading"><h3><a href="https://prioritylabelprinters.com/" target="_blank" rel="noopener noreferrer">PRIORITY LABEL PRINTERS LLC</a></h3><time>MARCH 2024 - MAY 2026</time></div>
 <h4>Graphic &amp; Web Designer / Frontend Web Developer</h4>
 <p>Designed and prepared production-ready artwork for custom labels, product packaging, decals, and commercial print materials. Applied professional prepress techniques, including spot-color management, contour-cut paths, and Roland VersaWorks swatches to ensure accurate printing and finishing. Also developed, updated, and maintained company websites and digital marketing assets.</p>
 </article>
@@ -358,7 +366,7 @@ Disciplined and analytical approach to web development projects, ability to work
 </article>
 
 <article class="job">
-<div class="job-heading"><h3>SHAZAMME</h3><time>MARCH 2023 – JUNE 2023</time></div>
+<div class="job-heading"><h3><a href="https://www.shazamme.com/" target="_blank" rel="noopener noreferrer">SHAZAMME</a></h3><time>MARCH 2023 – JUNE 2023</time></div>
 <h4>Front-end Web Designer and Developer</h4>
 <p>Designed and developed recruitment-focused websites using the DUDA platform, translating Figma and PSD designs into functional web experiences. Maintained existing client websites, implemented design updates, and supported ongoing website improvements. Collaborated within an Australian digital marketing technology company serving recruitment agencies and corporate recruitment teams.</p>
 </article>
@@ -370,7 +378,7 @@ Disciplined and analytical approach to web development projects, ability to work
 </article>
 
 <article class="job">
-<div class="job-heading"><h3>AFFINITYX</h3><time>NOVEMBER 2019 – MARCH 2020</time></div>
+<div class="job-heading"><h3><a href="https://affinityx.com/" target="_blank" rel="noopener noreferrer">AFFINITYX</a></h3><time>NOVEMBER 2019 – MARCH 2020</time></div>
 <h4>Front-end Web Designer &amp; Developer</h4>
 <p>Managed website development and maintenance projects for clients under GoDaddy accounts. Designed and implemented WordPress websites using Beaver Builder, performed on-page SEO, and handled website updates and technical maintenance. Worked within a high-volume production environment with an expected delivery target of one to two websites per day.</p>
 </article>
@@ -382,7 +390,7 @@ Disciplined and analytical approach to web development projects, ability to work
 </article>
 
 <article class="job">
-<div class="job-heading"><h3>RINGSIDE MARKETING CORPORATION</h3><time>MARCH 2016 – MARCH 2018</time></div>
+<div class="job-heading"><h3><a href="https://ringsidemarketingcorporation.com/" target="_blank" rel="noopener noreferrer">RINGSIDE MARKETING CORPORATION</a></h3><time>MARCH 2016 – MARCH 2018</time></div>
 <h4>Graphic &amp; Web Designer / Frontend Web Developer</h4>
 <p>Designed and developed WordPress websites using Beaver Builder, Divi, Elementor, and Avada, translating creative concepts into responsive digital experiences. Led and coordinated multidisciplinary teams across graphic design, web development, SEO, content creation, and social media marketing. Managed project workflows, coordinated deliverables, and supported timely project execution. Also handled domain management, web hosting administration, and website security.</p>
 </article>
@@ -394,7 +402,7 @@ Disciplined and analytical approach to web development projects, ability to work
 </article>
 
 <article class="job">
-<div class="job-heading"><h3>MARKETLINK WEB SOLUTIONS INC.</h3><time>MAY 2015 – NOVEMBER 2015</time></div>
+<div class="job-heading"><h3><a href="https://marketlinkwebsolutions.com/" target="_blank" rel="noopener noreferrer">MARKETLINK WEB SOLUTIONS INC.</a></h3><time>MAY 2015 – NOVEMBER 2015</time></div>
 <h4>Graphic &amp; Web Designer / Frontend Web Developer</h4>
 <p>Designed and developed WordPress websites using the Avada theme, creating visual mockups and responsive layouts for desktop, tablet, and mobile devices. Handled project coordination and supported field marketing initiatives while producing logos, promotional materials, email signatures, and other digital and print design assets.</p>
 </article>
@@ -420,12 +428,6 @@ Disciplined and analytical approach to web development projects, ability to work
 </section>
 </main>
 </div>
-
-<script>
-document.querySelectorAll('[data-placeholder-link]').forEach(link => {
-    link.addEventListener('click', event => event.preventDefault());
-});
-</script>
 
 <script src="assets/js/image-protection.js"></script>
 
