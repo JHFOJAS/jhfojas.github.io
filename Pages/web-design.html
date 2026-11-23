@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Website Design | Jake Harley Fojas</title>
+  <meta name="description" content="Explore website design, WordPress development, landing pages, and digital experiences by Jake Harley Fojas.">
+
+  <link rel="icon" type="image/png" href="../assets/images/jake-avatar.png">
+  <link rel="stylesheet" href="https://use.typekit.net/cej8zmi.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/category-global.css">
+
+  <style>
+    /* Web Design project cards — scoped to this page only */
+    #webDesignGallery .web-project-card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background: #F7F6F3;
+      border: 1px solid rgba(23, 19, 19, 0.10);
+      border-radius: 12px;
+      height: 100%;
+    }
+
+    #webDesignGallery .web-project-thumbnail {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: #E9E7E2;
+    }
+
+    #webDesignGallery .web-project-thumbnail img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+
+    #webDesignGallery .web-project-card:hover .web-project-thumbnail img {
+      transform: scale(1.035);
+    }
+
+    #webDesignGallery .web-project-info {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 22px;
+    }
+
+    #webDesignGallery .web-project-info h2 {
+      margin: 0;
+      color: #171313;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 21px;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    #webDesignGallery .web-project-info p {
+      margin: 0;
+      color: #625D59;
+      font-family: "DM Sans", sans-serif;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    #webDesignGallery .web-project-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      margin-top: auto;
+      padding: 0 20px;
+      border: 1px solid #171313;
+      border-radius: 4px;
+      background: #171313;
+      color: #F7F6F3;
+      font-family: "DM Sans", sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.25s ease, border-color 0.25s ease;
+    }
+
+    #webDesignGallery .web-project-button:hover {
+      border-color: #F04B22;
+      background: #F04B22;
+      color: #FFFFFF;
+    }
+
+    @media (max-width: 600px) {
+      #webDesignGallery .web-project-info {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-container">
+<div id="categoryHeader"></div>
+
+    <main>
+      <section class="page-hero">
+        <div class="section-label">
+          SELECTED WORK / 02
+        </div>
+
+        <h1>
+          Website <span>Design.</span>
+        </h1>
+
+        <div class="hero-bottom">
+          <p class="hero-description">
+            A collection of website designs, WordPress development,
+            responsive layouts, landing pages, and digital experiences
+            created to bring ideas and brands to life online.
+          </p>
+
+          <div class="image-count" id="imageCount">
+            00 DESIGN PIECES
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery-section">
+        <div class="gallery-grid" id="webDesignGallery"></div>
+      </section>
+
+    </main>
+<div id="categoryFooter"></div>
+
+  </div>
+
+  <script>
+    // Add future website projects here using the same object structure.
+    const webDesignProjects = [
+      {
+        title: "Aurelion Watch",
+        description: "An interactive luxury watch concept exploring premium product presentation and immersive 3D web design.",
+        thumbnail: "image-01.jpg",
+        url: "../assets/images/portfolio/projects/web-design/presentations/aurelion-watch.html"
+      }
+    ];
+
+    const gallery = document.getElementById("webDesignGallery");
+    const imageCount = document.getElementById("imageCount");
+
+    webDesignProjects.forEach((project) => {
+      const card = document.createElement("article");
+      card.className = "gallery-item web-project-card";
+
+      const thumbnailLink = document.createElement("a");
+      thumbnailLink.className = "web-project-thumbnail";
+      thumbnailLink.href = project.url;
+      thumbnailLink.target = "_blank";
+      thumbnailLink.rel = "noopener noreferrer";
+      thumbnailLink.setAttribute("aria-label", `View ${project.title} project`);
+
+      const image = document.createElement("img");
+      image.src = `../assets/images/portfolio/projects/web-design/thumbnails/${project.thumbnail}`;
+      image.alt = `${project.title} website design thumbnail`;
+      image.loading = "lazy";
+      thumbnailLink.appendChild(image);
+
+      const info = document.createElement("div");
+      info.className = "web-project-info";
+
+      const title = document.createElement("h2");
+      title.textContent = project.title;
+
+      const description = document.createElement("p");
+      description.textContent = project.description;
+
+      const button = document.createElement("a");
+      button.className = "web-project-button";
+      button.href = project.url;
+      button.target = "_blank";
+      button.rel = "noopener noreferrer";
+      button.textContent = "View Project";
+
+      info.append(title, description, button);
+      card.append(thumbnailLink, info);
+      gallery.appendChild(card);
+    });
+
+    imageCount.textContent =
+      `${webDesignProjects.length.toString().padStart(2, "0")} DESIGN PIECES`;
+  </script>
+<script src="../assets/js/category-global.js"></script>
+<script src="../assets/js/image-protection.js"></script>
+</body>
+</html>
