@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aurelion | Automatic watches, assembled by hand</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#0b1210;--fg:#ece6d6;--mut:#a39d8c;--gold:#c6a15b;--wine:#6b1f2a;--line:rgba(198,161,91,.28);color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*:before,*:after{box-sizing:inherit}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 16px/1.65 Manrope,system-ui,sans-serif}
+#c{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:16px 5vw;background:linear-gradient(var(--bg),transparent)}
+.logo{display:flex;align-items:center;gap:12px;color:var(--gold);text-decoration:none}
+.logo svg{width:38px;height:38px}
+.logo b{font:600 22px/1 "Cormorant Garamond",serif;letter-spacing:.32em}
+.btn{display:inline-block;border:1px solid var(--gold);color:var(--fg);background:transparent;padding:12px 24px;font:500 15px Manrope,sans-serif;text-decoration:none;cursor:pointer;border-radius:2px;transition:background .25s,color .25s}
+.btn:hover,.btn:focus-visible{background:var(--gold);color:#16120a;outline:none}
+.btn.f{background:var(--gold);color:#16120a}.btn.f:hover{background:var(--fg);border-color:var(--fg)}
+#bar{position:fixed;top:0;left:0;height:2px;width:0;background:var(--gold);z-index:6}
+#dots{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:5;display:flex;flex-direction:column;gap:10px}
+#dots i{width:7px;height:7px;border-radius:50%;border:1px solid var(--gold);cursor:pointer;transition:.3s}
+#dots i.on{background:var(--gold);transform:scale(1.5)}
+main{position:relative;z-index:2}
+.s{min-height:100vh;display:flex;align-items:center;padding:90px 8vw}
+.s.r{justify-content:flex-end}
+.card{max-width:430px;padding:30px;background:rgba(11,18,16,.62);backdrop-filter:blur(10px);border-left:2px solid var(--gold);position:fixed;z-index:3;top:50%;left:8vw;width:430px;pointer-events:none;opacity:0;transform:translateY(calc(-50% + 16px));transition:opacity .35s,transform .35s}
+.s.r .card{left:auto;right:8vw}
+.s.on .card{opacity:1;transform:translateY(-50%);pointer-events:auto;transition:opacity .9s,transform .9s}
+.n{color:var(--gold);font:500 13px Manrope;margin:0 0 8px}
+h1,h2,h3{font-family:"Cormorant Garamond",serif;font-weight:500;line-height:1.05;margin:0 0 16px}
+h1{font-size:clamp(46px,7vw,92px)}h2{font-size:clamp(34px,4.4vw,56px)}h3{font-size:28px}
+.lead{font:italic 400 22px/1.35 "Cormorant Garamond",serif;color:var(--gold);margin:0 0 14px}
+p{margin:0 0 16px;color:var(--mut)}
+.sp{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.sp span{border:1px solid var(--line);padding:7px 13px;font-size:13px;color:var(--fg)}
+.sp em{font-style:normal;color:var(--gold);margin-right:6px}
+.row{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+#end{flex-direction:column;align-items:stretch;justify-content:center;gap:34px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.w{padding:26px;border:1px solid var(--line);background:rgba(11,18,16,.72);backdrop-filter:blur(10px);transition:border-color .3s,transform .3s}
+.w:hover{border-color:var(--gold);transform:translateY(-4px)}
+.w .pr{font:500 26px "Cormorant Garamond",serif;color:var(--fg);margin:10px 0 14px}
+form{display:flex;gap:10px;flex-wrap:wrap}
+input{flex:1;min-width:220px;background:rgba(11,18,16,.8);border:1px solid var(--line);color:var(--fg);padding:12px 14px;font:inherit}
+input:focus{outline:2px solid var(--gold)}
+footer{font-size:13px;color:var(--mut)}
+.cr{color:var(--gold);text-underline-offset:3px}.cr:hover,.cr:focus-visible{color:var(--fg)}
+@media(max-width:760px){.s{padding:90px 5vw}.card{top:auto;bottom:calc(4vh + env(safe-area-inset-bottom,0px));left:5vw!important;right:5vw!important;width:auto!important;max-width:none!important;padding:22px;transform:translateY(16px)}.s.on .card{transform:none}#dots{display:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style></head><body>
+<div id="bar"></div>
+<nav><a class="logo" href="#top" aria-label="Aurelion">
+<svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="20" cy="20" r="14.5" fill="none" stroke="currentColor" stroke-width=".5" stroke-dasharray="1.2 2.2"/><path d="M12.5 28 20 11l7.5 17M15.6 22.5h8.8" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="20" cy="5.4" r="1.5" fill="currentColor"/></svg><b>AURELION</b></a>
+<a class="btn" href="#end">Reserve a watch</a></nav>
+<div id="dots"></div>
+<canvas id="c"></canvas>
+<main id="top">
+<section class="s"><div class="card" style="width:520px;max-width:calc(100vw - 10vw)">
+<p class="n">Automatic manufacture, Geneva</p>
+<h1>Time, assembled by hand.</h1>
+<p>Every Aurelion carries 214 parts, each finished by one watchmaker. Scroll to take the Calibre A-01 apart, layer by layer.</p>
+<div class="sp"><span><em>28,800</em>beats per hour</span><span><em>72 h</em>power reserve</span><span><em>100 m</em>water resistant</span></div>
+<div class="row"><a class="btn f" href="#p1" data-go="1">Explore the watch</a><a class="btn" href="#end">Book a private viewing</a></div>
+<p style="margin:24px 0 0;padding-top:14px;border-top:1px solid var(--line);font-size:13px">Created by <a class="cr" href="https://jhfojas.github.io/resume.html" target="_blank" rel="noopener">Jake Harley</a>, Senior Graphic and Web Designer</p></div></section>
+<div id="parts" style="display:contents"></div>
+<section class="s" id="end"><div>
+<h2>Three ways to wear the same movement</h2>
+<div class="grid" style="margin-top:22px">
+<div class="w" data-b="0xc6a15b" data-d="0x24406e"><h3>Nocturne</h3><p>Yellow gold bezel, midnight blue dial.</p><div class="pr">$18,900</div><a class="btn" href="#end">Reserve Nocturne</a></div>
+<div class="w" data-b="0xc2c6ce" data-d="0x1f5240"><h3>Meridian</h3><p>Polished steel bezel, forest green dial.</p><div class="pr">$12,400</div><a class="btn" href="#end">Reserve Meridian</a></div>
+<div class="w" data-b="0xb76e79" data-d="0x35303a"><h3>Eclipse</h3><p>Rose gold bezel, black lacquer dial.</p><div class="pr">$21,600</div><a class="btn" href="#end">Reserve Eclipse</a></div></div>
+</div>
+<div class="w"><h3>Book a private viewing</h3><p>Leave your email and a watchmaker will reply within one working day.</p>
+<form id="f"><input type="email" required placeholder="you@example.com" aria-label="Email"><button class="btn f">Request a viewing</button></form><p id="ok" style="margin:10px 0 0;color:var(--gold)"></p></div>
+<footer>Aurelion is a demo brand. Prices and specifications are placeholders.<br>Created by <a class="cr" href="https://jhfojas.github.io/resume.html" target="_blank" rel="noopener">Jake Harley</a>, Senior Graphic and Web Designer.</footer></section>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const D=[
+['crystal','Sapphire crystal','Harder than steel, clearer than glass.','Grown from synthetic sapphire and coated three times against glare. Only a diamond can scratch it.',[['9','Mohs hardness'],['2.4 mm','domed']]],
+['case','Case and bezel','One block of steel, six hours of polishing.','The 316L case is machined, then finished by hand. The gold bezel clicks in both directions.',[['40 mm','diameter'],['100 m','water resistance']]],
+['dial','The dial','Seven layers of lacquer, twelve gold markers.','Each marker is set by hand under a loupe, with lume underneath so the dial glows after dark.',[['18k','solid gold markers']]],
+['hands','The hands','Three hands, one quiet sweep.','Dauphine hands are cut, bevelled and polished by hand. The seconds hand glides with no tick.',[['28,800','beats per hour']]],
+['movement','Calibre A-01','214 parts and 31 ruby jewels.','A finished gear train under Geneva-waved bridges, assembled and regulated by one watchmaker.',[['214','parts'],['31','jewels'],['72 h','reserve']]],
+['balance','Balance wheel','Eight beats every second.','A free-sprung balance with a Breguet hairspring swings at 4 Hz. Each watch is timed in six positions.',[['4 Hz','frequency'],['±2 s','per day']]],
+['rotor','Rose gold rotor','Your wrist winds it.','A 22k half-moon rotor swings with every movement of your arm and winds the mainspring. No battery, ever.',[['22k','rose gold']]],
+['caseback','Sapphire caseback','Nothing to hide.','Turn it over and watch the engine run. Each caseback is engraved with a serial number and the maker’s signature.',[['1 of 500','numbered edition']]]];
+const FOC=[null,['crystal'],['case','bezel'],['dial'],['hands'],['movement'],['balance'],['rotor'],['caseback'],null];
+const host=document.getElementById('parts');
+D.forEach((d,i)=>{const s=document.createElement('section');s.className='s'+(i%2?' r':'');s.id='p'+(i+1);
+s.innerHTML=`<div class="card"><p class="n">Part ${i+1} of 8</p><h2>${d[1]}</h2><p class="lead">${d[2]}</p><p>${d[3]}</p><div class="sp">${d[4].map(x=>`<span><em>${x[0]}</em>${x[1]}</span>`).join('')}</div></div>`;host.appendChild(s)});
+const secs=[...document.querySelectorAll('.s')],dots=document.getElementById('dots');
+secs.forEach((s,i)=>{const d=document.createElement('i');d.onclick=()=>s.scrollIntoView({behavior:'smooth',block:'center'});dots.appendChild(d)});
+document.querySelector('[data-go]').onclick=e=>{e.preventDefault();secs[1].scrollIntoView({behavior:'smooth',block:'center'})};
+document.getElementById('f').onsubmit=e=>{e.preventDefault();document.getElementById('ok').textContent='Thank you. A watchmaker will write to you soon.';e.target.reset()};
+
+const T=THREE,R=new T.WebGLRenderer({canvas:document.getElementById('c'),antialias:true,alpha:true});
+R.setPixelRatio(Math.min(devicePixelRatio,2));R.outputEncoding=T.sRGBEncoding;R.toneMapping=T.ACESFilmicToneMapping;R.toneMappingExposure=1.2;
+const S=new T.Scene(),C=new T.PerspectiveCamera(38,1,.1,100);
+(()=>{const e=new T.Scene();e.add(new T.Mesh(new T.BoxGeometry(40,40,40),new T.MeshBasicMaterial({color:0x10151a,side:T.BackSide})));
+const sb=(x,y,z,w,h,c)=>{const m=new T.Mesh(new T.PlaneGeometry(w,h),new T.MeshBasicMaterial({color:new T.Color(c).multiplyScalar(8),side:T.DoubleSide}));m.position.set(x,y,z);m.lookAt(0,0,0);e.add(m)};
+sb(8,10,12,14,8,0xfff4e0);sb(-14,2,8,5,16,0xcfe0ff);sb(0,-12,6,18,4,0xffe2b0);sb(0,16,-6,20,6,0xffffff);sb(14,-4,-10,6,12,0xffd9a0);sb(0,0,16,10,3,0xffffff);
+S.environment=new T.PMREMGenerator(R).fromScene(e,.03).texture})();
+S.add(new T.AmbientLight(0xffffff,.12));
+let L=new T.DirectionalLight(0xfff1d6,.9);L.position.set(3,4,6);S.add(L);const KL=L;
+L=new T.PointLight(0xc6a15b,.8,30);L.position.set(-5,-2,4);S.add(L);
+const E=(c,m,r,o,x)=>new T.MeshPhysicalMaterial(Object.assign({color:c,metalness:m,roughness:r,transparent:true,opacity:o||1,side:T.DoubleSide,envMapIntensity:1.3},x||{}));
+const gold=()=>E(0xe0b66a,1,.18,1,{clearcoat:.7,clearcoatRoughness:.05}),steel=()=>E(0xd5d9e0,1,.15,1,{clearcoat:.4,clearcoatRoughness:.08}),rose=()=>E(0xc98a8a,1,.2,1,{clearcoat:.6,clearcoatRoughness:.06});
+const lume=()=>E(0xe6ffe8,0,.6,1,{emissive:0x66ff99,emissiveIntensity:.55});
+const tex=(w,h,fn)=>{const c=document.createElement('canvas');c.width=w;c.height=h;fn(c.getContext('2d'),w,h);const t=new T.CanvasTexture(c);t.encoding=T.sRGBEncoding;t.anisotropy=8;return t};
+const cyl=(r,h,m,o)=>{const x=new T.Mesh(new T.CylinderGeometry(r,r,h,96,1,!!o),m);x.rotation.x=Math.PI/2;return x};
+const box=(w,h,d,m,x,y,z,rz)=>{const b=new T.Mesh(new T.BoxGeometry(w,h,d),m);b.position.set(x,y,z);b.rotation.z=rz||0;return b};
+const rb=(w,h,d,m,x,y,z)=>{const s=new T.Shape();s.moveTo(-w/2,-h/2);s.lineTo(w/2,-h/2);s.lineTo(w/2,h/2);s.lineTo(-w/2,h/2);s.closePath();const g=new T.ExtrudeGeometry(s,{depth:d,bevelEnabled:true,bevelSize:.03,bevelThickness:.03,bevelSegments:3});g.translate(0,0,-d/2);const o=new T.Mesh(g,m);o.position.set(x,y,z);return o};
+const brushT=tex(512,512,(c,w,h)=>{c.fillStyle='#d0d0d0';c.fillRect(0,0,w,h);for(let i=0;i<1400;i++){const v=170+Math.random()*60|0;c.fillStyle=`rgba(${v},${v},${v},.5)`;c.fillRect(0,Math.random()*h,w,Math.random()*1.6+.3)}});
+brushT.wrapS=brushT.wrapT=T.RepeatWrapping;
+const steelB=()=>E(0xd5d9e0,1,.3,1,{roughnessMap:brushT,clearcoat:.3,clearcoatRoughness:.15});
+const leather=(bump,holes)=>tex(512,740,(c,w,h)=>{c.fillStyle=bump?'#808080':'#3a2314';c.fillRect(0,0,w,h);
+if(!bump){const g=c.createLinearGradient(0,0,w,0);g.addColorStop(0,'rgba(0,0,0,.35)');g.addColorStop(.12,'rgba(0,0,0,0)');g.addColorStop(.88,'rgba(0,0,0,0)');g.addColorStop(1,'rgba(0,0,0,.35)');c.fillStyle=g;c.fillRect(0,0,w,h)}
+for(let i=0;i<14000;i++){const x=Math.random()*w,y=Math.random()*h,r=1+Math.random()*2.6;c.fillStyle=bump?'rgba(0,0,0,.28)':(Math.random()>.35?'rgba(0,0,0,.12)':'rgba(255,205,160,.06)');c.beginPath();c.arc(x,y,r,0,7);c.fill()}
+c.strokeStyle=bump?'#fff':'#e6cf9f';c.lineWidth=bump?6:5;c.setLineDash([20,13]);[36,w-36].forEach(x=>{c.beginPath();c.moveTo(x,0);c.lineTo(x,h);c.stroke()});
+if(holes){c.setLineDash([]);for(let i=0;i<7;i++){const y=250+i*62;c.fillStyle=bump?'#000':'#120a05';c.beginPath();c.arc(w/2,y,15,0,7);c.fill();c.strokeStyle=bump?'#aaa':'#5a3a22';c.lineWidth=4;c.stroke()}}});
+const strap=(sg,ho)=>{const gm=new T.BoxGeometry(1.1,1.6,.1,6,24,1),p=gm.attributes.position;for(let i=0;i<p.count;i++){const d=(p.getY(i)*sg+.8)/1.6;p.setZ(i,p.getZ(i)-d*d*.35);p.setX(i,p.getX(i)*(1-d*.16))}gm.computeVertexNormals();
+const m=new T.Mesh(gm,E(0x8a8a8a,0,.7,1,{map:leather(0,ho),bumpMap:leather(1,ho),bumpScale:1.1,envMapIntensity:.45,clearcoat:.05,clearcoatRoughness:.6}));m.position.set(0,sg*2.5,0);return m};
+const rotT=tex(1024,1024,(c,w,h)=>{c.fillStyle='#c98f8f';c.fillRect(0,0,w,h);c.translate(512,512);for(let i=0;i<200;i++){c.rotate(Math.PI/100);c.fillStyle=i%2?'rgba(255,225,215,.1)':'rgba(70,20,25,.08)';c.fillRect(0,0,3,520)}c.setTransform(1,0,0,1,0,0);c.fillStyle='#3d1218';c.textAlign='center';
+const sp=(t,y,f,k)=>{c.font=f;let x=512-(t.length-1)*k/2;t.split('').forEach(ch=>{c.fillText(ch,x,y);x+=k})};sp('AURELION',380,'600 96px Georgia,serif',84);sp('CALIBRE A-01',480,'600 46px Arial,sans-serif',40);sp('22K ROSE GOLD',250,'600 38px Arial,sans-serif',34)});
+rotT.repeat.set(1/2.4,1/2.4);rotT.offset.set(.5,.5);
+const rotM=()=>E(0xffffff,1,.22,1,{map:rotT,clearcoat:.5,clearcoatRoughness:.08});
+const engT=tex(1024,1024,(c)=>{c.translate(512,512);c.fillStyle='#262a31';c.font='700 58px Arial,sans-serif';c.textAlign='center';const s='AURELION  AUTOMATIC  SWISS MADE  No. 0247/500  ';for(let i=0;i<s.length;i++){c.save();c.rotate(i/s.length*6.2832);c.translate(0,-410);c.fillText(s[i],0,0);c.restore()}c.setTransform(1,0,0,1,0,0);c.strokeStyle='#5c626c';c.lineWidth=3;c.beginPath();c.arc(512,512,470,0,7);c.stroke();c.beginPath();c.arc(512,512,350,0,7);c.stroke()});
+const W=new T.Group();S.add(W);const P={};let HH,MM,SS,GE=[],BW,RT;
+function part(n,z0,z1,fn){const g=new T.Group();fn(g);const p=P[n]={g,z0,z1,mats:[],op:1};g.traverse(o=>{if(o.material){o.material.userData.b=o.material.opacity;p.mats.push(o.material)}});W.add(g)}
+function gear(r,n,th,m){const s=new T.Shape(),q=Math.PI*2/n,ri=r*.86;
+for(let i=0;i<n;i++){[[0,ri],[.15,r],[.5,r],[.65,ri]].forEach((k,j)=>{const a=(i+k[0])*q,x=Math.cos(a)*k[1],y=Math.sin(a)*k[1];i+j?s.lineTo(x,y):s.moveTo(x,y)})}
+const h=new T.Path();h.absarc(0,0,r*.22,0,7,true);s.holes.push(h);
+for(let i=0;i<4;i++){const k=new T.Path();k.absarc(Math.cos(i*1.571)*r*.55,Math.sin(i*1.571)*r*.55,r*.15,0,7,true);s.holes.push(k)}
+const g=new T.ExtrudeGeometry(s,{depth:th,bevelEnabled:true,bevelThickness:.008,bevelSize:.008,bevelSegments:1});g.translate(0,0,-th/2);return new T.Mesh(g,m)}
+const hand=(w,l,t,m)=>{const s=new T.Shape();s.moveTo(-w/2,-t);s.lineTo(w/2,-t);s.lineTo(w*.55,l*.7);s.lineTo(0,l);s.lineTo(-w*.55,l*.7);s.closePath();
+return new T.Mesh(new T.ExtrudeGeometry(s,{depth:.015,bevelEnabled:true,bevelThickness:.008,bevelSize:.008,bevelSegments:2}),m)};
+
+part('crystal',.36,2.3,g=>{const q=new T.SphereGeometry(4,96,12,0,6.2832,0,.384);q.translate(0,-3.7,0);
+const m=new T.Mesh(q,E(0xdfeeff,0,0,.14,{clearcoat:1,clearcoatRoughness:0,envMapIntensity:1.2}));m.rotation.x=Math.PI/2;m.renderOrder=10;g.add(m)});
+part('bezel',.3,1.7,g=>{g.add(new T.Mesh(new T.TorusGeometry(1.5,.11,24,128),gold()));
+const n=120,im=new T.InstancedMesh(new T.BoxGeometry(.035,.1,.17),gold(),n),d=new T.Object3D();
+for(let i=0;i<n;i++){const a=i/n*6.2832;d.position.set(Math.cos(a)*1.6,Math.sin(a)*1.6,0);d.rotation.z=a-1.5708;d.updateMatrix();im.setMatrixAt(i,d.matrix)}g.add(im)});
+part('case',0,0,g=>{const pts=[[1.36,-.34],[1.5,-.34],[1.57,-.26],[1.57,.26],[1.5,.34],[1.36,.34]].map(p=>new T.Vector2(p[0],p[1]));
+const c=new T.Mesh(new T.LatheGeometry(pts,128),steelB());c.rotation.x=Math.PI/2;g.add(c);
+[[-.85,1.75],[.85,1.75],[-.85,-1.75],[.85,-1.75]].forEach(p=>g.add(rb(.3,.8,.26,steelB(),p[0],p[1],0)));
+const lt=tex(256,512,(c,w,h)=>{c.fillStyle='#2b1a10';c.fillRect(0,0,w,h);for(let i=0;i<3000;i++){c.fillStyle=Math.random()>.5?'rgba(255,220,180,.05)':'rgba(0,0,0,.08)';c.fillRect(Math.random()*w,Math.random()*h,2,2)}
+c.strokeStyle='#d9b98a';c.setLineDash([10,8]);c.lineWidth=3;[18,238].forEach(x=>{c.beginPath();c.moveTo(x,0);c.lineTo(x,h);c.stroke()})});
+g.add(strap(1,0),strap(-1,1));
+const st=new T.Mesh(new T.CylinderGeometry(.09,.09,.2,24),gold());st.position.x=1.62;st.rotation.z=1.5708;g.add(st);
+const cr=new T.Mesh(new T.CylinderGeometry(.15,.15,.26,28),E(0xe0b66a,1,.25,1,{flatShading:true}));cr.position.x=1.82;cr.rotation.z=1.5708;g.add(cr)});
+const mk=gold();
+part('dial',.05,.7,g=>{
+const sun=tex(1024,1024,(c,w,h)=>{c.fillStyle='#c4c4c4';c.fillRect(0,0,w,h);c.translate(512,512);for(let i=0;i<720;i++){c.rotate(Math.PI/360);c.fillStyle=i%2?'rgba(255,255,255,.03)':'rgba(0,0,0,.04)';c.fillRect(0,0,2,520)}
+c.setTransform(1,0,0,1,0,0);const gr=c.createRadialGradient(512,512,100,512,512,520);gr.addColorStop(0,'rgba(255,255,255,.2)');gr.addColorStop(1,'rgba(0,0,0,.4)');c.fillStyle=gr;c.fillRect(0,0,w,h)});
+const base=new T.Mesh(new T.CircleGeometry(1.4,128),E(0x24406e,.5,.35,1,{map:sun,clearcoat:.5}));base.position.z=.025;g.add(base);
+const pr=tex(1024,1024,(c)=>{c.strokeStyle='#ece6d6';c.translate(512,512);for(let i=0;i<60;i++){c.save();c.rotate(i*Math.PI/30);c.lineWidth=i%5?2:5;c.beginPath();c.moveTo(0,-476);c.lineTo(0,-(i%5?492:502));c.stroke();c.restore()}
+c.setTransform(1,0,0,1,0,0);c.fillStyle='#e0b66a';c.textAlign='center';
+const sp=(t,y,f,k)=>{c.font=f;let x=512-(t.length-1)*k/2;t.split('').forEach(ch=>{c.fillText(ch,x,y);x+=k})};
+sp('AURELION',330,'600 88px Georgia,serif',76);c.fillStyle='#ece6d6';sp('AUTOMATIC',690,'500 40px Arial,sans-serif',36);sp('GENEVE',780,'500 32px Arial,sans-serif',30)});
+const ov=new T.Mesh(new T.CircleGeometry(1.4,128),new T.MeshBasicMaterial({map:pr,transparent:true,polygonOffset:true,polygonOffsetFactor:-1}));ov.position.z=.03;g.add(ov);
+g.add(cyl(1.42,.04,E(0x1a2c4a,.6,.4)));
+for(let i=0;i<12;i++){const a=i*Math.PI/6,l=i%3?.15:.27,x=Math.sin(a)*1.18,y=Math.cos(a)*1.18;g.add(box(.06,l,.035,mk,x,y,.05,-a));g.add(box(.03,l*.65,.01,lume(),x,y,.072,-a))}});
+part('hands',.12,1.2,g=>{const h=(o,z)=>{const p=new T.Group();p.add(o);p.position.z=z;g.add(p);return p};
+const a=hand(.12,.85,.1,gold()),b=hand(.09,1.2,.1,gold());a.add(box(.04,.45,.006,lume(),0,.4,.02));b.add(box(.03,.7,.006,lume(),0,.6,.02));
+HH=h(a,0);MM=h(b,.04);const sc=new T.Group();sc.add(box(.03,1.4,.014,E(0xd24a3a,.4,.35,1,{emissive:0x5a1208,emissiveIntensity:.6}),0,.45,0));const cw=cyl(.07,.012,E(0xd24a3a,.6,.3));cw.position.y=-.25;sc.add(cw);SS=h(sc,.08);
+g.add(new T.Mesh(new T.SphereGeometry(.08,24,24),gold()))});
+part('movement',-.1,.1,g=>{
+const gv=tex(512,512,(c,w,h)=>{for(let x=0;x<w;x+=16){const gr=c.createLinearGradient(x,0,x+16,0);gr.addColorStop(0,'#caa05a');gr.addColorStop(.5,'#8a6428');gr.addColorStop(1,'#caa05a');c.fillStyle=gr;c.fillRect(x,0,16,h)}});
+g.add(cyl(1.3,.05,E(0x6b4d1f,.9,.4)));const pl=new T.Mesh(new T.CircleGeometry(1.3,96),E(0xffffff,.9,.32,1,{map:gv}));pl.position.z=.026;g.add(pl);
+[[-.5,.4,.6,20,1],[.5,.3,.42,14,-1.4],[.05,-.55,.5,18,1.1],[-.75,-.5,.3,10,-2],[.8,-.55,.3,10,2]].forEach(a=>{const m=gear(a[2],a[3],.05,a[3]>15?gold():steel());m.position.set(a[0],a[1],.07);m.userData.s=a[4];GE.push(m);g.add(m);
+const j=new T.Mesh(new T.SphereGeometry(.055,16,16),E(0xd0213a,0,.1,1,{clearcoat:1}));j.position.set(a[0],a[1],.11);g.add(j)});
+for(let i=0;i<6;i++){const a=i*1.047+.3,s=new T.Mesh(new T.CylinderGeometry(.06,.06,.03,20),E(0x2b4fb0,.9,.25));s.rotation.x=1.5708;s.position.set(Math.cos(a)*1.17,Math.sin(a)*1.17,.05);g.add(s);g.add(box(.08,.012,.012,E(0x111111,.5,.5),Math.cos(a)*1.17,Math.sin(a)*1.17,.068,a))}
+const bs=new T.Shape();bs.absarc(0,0,1.05,.3,1.7,false);bs.absarc(0,0,.8,1.7,.3,true);bs.closePath();
+const br=new T.Mesh(new T.ExtrudeGeometry(bs,{depth:.04,bevelEnabled:true,bevelThickness:.01,bevelSize:.01,bevelSegments:2}),gold());br.position.z=.15;g.add(br)});
+part('balance',-.15,-.5,g=>{BW=new T.Group();BW.position.set(.1,.05,0);BW.add(new T.Mesh(new T.TorusGeometry(.55,.045,16,64),gold()));
+for(let i=0;i<4;i++)BW.add(box(.03,1.1,.02,gold(),0,0,0,i*Math.PI/4));
+for(let i=0;i<4;i++){const a=i*1.571;const s=new T.Mesh(new T.SphereGeometry(.06,16,16),rose());s.position.set(Math.cos(a)*.55,Math.sin(a)*.55,0);BW.add(s)}
+BW.add(new T.Mesh(new T.TorusGeometry(.2,.012,8,48),E(0x9fb8d8,1,.2)));g.add(BW)});
+part('rotor',-.2,-1,g=>{const s=new T.Shape();s.absarc(0,0,1.2,0,Math.PI,false);s.lineTo(1.2,0);
+const h=new T.Path();h.absarc(0,0,.12,0,7,true);s.holes.push(h);
+RT=new T.Mesh(new T.ExtrudeGeometry(s,{depth:.06,bevelEnabled:true,bevelThickness:.015,bevelSize:.015,bevelSegments:3}),rotM());g.add(RT)});
+part('caseback',-.34,-1.7,g=>{g.add(cyl(1.5,.1,steelB()));g.add(new T.Mesh(new T.TorusGeometry(1.3,.035,12,96),gold()));const en=new T.Mesh(new T.CircleGeometry(1.5,96),new T.MeshBasicMaterial({map:engT,transparent:true,polygonOffset:true,polygonOffsetFactor:-1}));en.rotation.y=Math.PI;en.position.z=-.052;g.add(en);const z=cyl(.9,.03,E(0xbcd4ee,0,0,.35,{clearcoat:1}));z.position.z=-.07;g.add(z)});
+const dust=new T.Points(new T.BufferGeometry().setAttribute('position',new T.Float32BufferAttribute(Array.from({length:900},()=>(Math.random()-.5)*26),3)),new T.PointsMaterial({color:0xc6a15b,size:.04,transparent:true,opacity:.5}));S.add(dust);
+
+let lk=false,sT=0,lW=0,ty=0;const N=secs.length-1;
+const pos=i=>i==N?secs[N].offsetTop:secs[i].offsetTop+secs[i].offsetHeight/2-innerHeight/2;
+const atTop=()=>scrollY<=secs[N].offsetTop+8;
+function step(d){const n=Math.max(0,Math.min(N,act+d));if(n==act)return;sT=performance.now();lk=true;scrollTo({top:pos(n),behavior:(n==N||act==N)?'smooth':'instant'})}
+addEventListener('wheel',e=>{if(e.ctrlKey||!e.deltaY)return;const now=performance.now();if(lk&&now-sT>700&&now-lW>120)lk=false;lW=now;const d=e.deltaY>0?1:-1;
+if(act==N&&!(d<0&&atTop()))return;e.preventDefault();if(!lk)step(d)},{passive:false});
+addEventListener('touchstart',e=>{ty=e.touches[0].clientY},{passive:true});
+addEventListener('touchmove',e=>{if(act<N)e.preventDefault()},{passive:false});
+addEventListener('touchend',e=>{const d=ty-e.changedTouches[0].clientY;if(Math.abs(d)<40)return;const s=d>0?1:-1;if(act==N&&!(s<0&&atTop()))return;if(performance.now()-sT>700)step(s)});
+addEventListener('keydown',e=>{if(/INPUT|TEXTAREA|BUTTON|A/.test(document.activeElement.tagName))return;const k=e.key,s=(k=='ArrowDown'||k=='PageDown'||k==' ')?1:(k=='ArrowUp'||k=='PageUp')?-1:0;if(!s)return;if(act==N&&!(s<0&&atTop()))return;e.preventDefault();if(performance.now()-sT>700)step(s)});
+let mob=false,act=-1,tg={},cur={e:0,rx:.3,ry:-.5,rz:0,px:2.4,py:0,cz:9},mx=0,my=0,HS=1,ox=0,ph=3,pt=0,av=0,ps=0,ER=0,tw=null,uu=1;const CLf=()=>({e:0,rx:.3,ry:-.5,rz:0,px:0,py:mob?1.6:0,cz:mob?13:9});
+const Z=[null,
+{e:1,rx:.85,ry:-.95,rz:.15,px:2.6,py:0,cz:5.8},
+{e:1,rx:.1,ry:-1.57,rz:0,px:-2,py:0,cz:14},
+{e:.5,rx:0,ry:0,rz:-.75,px:2.6,py:0,cz:6.2},
+{e:1,rx:.95,ry:1.05,rz:1.1,px:-2.6,py:0,cz:8},
+{e:1,rx:.55,ry:-.7,rz:-.25,px:2.6,py:0,cz:6.8},
+{e:1,rx:.35,ry:.85,rz:-.9,px:-2.4,py:-.2,cz:5.4},
+{e:1,rx:.4,ry:3.6,rz:.2,px:2.6,py:0,cz:10.5},
+{e:.7,rx:.5,ry:3.14,rz:.5,px:-2.6,py:0,cz:9.5}];
+function target(i){const n=secs.length-1;
+if(i==0)return{e:0,rx:.3,ry:-.5,px:mob?0:2.4,py:mob?1.6:0,cz:mob?13:9,rz:0};
+if(i==n)return{e:0,rx:.15,ry:0,px:0,py:mob?3:1.4,cz:mob?16:14,rz:0};
+const z=Z[i];return mob?Object.assign({},z,{px:0,py:1.9,cz:Math.min(z.cz*1.5,17)}):z}
+function size(){mob=innerWidth<760;R.setSize(innerWidth,innerHeight);C.aspect=innerWidth/innerHeight;C.updateProjectionMatrix();tg=target(Math.max(act,0))}
+addEventListener('resize',size);size();
+addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
+
+const lp=(a,b,k)=>a+(b-a)*k;
+function frame(){const t=performance.now()/1000;let best=0,bd=1e9;
+secs.forEach((s,i)=>{const r=s.getBoundingClientRect(),d=Math.abs(r.top+r.height/2-innerHeight/2);if(d<bd){bd=d;best=i}});
+if(best!=act){act=best;secs.forEach(s=>s.classList.remove('on'));[...dots.children].forEach((d,i)=>d.classList.toggle('on',i==act));ph=0;pt=t}
+if(ph==0&&t-pt>.35){av=0;tw={f:Object.assign({},cur),to:target(act),t0:t,d:3};ph=5;for(const n in P)P[n].k0=P[n].k||0}
+if(ph==1&&t-tw.t0>=tw.d){ph=4;pt=t}
+if(ph==4&&t-pt>.25){av=act;tw={f:Object.assign({},cur),to:target(act),t0:t,d:1.9};ph=5}
+if(ph==5&&t-tw.t0>=tw.d){ph=2;pt=t}
+if(ph==99){const er=Math.abs(cur.e-tg.e)+Math.abs(cur.rx-tg.rx)+Math.abs(cur.ry-tg.ry)+Math.abs(cur.rz-tg.rz)+Math.abs(cur.px-tg.px)/3+Math.abs(cur.py-tg.py)/3+Math.abs(cur.cz-tg.cz)/8;ER=er;if(er<.08||t-ps>3.5){ph=2;pt=t}}
+if(ph==2&&t-pt>.3){secs[act].classList.add('on');ph=3}
+document.getElementById('bar').style.width=scrollY/(document.body.scrollHeight-innerHeight)*100+'%';
+uu=1;if((ph==1||ph==5)&&tw){uu=Math.min(1,(t-tw.t0)/tw.d);if(ph==5&&uu>.45)av=act;const q=.5-Math.cos(Math.PI*uu)/2;for(const k in cur)cur[k]=tw.f[k]+(tw.to[k]-tw.f[k])*q}
+W.rotation.set(cur.rx+my*.1,cur.ry+mx*.15+Math.sin(t*.4)*.05+(act==0?Math.sin(t*.5)*.2:0),cur.rz+Math.sin(t*.3)*.03);
+W.position.set(cur.px,cur.py+Math.sin(t)*.07,0);ER=(ph==1||ph==5)?Math.sin(Math.PI*uu)*2.6:lp(ER,0,.1);C.position.z=cur.cz+Math.min(ER,4)*1.6;C.fov=38+Math.min(ER,4)*2.5;C.updateProjectionMatrix();KL.position.set(Math.sin(t*.7)*6,4,Math.cos(t*.7)*4+4);
+const f=FOC[av];
+let ix=0;for(const n in P){const p=P[n];p.k=p.k||0;if(ph==1||ph==5){const es=x=>{x=Math.min(1,Math.max(0,x));return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2};p.k=(p.k0||0)*(1-es((uu-(8-ix)*.02)/.5))+tw.to.e*es((uu-.4-ix*.02)/.42)}ix++;p.g.position.z=lp(p.z0,p.z1*1.35,p.k);if(n=='rotor'||n=='caseback'||n=='crystal')p.g.rotation.z=p.k*(n=='rotor'?-.7:.5);
+const o=!f||f.includes(n)?1:.1;p.op=lp(p.op,o,.08);p.mats.forEach(m=>{m.opacity=m.userData.b*p.op;m.depthWrite=m.opacity>.98});p.g.visible=p.op>.02}
+HS=lp(HS,av==4?400:1,.05);ox+=(HS-1)*16;const d=new Date(Date.now()+ox),s=d.getSeconds()+d.getMilliseconds()/1000,m=d.getMinutes()+s/60,h=d.getHours()%12+m/60;
+SS.rotation.z=-s/60*6.283;MM.rotation.z=-m/60*6.283;HH.rotation.z=-h/12*6.283;
+GE.forEach(g=>g.rotation.z=t*g.userData.s*.5);BW.rotation.z=Math.sin(t*5)*1.1;RT.rotation.z=t*.6;dust.rotation.y=t*.02;
+R.render(S,C);requestAnimationFrame(frame)}
+frame();
+</script></body></html>
