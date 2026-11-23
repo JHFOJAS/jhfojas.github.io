@@ -12,123 +12,96 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="assets/images/jake-avatar.png">
   <link rel="stylesheet" href="assets/css/category-global.css">
-  
+
   <style>
-
-  .web-design-modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    background: rgba(23, 19, 19, 0.94);
-    padding: 40px;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .web-design-modal.open {
-    display: flex;
-  }
-
-  .web-design-modal-content {
-    width: 100%;
-    max-width: 1200px;
-    max-height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .web-design-modal-content img {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-height: 90vh;
-    object-fit: contain;
-    border-radius: 5px;
-  }
-
-/* Previous and Next Presentation Buttons */
-.web-design-modal-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 52px;
-  height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(247, 246, 243, 0.12);
-  color: #F7F6F3;
-  border: 1px solid rgba(247, 246, 243, 0.25);
-  border-radius: 50%;
-  font-size: 22px;
-  cursor: pointer;
-  transition: background 0.25s ease, color 0.25s ease;
-  z-index: 2;
-}
-
-.web-design-modal-nav:hover {
-  background: #F04B22;
-  color: #FFFFFF;
-}
-
-.web-design-modal-prev {
-  left: 25px;
-}
-
-.web-design-modal-next {
-  right: 25px;
-}
-
-@media (max-width: 768px) {
-  .web-design-modal-nav {
-    width: 42px;
-    height: 42px;
-    font-size: 18px;
-  }
-
-  .web-design-modal-prev {
-    left: 10px;
-  }
-
-  .web-design-modal-next {
-    right: 10px;
-  }
-}
-
-  .web-design-modal-close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    background: none;
-    border: none;
-    color: #F7F6F3;
-    font-size: 42px;
-    line-height: 1;
-    cursor: pointer;
-    transition: color 0.25s ease;
-  }
-
-  .web-design-modal-close:hover {
-    color: #F04B22;
-  }
-
-  @media (max-width: 768px) {
-    .web-design-modal {
-      padding: 20px;
+    /* Web Design project cards — scoped to this page only */
+    #webDesignGallery .web-project-card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background: #F7F6F3;
+      border: 1px solid rgba(23, 19, 19, 0.10);
+      border-radius: 12px;
+      height: 100%;
     }
 
-    .web-design-modal-close {
-      top: 12px;
-      right: 18px;
-      font-size: 36px;
+    #webDesignGallery .web-project-thumbnail {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: #E9E7E2;
     }
-  }
-</style>
-  
+
+    #webDesignGallery .web-project-thumbnail img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+
+    #webDesignGallery .web-project-card:hover .web-project-thumbnail img {
+      transform: scale(1.035);
+    }
+
+    #webDesignGallery .web-project-info {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 22px;
+    }
+
+    #webDesignGallery .web-project-info h2 {
+      margin: 0;
+      color: #171313;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 21px;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    #webDesignGallery .web-project-info p {
+      margin: 0;
+      color: #625D59;
+      font-family: "DM Sans", sans-serif;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    #webDesignGallery .web-project-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      margin-top: auto;
+      padding: 0 20px;
+      border: 1px solid #171313;
+      border-radius: 4px;
+      background: #171313;
+      color: #F7F6F3;
+      font-family: "DM Sans", sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.25s ease, border-color 0.25s ease;
+    }
+
+    #webDesignGallery .web-project-button:hover {
+      border-color: #F04B22;
+      background: #F04B22;
+      color: #FFFFFF;
+    }
+
+    @media (max-width: 600px) {
+      #webDesignGallery .web-project-info {
+        padding: 18px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -163,166 +136,66 @@
       </section>
 
     </main>
-<div class="web-design-modal" id="webDesignModal" aria-hidden="true">
-
-  <button
-    class="web-design-modal-close"
-    id="webDesignModalClose"
-    type="button"
-    aria-label="Close presentation"
-  >
-    &times;
-  </button>
-
-<div class="web-design-modal-content">
-
-  <button
-    class="web-design-modal-nav web-design-modal-prev"
-    id="webDesignModalPrev"
-    type="button"
-    aria-label="Previous presentation"
-  >
-    &#10094;
-  </button>
-
-  <img
-    id="webDesignModalImage"
-    src=""
-    alt="Website design presentation"
-  >
-
-  <button
-    class="web-design-modal-nav web-design-modal-next"
-    id="webDesignModalNext"
-    type="button"
-    aria-label="Next presentation"
-  >
-    &#10095;
-  </button>
-
-</div>
-
-</div>
 <div id="categoryFooter"></div>
 
   </div>
 
   <script>
-
-    const webDesignImages = [
-      "image-01.jpg",
-      "image-02.jpg",
-      "image-03.jpg"
+    // Add future website projects here using the same object structure.
+    const webDesignProjects = [
+      {
+        title: "Aurelion Watch",
+        description: "An interactive luxury watch concept exploring premium product presentation and immersive 3D web design.",
+        thumbnail: "image-01.jpg",
+        url: "assets/images/portfolio/projects/web-design/presentations/aurelion-watch.html"
+      }
     ];
-    const webDesignModal = document.getElementById("webDesignModal");
-const webDesignModalImage = document.getElementById("webDesignModalImage");
-const webDesignModalClose = document.getElementById("webDesignModalClose");
-
-
-// Track the currently displayed presentation
-let currentPresentationIndex = 0;
-
-// Display a presentation by its index
-function showWebDesignPresentation(index) {
-  currentPresentationIndex =
-    (index + sortedImages.length) % sortedImages.length;
-
-  const filename = sortedImages[currentPresentationIndex];
-
-  webDesignModalImage.src =
-    `assets/images/portfolio/projects/web-design/presentations/${filename}`;
-
-  webDesignModalImage.alt =
-    `Website design presentation — ${filename}`;
-}
-
-// Open the selected website presentation
-function openWebDesignModal(filename) {
-  const selectedIndex = sortedImages.indexOf(filename);
-
-  showWebDesignPresentation(selectedIndex);
-
-  webDesignModal.classList.add("open");
-  webDesignModal.setAttribute("aria-hidden", "false");
-  document.body.style.overflow = "hidden";
-}
-
-function closeWebDesignModal() {
-  webDesignModal.classList.remove("open");
-  webDesignModal.setAttribute("aria-hidden", "true");
-  webDesignModalImage.src = "";
-  document.body.style.overflow = "";
-}
-
-webDesignModalClose.addEventListener("click", closeWebDesignModal);
-
-document.getElementById("webDesignModalPrev")
-  .addEventListener("click", () => {
-    showWebDesignPresentation(currentPresentationIndex - 1);
-  });
-
-document.getElementById("webDesignModalNext")
-  .addEventListener("click", () => {
-    showWebDesignPresentation(currentPresentationIndex + 1);
-  });
-
-webDesignModal.addEventListener("click", (event) => {
-  if (event.target === webDesignModal) {
-    closeWebDesignModal();
-  }
-});
-
-
-// Keyboard navigation and modal closing
-document.addEventListener("keydown", (event) => {
-  if (!webDesignModal.classList.contains("open")) return;
-
-  if (event.key === "Escape") {
-    closeWebDesignModal();
-  }
-
-  if (event.key === "ArrowLeft") {
-    showWebDesignPresentation(currentPresentationIndex - 1);
-  }
-
-  if (event.key === "ArrowRight") {
-    showWebDesignPresentation(currentPresentationIndex + 1);
-  }
-});
 
     const gallery = document.getElementById("webDesignGallery");
     const imageCount = document.getElementById("imageCount");
 
-    const sortedImages = [...webDesignImages].sort((a, b) =>
-      a.localeCompare(b, undefined, { numeric: true })
-    );
+    webDesignProjects.forEach((project) => {
+      const card = document.createElement("article");
+      card.className = "gallery-item web-project-card";
 
-    sortedImages.forEach((filename, index) => {
-      const item = document.createElement("div");
-      item.className = "gallery-item";
+      const thumbnailLink = document.createElement("a");
+      thumbnailLink.className = "web-project-thumbnail";
+      thumbnailLink.href = project.url;
+      thumbnailLink.target = "_blank";
+      thumbnailLink.rel = "noopener noreferrer";
+      thumbnailLink.setAttribute("aria-label", `View ${project.title} project`);
 
       const image = document.createElement("img");
-
-      image.src = `assets/images/portfolio/projects/web-design/thumbnails/${filename}`;
-      image.alt = `Website design and development work ${index + 1}`;
+      image.src = `assets/images/portfolio/projects/web-design/thumbnails/${project.thumbnail}`;
+      image.alt = `${project.title} website design thumbnail`;
       image.loading = "lazy";
+      thumbnailLink.appendChild(image);
 
-item.appendChild(image);
+      const info = document.createElement("div");
+      info.className = "web-project-info";
 
-item.style.cursor = "pointer";
+      const title = document.createElement("h2");
+      title.textContent = project.title;
 
-item.addEventListener("click", () => {
-  openWebDesignModal(filename);
-});
+      const description = document.createElement("p");
+      description.textContent = project.description;
 
-gallery.appendChild(item);
+      const button = document.createElement("a");
+      button.className = "web-project-button";
+      button.href = project.url;
+      button.target = "_blank";
+      button.rel = "noopener noreferrer";
+      button.textContent = "View Project";
+
+      info.append(title, description, button);
+      card.append(thumbnailLink, info);
+      gallery.appendChild(card);
     });
 
     imageCount.textContent =
-      `${sortedImages.length.toString().padStart(2, "0")} DESIGN PIECES`;
+      `${webDesignProjects.length.toString().padStart(2, "0")} DESIGN PIECES`;
   </script>
 <script src="assets/js/category-global.js"></script>
 <script src="assets/js/image-protection.js"></script>
 </body>
 </html>
-
