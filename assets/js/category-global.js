@@ -12,7 +12,7 @@ async function loadCategoryComponents() {
 
   if (headerPlaceholder) {
     try {
-      const response = await fetch("assets/components/category-header.html");
+      const response = await fetch("../assets/components/category-header.html");
 
       if (!response.ok) {
         throw new Error(`Header request failed: ${response.status}`);
@@ -40,7 +40,7 @@ async function loadCategoryComponents() {
 
   if (footerPlaceholder) {
     try {
-      const response = await fetch("assets/components/category-footer.html");
+      const response = await fetch("../assets/components/category-footer.html");
 
       if (!response.ok) {
         throw new Error(`Footer request failed: ${response.status}`);
