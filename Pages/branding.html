@@ -60,10 +60,10 @@
 
   <script>
 
-    const brandingImages = Array.from(
-  { length: 35 },
-  (_, index) => `image-${String(index + 1).padStart(2, "0")}.png`
-);
+    const brandingImages = Array.from({ length: 34 }, (_, index) => {
+  const imageNumber = index + 1 >= 30 ? index + 2 : index + 1;
+  return `image-${String(imageNumber).padStart(2, "0")}.png`;
+});
 
     const gallery = document.getElementById("brandingGallery");
     const imageCount = document.getElementById("imageCount");
