@@ -139,7 +139,7 @@
     <main>
       <section class="page-hero">
         <div class="section-label">
-          SELECTED WORK / 02
+          SELECTED WORK / 03
         </div>
 
         <h1>
@@ -182,6 +182,14 @@
         description: "A refined luxury automatic watch experience, showcasing timeless design, precision-inspired details, and an elegant product presentation.",
         thumbnail: "image-01.jpg",
         url: "https://jhfojas.github.io/assets/websites/JHarley-Geneve.html"
+      },
+      {
+        title: "Cosmos Domicile",
+        description: "A cinematic luxury real estate experience presenting exceptional residences through immersive imagery, atmospheric motion, and refined architectural storytelling.",
+        thumbnail: "",
+        placeholderTitle: "COSMOS DOMICILE",
+        placeholderSubtitle: "Luxury Real Estate Experience",
+        url: "https://jhfojas.github.io/assets/websites/JH-COSMOS-DOMICILE.html"
       }
     ];
 
@@ -208,7 +216,7 @@
       } else {
         const placeholder = document.createElement("div");
         placeholder.className = "web-project-placeholder";
-        placeholder.innerHTML = "<span>NECTAR</span><small>Real Fruit Smoothies</small>";
+        placeholder.innerHTML = `<span>${project.placeholderTitle || project.title}</span><small>${project.placeholderSubtitle || "Website Design"}</small>`;
         thumbnailLink.appendChild(placeholder);
       }
 
