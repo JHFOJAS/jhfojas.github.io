@@ -1,0 +1,2042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jake Harley Fojas — Creative Designer and Digital Experience Developer.">
+  <title>Jake Harley Fojas | Creative Designer & Developer</title>
+  <link rel="stylesheet" href="https://use.typekit.net/cej8zmi.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/images/jake-avatar.png">
+
+  <style>
+    :root {
+      --orange: #f04b22;
+      --black: #171313;
+      --white: #f7f6f3;
+      --gray: #e8e6e2;
+      --muted: #77736f;
+      --font: "DM Sans", sans-serif;
+      --display: "Space Grotesk", sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: "proxima-nova", sans-serif;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1180px, 90%);
+      margin: auto;
+    }
+
+    .navbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      padding: 28px 0;
+      color: white;
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: "proxima-nova", sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      list-style: none;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      opacity: .85;
+      transition: .25s;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    .nav-contact {
+      border: 1px solid rgba(255,255,255,.65);
+      padding: 11px 20px;
+      border-radius: 50px;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      color: white;
+      border: 0;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    .hero-portrait {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .hero {
+      min-height: 730px;
+      background: var(--orange);
+      color: white;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      padding: 145px 0 80px;
+    }
+
+    .hero::before {
+      content: "CREATIVE";
+      position: absolute;
+      font-family: "proxima-nova", sans-serif;
+      font-size: clamp(130px, 23vw, 330px);
+      font-weight: 700;
+      letter-spacing: -20px;
+      opacity: .055;
+      right: -40px;
+      bottom: -70px;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      align-items: center;
+      gap: 45px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-family: "proxima-nova", sans-serif;
+      font-size: clamp(54px, 7.5vw, 100px);
+      line-height: .94;
+      letter-spacing: -7px;
+      font-weight: 700;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 span {
+      display: block;
+    }
+
+    .hero-description {
+      max-width: 490px;
+      font-size: 16px;
+      line-height: 1.8;
+      opacity: .92;
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 24px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: .25s;
+    }
+
+    .btn-dark {
+      background: var(--black);
+      color: white;
+    }
+
+    .btn-dark:hover {
+      background: white;
+      color: var(--black);
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,.7);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: var(--orange);
+    }
+
+    .portrait-wrap {
+      position: relative;
+      max-width: 390px;
+      width: 100%;
+      margin-left: auto;
+    }
+
+    .portrait {
+      aspect-ratio: 4 / 5;
+      background: #24201e;
+      border-radius: 190px 190px 24px 24px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      border: 1px solid rgba(255,255,255,.3);
+    }
+
+    .portrait-placeholder {
+      text-align: center;
+      padding: 30px;
+      color: white;
+    }
+
+    .portrait-placeholder .initials {
+      font-family: "proxima-nova", sans-serif;
+      font-size: 100px;
+      font-weight: 700;
+      line-height: 1;
+      opacity: .9;
+    }
+
+    .portrait-placeholder p {
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin-top: 15px;
+      opacity: .65;
+    }
+
+    .portrait-note {
+      position: absolute;
+      bottom: 25px;
+      left: -45px;
+      background: var(--white);
+      color: var(--black);
+      padding: 17px 22px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 700;
+      box-shadow: 0 15px 40px rgba(0,0,0,.12);
+    }
+
+    .hero-index {
+      position: absolute;
+      right: 0;
+      bottom: -35px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      opacity: .7;
+    }
+
+    /* Subtle cursor-driven depth for the hero layers. */
+    .hero [data-parallax] {
+      --parallax-x: 0px;
+      --parallax-y: 0px;
+      transform: translate3d(var(--parallax-x), var(--parallax-y), 0);
+      transition: transform 180ms cubic-bezier(.2, .7, .2, 1);
+      will-change: transform;
+    }
+
+    .hero::before {
+      transform: translate3d(var(--hero-bg-x, 0px), var(--hero-bg-y, 0px), 0);
+      transition: transform 220ms cubic-bezier(.2, .7, .2, 1);
+    }
+
+    @media (max-width: 800px), (prefers-reduced-motion: reduce) {
+      .hero [data-parallax] {
+        transform: none !important;
+        transition: none !important;
+        will-change: auto;
+      }
+
+      .hero::before {
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+
+
+    /* Scroll-triggered entrance motion for content below the hero. */
+    [data-entrance] {
+      opacity: 0;
+      transform: translate3d(0, 22px, 0);
+      transition: opacity 650ms ease, transform 650ms cubic-bezier(.2, .7, .2, 1);
+      transition-delay: var(--entrance-delay, 0ms);
+      will-change: opacity, transform;
+    }
+
+    [data-entrance].is-visible {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      will-change: auto;
+    }
+
+    @media (max-width: 800px) {
+      [data-entrance] {
+        transform: translate3d(0, 14px, 0);
+        transition-duration: 500ms;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      [data-entrance],
+      [data-entrance].is-visible {
+        opacity: 1;
+        transform: none;
+        transition: none;
+        will-change: auto;
+      }
+    }
+
+    .intro {
+      padding: 115px 0;
+    }
+
+    .section-label {
+      color: var(--orange);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .intro h2 {
+      font-family: "proxima-nova", sans-serif;
+      font-size: clamp(35px, 5vw, 58px);
+      line-height: 1.08;
+      letter-spacing: -3px;
+    }
+
+    .intro-copy {
+      font-size: 16px;
+      line-height: 1.9;
+      color: #5f5b57;
+    }
+
+    .intro-copy p + p {
+      margin-top: 18px;
+    }
+
+    .services {
+      background: var(--black);
+      color: white;
+      padding: 105px 0;
+    }
+
+    .services-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 55px;
+    }
+
+    .services-heading h2,
+    .work-heading h2,
+    .about-heading h2 {
+      font-family: "proxima-nova", sans-serif;
+      font-size: clamp(42px, 6vw, 68px);
+      letter-spacing: -4px;
+      line-height: 1;
+    }
+
+    .services-heading p {
+      max-width: 300px;
+      color: #aaa5a0;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .service-list {
+      border-top: 1px solid #393534;
+    }
+
+    .service-item {
+      display: grid;
+      grid-template-columns: 65px 1fr 1fr 30px;
+      align-items: center;
+      gap: 20px;
+      padding: 29px 0;
+      border-bottom: 1px solid #393534;
+    }
+
+    .service-number {
+      color: var(--orange);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .service-item h3 {
+      font-family: "proxima-nova", sans-serif;
+      font-size: 25px;
+      font-weight: 600;
+    }
+
+    .service-item p {
+      color: #aaa5a0;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .service-arrow {
+      font-size: 22px;
+      color: var(--orange);
+    }
+
+    .work {
+      padding: 110px 0;
+    }
+
+    .work-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 50px;
+      gap: 20px;
+    }
+
+    .work-heading p {
+      max-width: 300px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px 30px;
+    }
+
+    .project-visual {
+      height: 330px;
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: .35s;
+    }
+
+    .project-thumbnail {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: .35s;
+    }
+
+    .project-card:hover .project-visual {
+      transform: translateY(-6px);
+    }
+
+    .visual-one {
+      background: #e5a58d;
+    }
+
+    .visual-two {
+      background: #c7d4c6;
+    }
+
+    .visual-three {
+      background: #e5d4b8;
+    }
+
+    .visual-four {
+      background: #c3c0d9;
+    }
+
+    .mockup {
+      width: 75%;
+      height: 75%;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 20px 55px rgba(0,0,0,.16);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transform: rotate(-3deg);
+    }
+
+    .mockup-top {
+      display: flex;
+      justify-content: space-between;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .mockup-title {
+      font-family: "proxima-nova", sans-serif;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: .95;
+      font-weight: 700;
+      letter-spacing: -2px;
+    }
+
+    .mockup-bottom {
+      font-size: 9px;
+      color: #777;
+    }
+
+    .mockup-two {
+      background: #202020;
+      color: white;
+      transform: rotate(3deg);
+    }
+
+    .mockup-two .mockup-bottom {
+      color: #aaa;
+    }
+
+    .mockup-three {
+      background: #f4e8d6;
+      transform: rotate(-2deg);
+    }
+
+    .mockup-four {
+      background: #332e3e;
+      color: white;
+      transform: rotate(2deg);
+    }
+
+    .mockup-four .mockup-bottom {
+      color: #ccc;
+    }
+
+    .project-info {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 20px;
+    }
+
+    .project-info h3 {
+      font-family: "proxima-nova", sans-serif;
+      font-size: 22px;
+      margin-bottom: 7px;
+    }
+
+    .project-info p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .project-year {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .work-note {
+      margin-top: 45px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .about {
+      padding: 110px 0;
+      background: var(--gray);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+    }
+
+    .about-heading h2 {
+      margin-bottom: 25px;
+    }
+
+    .about-heading p {
+      color: #66615d;
+      line-height: 1.9;
+      max-width: 450px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .skill {
+      background: var(--white);
+      border: 1px solid #d8d5d0;
+      padding: 11px 15px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .experience-list {
+      border-top: 1px solid #c8c4bd;
+    }
+
+    .experience-item {
+      padding: 23px 0;
+      border-bottom: 1px solid #c8c4bd;
+    }
+
+    .experience-item h3 {
+      font-family: "proxima-nova", sans-serif;
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .experience-item p {
+      color: #68635f;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .contact {
+      background: var(--orange);
+      color: white;
+      padding: 110px 0;
+      text-align: center;
+    }
+
+    .contact .section-label {
+      color: white;
+      opacity: .8;
+    }
+
+    .contact h2 {
+      font-family: "proxima-nova", sans-serif;
+      font-size: clamp(48px, 8vw, 95px);
+      line-height: .95;
+      letter-spacing: -6px;
+      margin-bottom: 28px;
+    }
+
+    .contact p {
+      max-width: 480px;
+      margin: 0 auto 35px;
+      line-height: 1.8;
+      opacity: .9;
+    }
+
+    .contact .btn {
+      background: var(--black);
+      color: white;
+    }
+
+    .contact .btn:hover {
+      background: white;
+      color: var(--black);
+    }
+
+    footer {
+      background: var(--black);
+      color: white;
+      padding: 28px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 11px;
+      color: #aaa5a0;
+    }
+
+    .footer-inner strong {
+      color: white;
+    }
+
+    @media (max-width: 800px) {
+      .hero-grid,
+      .intro-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 130px;
+      }
+
+      .hero h1 {
+        letter-spacing: -4px;
+      }
+
+      .portrait-wrap {
+        margin: 30px auto 0;
+        max-width: 320px;
+      }
+
+      .intro-grid,
+      .about-grid {
+        gap: 35px;
+      }
+
+      .services-heading,
+      .work-heading {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .service-item {
+        grid-template-columns: 35px 1fr 25px;
+      }
+
+      .service-item p {
+        grid-column: 2;
+      }
+
+      .service-arrow {
+        grid-column: 3;
+        grid-row: 1;
+      }
+
+      .project-visual {
+        height: 260px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        padding: 20px 0;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 5%;
+        width: 90%;
+        background: var(--black);
+        padding: 25px;
+        border-radius: 14px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 22px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-contact {
+        text-align: center;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 120px 0 75px;
+      }
+
+      .hero h1 {
+        font-size: 60px;
+      }
+
+      .portrait-wrap {
+        max-width: 270px;
+      }
+
+      .portrait-note {
+        left: -20px;
+      }
+
+      .intro,
+      .services,
+      .work,
+      .about,
+      .contact {
+        padding: 75px 0;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .project-visual {
+        height: 280px;
+      }
+
+      .contact h2 {
+        letter-spacing: -3px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+
+    .site-shell {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      background: var(--black);
+      color: white;
+      padding: 38px 28px;
+      display: flex;
+      flex-direction: column;
+      z-index: 20;
+    }
+
+    .sidebar-name {
+      font-size: 23px;
+      line-height: 1.15;
+      font-weight: 700;
+    }
+
+    .sidebar-role {
+      color: #aaa5a0;
+      font-size: 12px;
+      line-height: 1.6;
+      margin-top: 9px;
+    }
+
+    .sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .sidebar-nav a {
+      color: #aaa5a0;
+      padding: 12px 14px;
+      border-radius: 7px;
+      font-size: 14px;
+      transition: .25s ease;
+    }
+
+    .sidebar-nav a:hover,
+    .sidebar-nav a.active {
+      background: var(--orange);
+      color: white;
+    }
+
+    .sidebar-footer {
+      margin-top: auto;
+      color: #aaa5a0;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .main-content {
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    @media (max-width: 900px) {
+      .site-shell {
+        grid-template-columns: 230px minmax(0, 1fr);
+      }
+
+      .sidebar {
+        padding: 30px 20px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .site-shell {
+        display: block;
+      }
+
+      .sidebar {
+        position: relative;
+        height: auto;
+        padding: 20px;
+      }
+
+      .sidebar-name {
+        font-size: 19px;
+      }
+
+      .sidebar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+
+      .sidebar-nav a {
+        padding: 9px 11px;
+        font-size: 12px;
+      }
+
+      .sidebar-footer {
+        display: none;
+      }
+    }
+
+    .sidebar {
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .sidebar-profile {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 0;
+      margin-bottom: 55px;
+    }
+
+    .sidebar-profile > div:last-child {
+      width: 100%;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .sidebar-profile {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: left;
+        gap: 16px;
+        margin-bottom: 20px;
+      }
+
+      .sidebar-profile > div:last-child {
+        text-align: left;
+      }
+    }
+
+    .sidebar-name {
+      letter-spacing: -0.7px;
+    }
+
+    .sidebar-role {
+      letter-spacing: 0.3px;
+    }
+
+    .sidebar-nav a {
+      position: relative;
+      transition: all .25s ease;
+    }
+
+    .sidebar-nav a.active {
+      box-shadow: inset 3px 0 0 white;
+      font-weight: 600;
+    }
+
+    .sidebar-nav a:hover {
+      padding-left: 19px;
+    }
+
+    .sidebar-footer {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 20px;
+      letter-spacing: 0.3px;
+    }
+
+    .sidebar-portrait {
+      width: 125px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 30% 25%, #62504a, transparent 65%),
+        linear-gradient(145deg, #302623, #171313);
+      border: 2px solid var(--orange);
+      display: grid;
+      place-items: center;
+      margin: 0 auto 24px;
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -2px;
+      flex-shrink: 0;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(240,75,34,0.15);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .sidebar-portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: inherit;
+    }
+
+    .sidebar-portrait:hover {
+      transform: scale(1.04);
+      box-shadow: 0 12px 30px rgba(240,75,34,0.25);
+    }
+
+    @media (max-width: 700px) {
+      .sidebar-portrait {
+        width: 65px;
+        margin: 0;
+        font-size: 22px;
+      }
+    }
+
+    .sidebar-social {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 28px;
+      padding: 18px 4px;
+      border-top: 1px solid rgba(255,255,255,.12);
+    }
+
+    .social-link {
+      width: 36px;
+      height: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 50%;
+      color: #fff;
+      transition: background .2s ease, border-color .2s ease, transform .2s ease;
+    }
+
+    .social-link svg {
+      width: 17px;
+      height: 17px;
+      fill: currentColor;
+    }
+
+    .social-link svg path:first-child:not(:only-child) { }
+
+    .social-link:hover {
+      background: var(--orange);
+      border-color: var(--orange);
+      transform: translateY(-2px);
+    }
+
+    .social-link.is-placeholder {
+      opacity: .62;
+    }
+
+    .social-link.is-placeholder:hover {
+      opacity: 1;
+    }
+
+    .social-link[aria-label^="Email"] svg path {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .indeed-mark {
+      font-family: Arial, sans-serif;
+      font-size: 23px;
+      font-weight: 800;
+      font-style: italic;
+      line-height: 1;
+    }
+
+    @media (max-width:700px) {
+      .sidebar-social {
+        margin-top: 16px;
+        padding: 12px 4px 0;
+        border-top: 0;
+      }
+    }
+
+    .project-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity .3s ease, visibility .3s ease;
+    }
+
+    .project-modal.open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .project-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(23, 19, 19, .82);
+      backdrop-filter: blur(8px);
+    }
+
+    .project-modal-content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 680px;
+      max-height: 85vh;
+      overflow-y: auto;
+      background: #F7F6F3;
+      color: #171313;
+      padding: 55px;
+      border-radius: 12px;
+      transform: translateY(25px);
+      transition: transform .3s ease;
+    }
+
+    .modal-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 28px 0;
+    }
+
+    .modal-gallery:empty {
+      display: none;
+    }
+
+    .modal-gallery img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform .3s ease;
+    }
+
+    .modal-gallery img:hover {
+      transform: scale(1.02);
+    }
+
+    @media (max-width: 600px) {
+      .modal-gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .project-modal.open .project-modal-content {
+      transform: translateY(0);
+    }
+
+    .project-modal-close {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 50%;
+      background: #E8E6E2;
+      color: #171313;
+      font-size: 28px;
+      cursor: pointer;
+      transition: background .2s ease, color .2s ease;
+    }
+
+    .project-modal-close:hover {
+      background: #F04B22;
+      color: white;
+    }
+
+    .modal-label {
+      color: #F04B22;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+    }
+
+    .project-modal-content h2 {
+      font-size: clamp(30px, 5vw, 48px);
+      line-height: 1.1;
+      margin-bottom: 20px;
+      letter-spacing: -1.5px;
+    }
+
+    .project-modal-content > p {
+      color: #625D58;
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 35px;
+    }
+
+    .modal-details {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 25px 0;
+      border-top: 1px solid #E8E6E2;
+      border-bottom: 1px solid #E8E6E2;
+    }
+
+    .modal-details div {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .modal-details span {
+      color: #928B84;
+      font-size: 10px;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    .modal-details strong {
+      font-size: 13px;
+    }
+
+    .modal-note {
+      margin: 25px 0;
+      color: #77716B;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .modal-case-study {
+      width: 100%;
+      padding: 17px;
+      background: #F04B22;
+      color: #FFFFFF;
+      border: 0;
+      border-radius: 5px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: background 0.25s ease, color 0.25s ease;
+      text-decoration: none;
+    }
+
+    .modal-case-study:hover {
+      background: #171313;
+      color: #FFFFFF;
+    }
+
+    .project-card {
+      cursor: pointer;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .project-card:focus-visible {
+      outline: 3px solid #F04B22;
+      outline-offset: 5px;
+    }
+
+    @media (max-width: 600px) {
+      .project-modal {
+        padding: 12px;
+      }
+
+      .project-modal-content {
+        padding: 45px 24px 28px;
+      }
+
+      .modal-details {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div class="site-shell">
+
+  <aside class="sidebar">
+
+    <div class="sidebar-profile">
+      <div class="sidebar-portrait">
+        <img src="assets/images/jake-avatar.png" alt="Jake Harley Fojas Avatar">
+      </div>
+
+      <div>
+        <div class="sidebar-name">Jake Harley Fojas</div>
+        <div class="sidebar-role">
+          Creative Designer<br>
+          Digital Experience Developer
+        </div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav" aria-label="Main navigation">
+      <a href="#home" class="active">Introduction</a>
+      <a href="#services">Services</a>
+      <a href="#work">Portfolio</a>
+      <a href="#about">About Me</a>
+      <a href="Pages/resume.html">CV / Resume</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="sidebar-social" aria-label="Social and contact links">
+      <a href="https://www.linkedin.com/in/jakeharleyf/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn profile" title="LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 3.5a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4ZM3.4 9.4H7v11.2H3.4zM9.2 9.4h3.4v1.5h.1a3.7 3.7 0 0 1 3.3-1.8c3.5 0 4.2 2.3 4.2 5.3v6.2h-3.6v-5.5c0-1.3 0-3-1.9-3s-2.2 1.4-2.2 2.9v5.6H9.2z"/></svg>
+      </a>
+
+      <a href="mailto:harleyjake09@gmail.com" class="social-link" aria-label="Email Jake">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5h18v13H3z"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>
+      </a>
+
+      <a href="https://profile.indeed.com/?hl=en_PH&co=PH&from=gnav-homepage--homepage-frontend" class="social-link" aria-label="Indeed profile" title="Indeed profile">
+        <span class="indeed-mark" aria-hidden="true">i</span>
+      </a>
+    </div>
+
+    <div class="sidebar-footer">
+      Graphic Design · Web Design<br>
+      WordPress Development<br><br>
+      © Jake Harley Fojas
+    </div>
+
+  </aside>
+
+  <main class="main-content">
+
+    <header class="hero" id="home">
+      <div class="container hero-grid">
+
+        <div>
+          <div class="eyebrow" data-parallax="0.35">
+            CREATIVE DESIGNER · WORDPRESS DEVELOPER
+          </div>
+
+          <h1 data-parallax="0.65">
+            DESIGNING<br>
+            WITH<br>
+            INTENTION<span>.</span>
+          </h1>
+
+          <p class="hero-description" data-parallax="0.45">
+            I bring creative design and front-end development together
+            to build meaningful digital experiences, compelling brand
+            visuals, and functional websites.
+          </p>
+
+          <div class="hero-buttons" data-parallax="0.3">
+            <a href="#work" class="btn btn-dark">
+              Explore Selected Work ↗
+            </a>
+
+            <a href="#about" class="btn btn-outline">
+              More About Me
+            </a>
+          </div>
+        </div>
+
+        <div class="portrait-wrap" data-parallax="0.9">
+          <div class="portrait">
+            <img
+              data-parallax="1.15"
+              src="assets/images/jake-portrait.png"
+              alt="Jake Harley Fojas Portrait"
+              class="hero-portrait"
+            >
+          </div>
+
+          <div class="portrait-note" data-parallax="1.3">
+            Design-minded.<br>
+            Technology-driven.
+          </div>
+
+          <div class="hero-index" data-parallax="0.55">
+            01 / CREATIVE PORTFOLIO
+          </div>
+        </div>
+
+      </div>
+    </header>
+
+    <section class="intro">
+      <div class="container intro-grid">
+        <div>
+          <div class="section-label">01 — Introduction</div>
+          <h2>Designing ideas.<br>Building experiences.</h2>
+        </div>
+
+        <div class="intro-copy">
+          <p>
+            I'm a creative designer and digital experience developer
+            with a background that bridges graphic design, web design,
+            and front-end development.
+          </p>
+
+          <p>
+            My journey began with visual communication and grew into
+            building websites and digital experiences. I enjoy bringing
+            creative concepts to life through design, technology,
+            and attention to detail.
+          </p>
+
+          <p>
+            From a single graphic to a complete website, my goal is
+            always the same: create work that looks good, works well,
+            and communicates clearly.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="services-heading">
+          <div>
+            <div class="section-label">02 — What I Do</div>
+            <h2>My Expertise.</h2>
+          </div>
+
+          <p>
+            Creative thinking meets practical execution.
+            Here's how I turn concepts into finished work.
+          </p>
+        </div>
+
+        <div class="service-list">
+          <div class="service-item">
+            <span class="service-number">01</span>
+            <h3>Graphic Design</h3>
+            <p>Brand visuals, marketing materials, print design, and digital content.</p>
+            <span class="service-arrow">↗</span>
+          </div>
+
+          <div class="service-item">
+            <span class="service-number">02</span>
+            <h3>Web Design</h3>
+            <p>Modern layouts, landing pages, responsive interfaces, and user experiences.</p>
+            <span class="service-arrow">↗</span>
+          </div>
+
+          <div class="service-item">
+            <span class="service-number">03</span>
+            <h3>WordPress Development</h3>
+            <p>Custom page building, website implementation, maintenance, and optimization.</p>
+            <span class="service-arrow">↗</span>
+          </div>
+
+          <div class="service-item">
+            <span class="service-number">04</span>
+            <h3>Digital Solutions</h3>
+            <p>Front-end development, creative technology, and AI-assisted workflows.</p>
+            <span class="service-arrow">↗</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="work" id="work">
+      <div class="container">
+        <div class="work-heading">
+          <div>
+            <div class="section-label">03 — Selected Work</div>
+            <h2>Featured Projects.</h2>
+          </div>
+
+          <p>
+            A curated selection of creative work, design explorations, and digital experiences showcasing my approach to visual communication and design.
+          </p>
+        </div>
+
+        <div class="project-grid">
+
+          <article class="project-card" data-project="branding" tabindex="0" role="button" aria-haspopup="dialog">
+            <div class="project-visual">
+              <img
+                src="assets/images/portfolio/thumbnails/branding-thumb.jpg"
+                alt="Brand and Graphic Design project thumbnail"
+                class="project-thumbnail"
+              >
+            </div>
+
+            <div class="project-info">
+              <div>
+                <h3>Brand & Graphic Design</h3>
+                <p>Branding · Marketing · Visual Communication</p>
+              </div>
+              <span class="project-year">01 / 04</span>
+            </div>
+          </article>
+
+          <article class="project-card" data-project="web-design" tabindex="0" role="button" aria-haspopup="dialog">
+            <div class="project-visual">
+              <img
+                src="assets/images/portfolio/thumbnails/web-design-thumb.jpg"
+                alt="Website Design project thumbnail"
+                class="project-thumbnail"
+              >
+            </div>
+
+            <div class="project-info">
+              <div>
+                <h3>Website Design</h3>
+                <p>UI Design · Landing Pages · WordPress</p>
+              </div>
+              <span class="project-year">02 / 04</span>
+            </div>
+          </article>
+
+          <article class="project-card" data-project="print-design" tabindex="0" role="button" aria-haspopup="dialog">
+            <div class="project-visual">
+              <img
+                src="assets/images/portfolio/thumbnails/print-design-thumb.jpg"
+                alt="Print and Production project thumbnail"
+                class="project-thumbnail"
+              >
+            </div>
+
+            <div class="project-info">
+              <div>
+                <h3>Print & Production</h3>
+                <p>Labels · Stickers · Print-Ready Artwork</p>
+              </div>
+              <span class="project-year">03 / 04</span>
+            </div>
+          </article>
+
+          <article class="project-card" data-project="creative-experiments" tabindex="0" role="button" aria-haspopup="dialog">
+            <div class="project-visual">
+              <img
+                src="assets/images/portfolio/thumbnails/creative-experiments-thumb.jpg"
+                alt="Web App Development project thumbnail"
+                class="project-thumbnail"
+              >
+            </div>
+
+            <div class="project-info">
+              <div>
+                <h3>Web App Development</h3>
+                <p>Interactive Interfaces · Front-End · Digital Tools</p>
+              </div>
+              <span class="project-year">04 / 04</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container about-grid">
+
+        <div class="about-heading">
+          <div class="section-label">04 — ABOUT & EXPERTISE</div>
+
+          <h2>Where creativity meets technology.</h2>
+
+          <p>
+            I'm a multidisciplinary creative professional with a
+            background in graphic design, web design, and front-end
+            development.
+
+            My journey started with visual communication and evolved
+            into building digital experiences through design and
+            technology. I enjoy turning ideas into purposeful visuals,
+            engaging websites, and practical digital solutions.
+
+            I value thoughtful design, clean execution, continuous
+            learning, and meaningful collaboration.
+          </p>
+
+          <div class="skills">
+            <span class="skill">Photoshop</span>
+            <span class="skill">Illustrator</span>
+            <span class="skill">Figma</span>
+            <span class="skill">Midjourney</span>
+            <span class="skill">WordPress</span>
+            <span class="skill">Divi</span>
+            <span class="skill">Elementor</span>
+            <span class="skill">Beaver Builder</span>
+            <span class="skill">Avada</span>
+            <span class="skill">HTML5</span>
+            <span class="skill">CSS3</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">PHP</span>
+            <span class="skill">SFTP / SSH</span>
+            <span class="skill">Website QA</span>
+            <span class="skill">AI-Assisted Workflows</span>
+          </div>
+        </div>
+
+        <div class="experience-list">
+          <div class="experience-item">
+            <h3>01 / Graphic Design & Visual Communication</h3>
+            <p>
+              Creating brand visuals, marketing graphics, social
+              media content, email campaigns, e-commerce presentations,
+              product labels, and print-ready production artwork.
+              Experienced in preparing technical artwork with cutlines,
+              perforation lines, and production specifications.
+            </p>
+          </div>
+
+          <div class="experience-item">
+            <h3>02 / Web Design & WordPress Development</h3>
+            <p>
+              Transforming design concepts from AI Designs, Figma,
+              and other design sources into functional WordPress
+              websites. Experienced with Divi, Elementor,
+              Beaver Builder, Avada, responsive layouts, and
+              website customization.
+            </p>
+          </div>
+
+          <div class="experience-item">
+            <h3>03 / Front-End Development & Website Support</h3>
+            <p>
+              Working with HTML, CSS, JavaScript, and PHP to
+              customize and maintain websites. Familiar with
+              theme and plugin updates, website QA, SFTP/SSH,
+              troubleshooting, performance improvements,
+              and website security maintenance.
+            </p>
+          </div>
+
+          <div class="experience-item">
+            <h3>04 / Team Leadership & Collaboration</h3>
+            <p>
+              Experience coordinating creative and technical teams
+              across graphic design, web development, SEO, and
+              content production. Comfortable managing workflows,
+              organizing deliverables, supporting teammates,
+              and working toward project deadlines.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-label">05 — Get In Touch</div>
+
+        <h2>Have a project<br>in mind?</h2>
+
+        <p>
+          Let's create something meaningful together.
+          I'm open to creative opportunities, collaborations,
+          and exciting digital projects.
+        </p>
+
+<a href="mailto:harleyjake09@gmail.com?subject=Portfolio%20Inquiry%20%E2%80%93%20Jake%20Harley%20Fojas&body=Hi%20Jake%2C%0A%0AI%27m%20interested%20in%20working%20with%20you.%20Here%20are%20the%20details%20of%20my%20project%3A%0A%0AProject%20Details%3A%0A%0AThank%20you!"
+  class="btn">
+  Let's Talk ↗
+</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container footer-inner">
+        <span><strong>JHF.</strong> Creative Designer & Developer</span>
+        <span>© <span id="year"></span> Jake Harley Fojas. All rights reserved.</span>
+        <a href="#home">Back to top ↑</a>
+      </div>
+    </footer>
+
+    <div class="project-modal" id="projectModal" aria-hidden="true">
+
+      <div class="project-modal-backdrop"></div>
+
+      <div class="project-modal-content"
+           role="dialog"
+           aria-modal="true"
+           aria-labelledby="modalTitle">
+
+        <button class="project-modal-close"
+                type="button"
+                aria-label="Close project preview">
+          &times;
+        </button>
+
+        <div class="modal-label">PROJECT PREVIEW</div>
+
+        <h2 id="modalTitle">Project Title</h2>
+
+        <p id="modalDescription">
+          Project description goes here.
+        </p>
+
+        <div class="modal-gallery" id="modalGallery" aria-label="Project image gallery">
+        </div>
+
+        <div class="modal-details">
+          <div>
+            <span>DISCIPLINE</span>
+            <strong id="modalDiscipline">Design</strong>
+          </div>
+
+          <div>
+            <span>FOCUS</span>
+            <strong id="modalFocus">Creative Direction</strong>
+          </div>
+
+          <div>
+            <span>PROJECT TYPE</span>
+            <strong id="modalType">Portfolio Sample</strong>
+          </div>
+        </div>
+
+        <div class="modal-note">
+          Explore selected website concepts and digital experiences. Open the full portfolio to see more details and project links.
+        </div>
+
+        <a class="modal-case-study" id="modalViewAll" href="#">
+          VIEW ALL PROJECTS ↗
+        </a>
+
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("year").textContent =
+        new Date().getFullYear();
+    </script>
+
+    <script>
+
+      const hero = document.querySelector('.hero');
+      const heroParallaxItems = hero ? hero.querySelectorAll('[data-parallax]') : [];
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+      if (hero && finePointer && !reduceMotion) {
+        let parallaxFrame = null;
+
+        hero.addEventListener('pointermove', event => {
+          const bounds = hero.getBoundingClientRect();
+          const offsetX = (event.clientX - bounds.left) / bounds.width - 0.5;
+          const offsetY = (event.clientY - bounds.top) / bounds.height - 0.5;
+
+          if (parallaxFrame) cancelAnimationFrame(parallaxFrame);
+          parallaxFrame = requestAnimationFrame(() => {
+            heroParallaxItems.forEach(item => {
+              const depth = Number(item.dataset.parallax) || 0;
+              const moveX = (-offsetX * depth * 22).toFixed(2);
+              const moveY = (-offsetY * depth * 18).toFixed(2);
+              item.style.setProperty('--parallax-x', `${moveX}px`);
+              item.style.setProperty('--parallax-y', `${moveY}px`);
+            });
+
+            hero.style.setProperty('--hero-bg-x', `${(offsetX * -14).toFixed(2)}px`);
+            hero.style.setProperty('--hero-bg-y', `${(offsetY * -11).toFixed(2)}px`);
+          });
+        });
+
+        hero.addEventListener('pointerleave', () => {
+          if (parallaxFrame) cancelAnimationFrame(parallaxFrame);
+          heroParallaxItems.forEach(item => {
+            item.style.setProperty('--parallax-x', '0px');
+            item.style.setProperty('--parallax-y', '0px');
+          });
+          hero.style.setProperty('--hero-bg-x', '0px');
+          hero.style.setProperty('--hero-bg-y', '0px');
+        });
+      }
+      
+      const entranceGroups = [
+        document.querySelectorAll('.intro-grid'),
+        document.querySelectorAll('.services-heading'),
+        document.querySelectorAll('.service-item'),
+        document.querySelectorAll('.work-heading'),
+        document.querySelectorAll('.project-card'),
+        document.querySelectorAll('.about-heading'),
+        document.querySelectorAll('.experience-item'),
+        document.querySelectorAll('.contact > .container > *')
+      ];
+
+      const entranceItems = entranceGroups.flatMap(group => Array.from(group));
+      const reduceEntranceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (!reduceEntranceMotion && 'IntersectionObserver' in window) {
+        entranceGroups.forEach(group => {
+          group.forEach((item, index) => {
+            item.setAttribute('data-entrance', '');
+            item.style.setProperty('--entrance-delay', `${Math.min(index, 4) * 90}ms`);
+          });
+        });
+
+        const entranceObserver = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              entranceObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        entranceItems.forEach(item => entranceObserver.observe(item));
+      }
+
+      const sidebarLinks = document.querySelectorAll('.sidebar-nav a[href^="#"]');
+
+      const sections = document.querySelectorAll(
+        "#home, #services, #work, #about, #contact"
+      );
+
+      function setActiveLink(sectionId) {
+        sidebarLinks.forEach(link => {
+          link.classList.toggle(
+            "active",
+            link.getAttribute("href") === "#" + sectionId
+          );
+        });
+      }
+
+      sidebarLinks.forEach(link => {
+        link.addEventListener("click", () => {
+          const sectionId = link.getAttribute("href").substring(1);
+          setActiveLink(sectionId);
+        });
+      });
+
+      const sectionObserver = new IntersectionObserver(entries => {
+        const visibleSections = entries
+          .filter(entry => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (visibleSections.length > 0) {
+          setActiveLink(visibleSections[0].target.id);
+        }
+      }, {
+        rootMargin: "-20% 0px -65% 0px",
+        threshold: [0, 0.25, 0.5, 0.75, 1]
+      });
+
+      sections.forEach(section => {
+        sectionObserver.observe(section);
+      });
+
+      const initialSection = window.location.hash.substring(1);
+
+      if (initialSection) {
+        setActiveLink(initialSection);
+      } else {
+        setActiveLink("home");
+      }
+
+      const projectModal = document.getElementById("projectModal");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalDescription = document.getElementById("modalDescription");
+      const modalDiscipline = document.getElementById("modalDiscipline");
+      const modalFocus = document.getElementById("modalFocus");
+      const modalType = document.getElementById("modalType");
+      const modalGallery = document.getElementById("modalGallery");
+
+      const projectCards = document.querySelectorAll(".project-card");
+      const modalClose = document.querySelector(".project-modal-close");
+      const modalBackdrop = document.querySelector(".project-modal-backdrop");
+
+      const projectData = {
+
+        branding: {
+          title: "Brand & Graphic Design",
+          description: "A showcase of visual communication, branding concepts, marketing graphics, and creative design. Actual project examples and visuals will be added later.",
+          discipline: "Graphic Design",
+          focus: "Branding & Visuals",
+          type: "Creative Portfolio",
+          gallery: [
+            "assets/images/portfolio/projects/branding/image-01.png",
+            "assets/images/portfolio/projects/branding/image-02.png",
+            "assets/images/portfolio/projects/branding/image-03.png",
+            "assets/images/portfolio/projects/branding/image-04.png"
+          ]
+        },
+
+        "web-design": {
+          title: "Website Design",
+          description: "From immersive 3D and interactive 2D experiences to dynamic WordPress platforms and fast, responsive static websites, I design and develop digital experiences that engage visitors, communicate your value, and help your business grow.",
+          discipline: "Web Design & Development",
+          focus: "3D · 2D · WordPress · Front-End",
+          type: "Interactive & Business Websites",
+          gallery: [
+            "assets/images/portfolio/projects/web-design/thumbnails/nectar-kiwi.webp",
+            "assets/images/portfolio/projects/web-design/thumbnails/cosmos-domicile.webp",
+            "assets/images/portfolio/projects/web-design/thumbnails/j-harley-watch.webp"
+          ]
+        },
+
+        "print-design": {
+          title: "Print & Production",
+          description: "A showcase of print-focused creative work, including labels, stickers, production artwork, and print-ready design preparation. Actual project examples and visuals will be added later.",
+          discipline: "Print Design",
+          focus: "Production Artwork",
+          type: "Creative Portfolio",
+          gallery: [
+            "assets/images/portfolio/projects/print-design/image-01.png",
+            "assets/images/portfolio/projects/print-design/image-02.png",
+            "assets/images/portfolio/projects/print-design/image-03.png",
+            "assets/images/portfolio/projects/print-design/image-04.png"
+          ]
+        },
+
+        "creative-experiments": {
+          title: "Web App Development",
+          description: "A collection of web-based interfaces, interactive features, and functional digital concepts focused on usability, thoughtful design, and practical implementation. Project examples and details will be added as they are ready.",
+          discipline: "Web Development",
+          focus: "Front-End & Interactive UI",
+          type: "Digital Projects",
+          gallery: [
+            "assets/images/portfolio/projects/creative-experiments/image-01.jpg",
+            "assets/images/portfolio/projects/creative-experiments/image-02.jpg",
+            "assets/images/portfolio/projects/creative-experiments/image-03.jpg"
+          ]
+        }
+      };
+
+      let lastFocusedCard = null;
+
+      function openProjectModal(projectId, card) {
+        const project = projectData[projectId];
+
+        if (!project) return;
+
+        lastFocusedCard = card;
+
+        modalTitle.textContent = project.title;
+        modalDescription.textContent = project.description;
+        modalDiscipline.textContent = project.discipline;
+        modalFocus.textContent = project.focus;
+        modalType.textContent = project.type;
+
+        modalGallery.innerHTML = "";
+
+        if (project.gallery && project.gallery.length > 0) {
+          project.gallery.forEach((imagePath, index) => {
+            const image = document.createElement("img");
+
+            image.src = imagePath;
+            image.alt = `${project.title} — Image ${index + 1}`;
+            image.loading = "lazy";
+
+            modalGallery.appendChild(image);
+          });
+        }
+
+        const categoryPages = {
+          branding: "Pages/branding.html",
+          "web-design": "Pages/web-design.html",
+          "print-design": "Pages/print-design.html",
+          "creative-experiments": "Pages/creative-experiments.html"
+        };
+
+        const viewAllLink = document.getElementById("modalViewAll");
+
+        if (viewAllLink && categoryPages[projectId]) {
+          viewAllLink.href = categoryPages[projectId];
+        }
+
+        projectModal.classList.add("open");
+        projectModal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+
+        modalClose.focus();
+      }
+
+      function closeProjectModal() {
+        projectModal.classList.remove("open");
+        projectModal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+
+        if (lastFocusedCard) {
+          lastFocusedCard.focus();
+        }
+      }
+
+      projectCards.forEach(card => {
+        card.addEventListener("click", () => {
+          openProjectModal(card.dataset.project, card);
+        });
+
+        card.addEventListener("keydown", event => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openProjectModal(card.dataset.project, card);
+          }
+        });
+      });
+
+      modalClose.addEventListener("click", closeProjectModal);
+      modalBackdrop.addEventListener("click", closeProjectModal);
+
+      document.addEventListener("keydown", event => {
+        if (event.key === "Escape" && projectModal.classList.contains("open")) {
+          closeProjectModal();
+        }
+      });
+
+    </script>
+  </main>
+</div>
+
+<script src="assets/js/image-protection.js"></script>
+</body>
+</html>
