@@ -62,7 +62,7 @@
 
     const brandingImages = Array.from({ length: 34 }, (_, index) => {
   const imageNumber = index + 1 >= 30 ? index + 2 : index + 1;
-  return `image-${String(imageNumber).padStart(2, "0")}.png`;
+  return `image-${String(imageNumber).padStart(2, "0")}.webp`;
 });
 
     const gallery = document.getElementById("brandingGallery");
